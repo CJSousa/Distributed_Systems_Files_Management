@@ -1,4 +1,4 @@
-package tp1.impl.service.rest;
+package tp1.impl.service.rest.clients;
 
 import java.net.URI;
 import java.util.function.Supplier;
@@ -12,7 +12,6 @@ import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 
 public class RestClient {
-	
 	private static Logger Log = Logger.getLogger(RestClient.class.getName());
 
 	protected static final int READ_TIMEOUT = 5000;
@@ -30,7 +29,7 @@ public class RestClient {
 		this.config = new ClientConfig();
 
 		config.property(ClientProperties.READ_TIMEOUT, READ_TIMEOUT);
-		config.property( ClientProperties.CONNECT_TIMEOUT, CONNECT_TIMEOUT);
+		config.property(ClientProperties.CONNECT_TIMEOUT, CONNECT_TIMEOUT);
 		
 		this.client = ClientBuilder.newClient(config);
 	}
@@ -57,4 +56,11 @@ public class RestClient {
 		}
 	}
 
+	/*
+	public void reTry(Supplier<T> func) {
+		// TODO Auto-generated method stub
+		
+	}
+	*/
 }
+
