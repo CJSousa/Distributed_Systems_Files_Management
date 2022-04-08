@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import tp1.api.User;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
-import tp1.impl.service.rest.UsersResource;
+import tp1.impl.service.rest.users.UsersResource;
 
 public class JavaUsers implements Users {
 

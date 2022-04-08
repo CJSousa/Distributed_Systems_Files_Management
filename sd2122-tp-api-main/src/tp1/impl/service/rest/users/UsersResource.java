@@ -1,4 +1,4 @@
-package tp1.impl.service.rest;
+package tp1.impl.service.rest.users;
 
 import java.util.List;
 
