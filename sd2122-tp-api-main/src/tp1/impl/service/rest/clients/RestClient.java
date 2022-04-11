@@ -21,10 +21,10 @@ public class RestClient {
 	protected static final int MAX_RETRIES = 10;
 
 	final URI serverURI;
-	final Client client;
+	protected final Client client;
 	final ClientConfig config;
 
-	RestClient(URI serverURI) {
+	protected RestClient(URI serverURI) {
 		this.serverURI = serverURI;
 		this.config = new ClientConfig();
 
@@ -55,12 +55,5 @@ public class RestClient {
 		} catch (InterruptedException x) { // nothing to do...
 		}
 	}
-
-	/*
-	public void reTry(Supplier<T> func) {
-		// TODO Auto-generated method stub
-		
-	}
-	*/
 }
 

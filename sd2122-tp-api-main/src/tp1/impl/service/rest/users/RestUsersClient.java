@@ -2,8 +2,6 @@ package tp1.impl.service.rest.users;
 
 import java.net.URI;
 import java.util.List;
-
-import bruh.RestClient;
 import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
@@ -14,12 +12,13 @@ import tp1.api.User;
 import tp1.api.service.rest.RestUsers;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
+import tp1.impl.service.rest.clients.RestClient;
 
 public class RestUsersClient extends RestClient implements Users {
 	
 	final WebTarget target;
 
-	RestUsersClient(URI serverURI) {
+	public RestUsersClient(URI serverURI) {
 		super( serverURI );
 		target = client.target( serverURI ).path( RestUsers.PATH );
 	}

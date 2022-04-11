@@ -1,11 +1,9 @@
 package tp1.impl.service.rest.users;
 
 import java.util.List;
-
 import jakarta.ws.rs.WebApplicationException;
 import tp1.api.User;
 import tp1.api.service.rest.RestUsers;
-import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
 import tp1.impl.service.java.JavaUsers;
 
