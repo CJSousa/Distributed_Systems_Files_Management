@@ -12,6 +12,11 @@ public class UsersClientFactory {
 	private static final int FIRST_SERVER_AVAILABLE = 0;
 	private static final String SERVICE_NAME = "users";
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	public static Users getClient() {
 
 		// With multicast, find available URI

@@ -1,7 +1,7 @@
 package tp1.impl.service.java;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Logger;
 import tp1.api.service.util.Files;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import tp1.impl.service.rest.files.FilesResource;
 public class JavaFiles implements Files {
 	
 
-	private final List<String> files = new ArrayList<String>();
+	private final Set<String> files = new HashSet<String>();
 	private static Logger Log = Logger.getLogger(FilesResource.class.getName());
 
 	@Override
@@ -33,6 +33,7 @@ public class JavaFiles implements Files {
 		}
 		
 		files.add(fileId);
+		
 		try {
 			java.nio.file.Files.write(Paths.get(fileId), data);
 		} catch (IOException e) {

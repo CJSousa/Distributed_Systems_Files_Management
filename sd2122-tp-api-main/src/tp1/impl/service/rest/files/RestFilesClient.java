@@ -19,10 +19,9 @@ public class RestFilesClient extends RestClient implements Files {
 
 	//PAY ATTENTION BECAUSE 200 and 204 should both present as 200s
 	
-	RestFilesClient(URI serverURI) {
+	public RestFilesClient(URI serverURI) {
 		super(serverURI);
 		target = client.target(serverURI).path(RestFiles.PATH);
-		//
 	}
 
 	@Override
