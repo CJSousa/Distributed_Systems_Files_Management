@@ -23,7 +23,7 @@ public class JavaDirectory implements Directory {
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
-			return (Result<FileInfo>) userResult;
+			return Result.error(userResult.error());
 
 		// Check if userId exists in directory
 		Map<String, FileInfo> files = userFiles.get(userId);
@@ -34,10 +34,13 @@ public class JavaDirectory implements Directory {
 		// Check if file can be written
 
 		String fileId = "/" + userId + filename;
+		
+		//userId/filename
+		
 		Result fileResult = FilesClientFactory.getClient().writeFile(fileId, data, password);
 
 		if (!fileResult.isOK())
-			return (Result<FileInfo>) fileResult;
+			return Result.error(userResult.error());
 
 		// DUVIDA no URL
 		FileInfo file = new FileInfo(userId, filename, fileId, new HashSet<String>());
@@ -54,7 +57,7 @@ public class JavaDirectory implements Directory {
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
-			return (Result<Void>) userResult;
+			return Result.error(userResult.error());
 
 		// Check if userId exists in directory
 		Map<String, FileInfo> files = userFiles.get(userId);
@@ -72,11 +75,12 @@ public class JavaDirectory implements Directory {
 
 		if (!file.getOwner().equals(userId))
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
+		
 
-		Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, "");
+		Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, Token.get());
 
 		if (!fileResult.isOK())
-			return (Result<Void>) fileResult;
+			return Result.error(fileResult.error());
 
 		files.remove(fileId);
 		return Result.ok();
@@ -89,7 +93,7 @@ public class JavaDirectory implements Directory {
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
-			return (Result<Void>) userResult;
+			return Result.error(userResult.error());
 
 		// Verificacao de validade de userIdShare
 
@@ -126,7 +130,7 @@ public class JavaDirectory implements Directory {
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
-			return (Result<Void>) userResult;
+			return Result.error(userResult.error());
 
 		// Verificacao de validade de userIdShare
 
