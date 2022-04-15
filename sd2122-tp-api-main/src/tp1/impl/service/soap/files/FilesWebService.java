@@ -3,7 +3,7 @@ package tp1.impl.service.soap.files;
 import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
-import tp1.impl.service.java.JavaFiles;
+import tp1.impl.service.java.files.JavaFiles;
 
 public class FilesWebService implements SoapFiles {
 	

@@ -1,4 +1,4 @@
-package tp1.impl.service.rest.files;
+package tp1.impl.service.rest.files.clients;
 
 import java.net.URI;
 import jakarta.ws.rs.client.Entity;

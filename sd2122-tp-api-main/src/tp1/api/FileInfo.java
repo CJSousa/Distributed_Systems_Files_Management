@@ -63,7 +63,7 @@ public class FileInfo {
 	public void setSharedWith(Set<String> sharedWith) {
 		this.sharedWith = sharedWith;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(fileURL, filename);

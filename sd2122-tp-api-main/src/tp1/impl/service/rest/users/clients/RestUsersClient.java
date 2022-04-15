@@ -1,4 +1,4 @@
-package tp1.impl.service.rest.users;
+package tp1.impl.service.rest.users.clients;
 
 import java.net.URI;
 import java.util.List;

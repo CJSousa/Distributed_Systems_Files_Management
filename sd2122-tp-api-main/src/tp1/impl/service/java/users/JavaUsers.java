@@ -1,7 +1,8 @@
-package tp1.impl.service.java;
+package tp1.impl.service.java.users;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 import tp1.api.User;
@@ -11,7 +12,7 @@ import tp1.impl.service.rest.users.UsersResource;
 
 public class JavaUsers implements Users {
 
-	private final ConcurrentHashMap<String, User> users = new ConcurrentHashMap<String, User>();
+	private final Map<String, User> users = new ConcurrentHashMap<String, User>();
 	private static Logger Log = Logger.getLogger(UsersResource.class.getName());
 
 	@Override
@@ -48,7 +49,7 @@ public class JavaUsers implements Users {
 		}
 
 		var user = users.get(userId);
-
+		
 		// Check if user exists
 		if (user == null) {
 			Log.info("User does not exist.");
@@ -74,7 +75,11 @@ public class JavaUsers implements Users {
 	public Result<User> updateUser(String userId, String password, User user) {
 		Log.info("updateUser : user = " + userId + "; pwd = " + password + " ; user = " + user);
 
-		var newUser = this.getUser(userId, password).value();
+		var result = this.getUser(userId, password);
+		
+		if(!result.isOK()) return Result.error(result.error());
+		
+		var newUser = result.value();
 		var newFullName = user.getFullName();
 		var newEmail = user.getEmail();
 		var newPassword = user.getPassword();
@@ -98,7 +103,11 @@ public class JavaUsers implements Users {
 	public Result<User> deleteUser(String userId, String password) {
 		Log.info("deleteUser : user = " + userId + "; pwd = " + password);
 
-		var userToRemove = this.getUser(userId, password).value();
+		var result = this.getUser(userId, password);
+		
+		if(!result.isOK()) return Result.error(result.error());
+		
+		var userToRemove = result.value();
 
 		// Check if user is valid
 		if (userToRemove == null) {

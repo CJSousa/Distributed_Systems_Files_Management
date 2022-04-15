@@ -1,10 +1,9 @@
-package tp1.impl.service.java;
+package tp1.impl.service.java.users.clients;
 
 import java.net.URI;
-
-import discovery.Discovery;
 import tp1.api.service.util.Users;
-import tp1.impl.service.rest.users.RestUsersClient;
+import tp1.discovery.Discovery;
+import tp1.impl.service.rest.users.clients.RestUsersClient;
 
 public class UsersClientFactory {
 
@@ -26,7 +25,6 @@ public class UsersClientFactory {
 		URI[] availableServers;
 		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}
 		String serverURI = availableServers[FIRST_SERVER_AVAILABLE].toString();
-
 		// 
 		if( serverURI.endsWith("rest") )
 			return new RestUsersClient(URI.create(serverURI)); 

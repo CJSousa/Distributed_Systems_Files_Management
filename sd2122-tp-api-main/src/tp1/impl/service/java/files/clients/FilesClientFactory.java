@@ -1,10 +1,9 @@
-package tp1.impl.service.java;
+package tp1.impl.service.java.files.clients;
 
 import java.net.URI;
-
-import discovery.Discovery;
 import tp1.api.service.util.Files;
-import tp1.impl.service.rest.files.RestFilesClient;
+import tp1.discovery.Discovery;
+import tp1.impl.service.rest.files.clients.RestFilesClient;
 
 public class FilesClientFactory {
 
@@ -19,8 +18,7 @@ public class FilesClientFactory {
 		discovery.listener(MIN_REPLIES);
 
 		URI[] availableServers;
-		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {
-		}
+		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}
 		String serverURI = availableServers[FIRST_SERVER_AVAILABLE].toString();
 
 		//

@@ -1,5 +1,4 @@
-package discovery;
-
+package tp1.discovery;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -7,7 +7,7 @@ import tp1.api.service.soap.SoapUsers;
 import tp1.api.service.soap.UsersException;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
-import tp1.impl.service.java.JavaUsers;
+import tp1.impl.service.java.users.JavaUsers;
 
 public class UsersWebService implements SoapUsers {
 

@@ -1,4 +1,4 @@
-package tp1.impl.service.java;
+package tp1.impl.service.java.directory;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,6 +7,9 @@ import java.util.Map;
 import tp1.api.FileInfo;
 import tp1.api.service.util.Directory;
 import tp1.api.service.util.Result;
+import tp1.api.service.util.Result.ErrorCode;
+import tp1.impl.service.java.files.clients.FilesClientFactory;
+import tp1.impl.service.java.users.clients.UsersClientFactory;
 
 public class JavaDirectory implements Directory {
 
@@ -15,11 +18,11 @@ public class JavaDirectory implements Directory {
 	// getClient
 	// <serverId, fileID>
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public Result<FileInfo> writeFile(String filename, byte[] data, String userId, String password) {
 
-		Result userResult = UsersClientFactory.getClient().getUser(userId, password);
+		var userResult = UsersClientFactory.getClient().getUser(userId, password);
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
@@ -49,11 +52,10 @@ public class JavaDirectory implements Directory {
 		return Result.ok(file);
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
 
-		Result userResult = UsersClientFactory.getClient().getUser(userId, password);
+		var userResult = UsersClientFactory.getClient().getUser(userId, password);
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
@@ -77,7 +79,9 @@ public class JavaDirectory implements Directory {
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 		
 
-		Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, Token.get());
+		//Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, Token.get());
+
+		var fileResult = FilesClientFactory.getClient().deleteFile(fileId, "");
 
 		if (!fileResult.isOK())
 			return Result.error(fileResult.error());
@@ -89,13 +93,16 @@ public class JavaDirectory implements Directory {
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
 
-		Result userResult = UsersClientFactory.getClient().getUser(userId, password);
+		var userResult = UsersClientFactory.getClient().getUser(userId, password);
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())
 			return Result.error(userResult.error());
 
-		// Verificacao de validade de userIdShare
+		// Check if userIdShare exists in the system
+		ErrorCode userShareError = UsersClientFactory.getClient().getUser(userIdShare, password).error();
+		if (userShareError != Result.ErrorCode.FORBIDDEN)
+			return Result.error(userShareError);
 
 		// Check if userId exists in directory
 		Map<String, FileInfo> files = userFiles.get(userId);
@@ -105,7 +112,7 @@ public class JavaDirectory implements Directory {
 
 		// Check if file can be deleted
 
-		String fileId = "/" + userId + filename;
+		String fileId = userId + "!*!*!*!" + filename;
 		FileInfo file = files.get(fileId);
 
 		if (file == null)
@@ -126,7 +133,7 @@ public class JavaDirectory implements Directory {
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
 		
-		Result userResult = UsersClientFactory.getClient().getUser(userId, password);
+		var userResult = UsersClientFactory.getClient().getUser(userId, password);
 
 		// Check if userId exists in the system
 		if (!userResult.isOK())

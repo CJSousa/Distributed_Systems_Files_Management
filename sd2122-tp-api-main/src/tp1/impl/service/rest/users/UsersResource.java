@@ -1,25 +1,29 @@
 package tp1.impl.service.rest.users;
 
 import java.util.List;
+
+import jakarta.inject.Singleton;
 import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response.Status;
 import tp1.api.User;
 import tp1.api.service.rest.RestUsers;
+import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
-import tp1.impl.service.java.JavaUsers;
+import tp1.impl.service.java.users.JavaUsers;
 
+@Singleton
 public class UsersResource implements RestUsers {
 
 	final Users impl = new JavaUsers();
 
 	@Override
 	public String createUser(User user) {
-
 		var result = impl.createUser(user);
 
 		if (result.isOK())
 			return result.value();
 		else
-			throw new WebApplicationException(result.error().toString());
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
@@ -29,7 +33,7 @@ public class UsersResource implements RestUsers {
 		if (result.isOK())
 			return result.value();
 		else
-			throw new WebApplicationException(result.error().toString());
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
@@ -39,7 +43,7 @@ public class UsersResource implements RestUsers {
 		if (result.isOK())
 			return result.value();
 		else
-			throw new WebApplicationException(result.error().toString());
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
@@ -49,7 +53,7 @@ public class UsersResource implements RestUsers {
 		if (result.isOK())
 			return result.value();
 		else
-			throw new WebApplicationException(result.error().toString());
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
@@ -59,13 +63,30 @@ public class UsersResource implements RestUsers {
 		if (result.isOK())
 			return result.value();
 		else
-			throw new WebApplicationException(result.error().toString());
+			throw new WebApplicationException(this.getError(result));
 	}
 
-	/*
-	 * private Object getResult(Result result){ if( result.isOK() ) return
-	 * result.value(); else throw new WebApplicationException
-	 * (result.error().toString()); }
+	/**
+	 * Transforms an Error Code Result to a comprehensible Status Response
+	 * 
+	 * @param result - result of an operation
+	 * @return Status response
 	 */
+	private Status getError(Result<?> result) {
+		switch (result.error()) {
+		case CONFLICT:
+			return Status.CONFLICT;
+		case NOT_FOUND:
+			return Status.NOT_FOUND;
+		case BAD_REQUEST:
+			return Status.BAD_REQUEST;
+		case FORBIDDEN:
+			return Status.FORBIDDEN;
+		case INTERNAL_ERROR:
+			return Status.INTERNAL_SERVER_ERROR;
+		default:
+			return Status.NOT_IMPLEMENTED;
+		}
+	}
 
 }

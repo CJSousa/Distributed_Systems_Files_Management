@@ -1,11 +1,13 @@
-package tp1.impl.service.rest.servers;
+package tp1.impl.service.rest.users.servers;
 
 import java.net.InetAddress;
+
 import java.net.URI;
 import java.util.logging.Logger;
 import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import discovery.Discovery;
+import tp1.discovery.Discovery;
+import tp1.impl.service.rest.servers.GenericExceptionMapper;
 import tp1.impl.service.rest.users.UsersResource;
 
 public class RestUsersServer {
