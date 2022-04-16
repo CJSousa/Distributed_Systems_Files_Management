@@ -20,7 +20,7 @@ public class RestDirectoryServer {
 	}
 	
 	public static final int PORT = 8080;
-	public static final String SERVICE = "DirectoryService";
+	public static final String SERVICE = "directory";
 	private static final String SERVER_URI_FMT = "http://%s:%s/rest";
 	
 	public static void main(String[] args) {

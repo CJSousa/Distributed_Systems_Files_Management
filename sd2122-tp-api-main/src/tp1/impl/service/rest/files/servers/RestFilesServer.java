@@ -21,7 +21,7 @@ public class RestFilesServer {
 	}
 	
 	public static final int PORT = 8080;
-	public static final String SERVICE = "FilesService";
+	public static final String SERVICE = "files";
 	private static final String SERVER_URI_FMT = "http://%s:%s/rest";
 	
 	public static void main(String[] args) {
