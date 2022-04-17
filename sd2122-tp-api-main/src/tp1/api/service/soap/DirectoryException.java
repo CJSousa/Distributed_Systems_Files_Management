@@ -3,7 +3,7 @@ package tp1.api.service.soap;
 import jakarta.xml.ws.WebFault;
 
 @WebFault
-public class DirectoryException extends Exception {
+public class DirectoryException extends SoapException {
 
 	private static final long serialVersionUID = 1L;
 

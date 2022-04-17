@@ -6,12 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import tp1.api.FileInfo;
-import tp1.api.User;
-import tp1.api.service.rest.RestFiles;
 import tp1.api.service.util.Directory;
-import tp1.api.service.util.Files;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Result.ErrorCode;
 import tp1.impl.service.java.files.clients.FilesClientFactory;
