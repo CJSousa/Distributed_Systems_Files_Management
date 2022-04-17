@@ -1,6 +1,6 @@
 package tp1.api.service.soap;
 
-import tp1.api.service.util.Result.ErrorCode;
+import tp1.api.service.util.Result;
 
 public class SoapException extends Exception {
 	
@@ -14,8 +14,8 @@ public class SoapException extends Exception {
 		super(errorMessage);
 	}
 
-	public ErrorCode getErrorCode() {
-		return Result.
+	public Result.ErrorCode getErrorCode() {
+		return Result.ErrorCode.valueOf(this.getMessage());
 	}
 
 }

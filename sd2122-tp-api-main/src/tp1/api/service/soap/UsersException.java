@@ -2,6 +2,7 @@ package tp1.api.service.soap;
 
 import jakarta.xml.ws.WebFault;
 
+
 @WebFault
 public class UsersException extends SoapException {
 
@@ -14,4 +15,5 @@ public class UsersException extends SoapException {
 	public UsersException(String errorMessage ) {
 		super(errorMessage);
 	}
+	
 }

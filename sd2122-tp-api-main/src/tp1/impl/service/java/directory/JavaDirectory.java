@@ -46,8 +46,6 @@ public class JavaDirectory implements Directory {
 			return Result.error(userResult.error());
 
 		// DUVIDA no URL
-		// Chamar metodo novo getURIsOfPath do Discovery
-		// Discovery tem de ter @Singleton?
 		FileInfo file = new FileInfo(userId, filename, 
 				FilesClientFactory.getAvailableURI() + "/files/" + fileId, 
 				new HashSet<String>());

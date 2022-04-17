@@ -1,11 +1,9 @@
 package tp1.impl.service.soap.users;
 
 import java.util.List;
-
 import tp1.api.User;
 import tp1.api.service.soap.SoapUsers;
 import tp1.api.service.soap.UsersException;
-import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
 import tp1.impl.service.java.users.JavaUsers;
 

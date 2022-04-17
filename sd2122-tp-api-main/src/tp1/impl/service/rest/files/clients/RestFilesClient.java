@@ -25,23 +25,17 @@ public class RestFilesClient extends RestClient implements Files {
 
 	@Override
 	public Result<Void> writeFile(String fileId, byte[] data, String token) {
-		return super.reTry(() -> {
-			return clt_writeFile(fileId, data, token);
-		});
+		return super.reTry(() -> clt_writeFile(fileId, data, token));
 	}
 
 	@Override
 	public Result<Void> deleteFile(String fileId, String token) {
-		return super.reTry(() -> {
-			return clt_deleteFile(fileId, token);
-		});
+		return super.reTry(() -> clt_deleteFile(fileId, token));
 	}
 
 	@Override
 	public Result<byte[]> getFile(String fileId, String token) {
-		return super.reTry(() -> {
-			return clt_getFile(fileId, token);
-		});
+		return super.reTry(() -> clt_getFile(fileId, token));
 	}
 
 	//
@@ -59,19 +53,16 @@ public class RestFilesClient extends RestClient implements Files {
 	 */
 	private Result<Void> clt_writeFile(String fileId, byte[] data, String token) {
 
-		Response r = target.path(fileId).queryParam(RestFiles.TOKEN, token).request().accept(MediaType.APPLICATION_JSON)
+		Response r = target.path(fileId)
+				.queryParam(RestFiles.TOKEN, token)
+				.request().accept(MediaType.APPLICATION_JSON)
 				.post(Entity.entity(data, MediaType.APPLICATION_OCTET_STREAM));
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			System.out.println("Success, wrote file with id: ");
-			return r.readEntity(new GenericType<Result<Void>>() {
-			});
+			//return r.readEntity(new GenericType<Result<Void>>() {});
+			return Result.ok(r.readEntity(Void.class));
 		} else
-			//Status.fromStatusCode(CONNECT_TIMEOUT)
-			System.out.println("Error, HTTP error status: " + r.getStatus());
-
-		return null;
-
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
 	/**
@@ -82,16 +73,17 @@ public class RestFilesClient extends RestClient implements Files {
 	 */
 	private Result<Void> clt_deleteFile(String fileId, String token) {
 
-		Response r = target.path(fileId).queryParam(RestFiles.TOKEN, token).request().accept(MediaType.APPLICATION_JSON)
+		Response r = target.path(fileId)
+				.queryParam(RestFiles.TOKEN, token)
+				.request()
+				.accept(MediaType.APPLICATION_JSON)
 				.delete();
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			System.out.println("Successful removal of: ");
-			return r.readEntity(new GenericType<Result<Void>>() {
-			});
+			//return r.readEntity(new GenericType<Result<Void>>() {});
+			return Result.ok(r.readEntity(Void.class));
 		} else
-			System.out.println("Error, HTTP error status: " + r.getStatus());
-		return null;
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
 
@@ -103,15 +95,16 @@ public class RestFilesClient extends RestClient implements Files {
 	 */
 	private Result<byte[]> clt_getFile(String fileId, String token) {
 
-		Response r = target.path(fileId).queryParam(RestFiles.TOKEN, token).request().accept(MediaType.APPLICATION_JSON)
+		Response r = target.path(fileId)
+				.queryParam(RestFiles.TOKEN, token)
+				.request()
+				.accept(MediaType.APPLICATION_JSON)
 				.get();
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity())
-			return r.readEntity(new GenericType<Result<byte[]>>() {
-			});
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) //return r.readEntity(new GenericType<Result<byte[]>>() {});
+			return Result.ok(r.readEntity(byte[].class));
 		else
-			System.out.println("Error, HTTP error status: " + r.getStatus());
-		return null;
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
 

@@ -15,7 +15,6 @@ public class SoapClient {
 	protected static final int RETRY_SLEEP = 3000;
 	protected static final int MAX_RETRIES = 10;
 
-	@SuppressWarnings("unchecked")
 	public <T> Result<T> reTry(ThrowsSupplier<T> func) {
 		// Default error
 		Result<T> result = Result.error(Result.ErrorCode.NOT_IMPLEMENTED);
