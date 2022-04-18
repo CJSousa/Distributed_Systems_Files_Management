@@ -58,6 +58,7 @@ public class Discovery {
 	public Discovery (){
 		// Ensures that the listener has had enough time to listen to announcements
 		this.servicesNet = new ConcurrentHashMap<>();
+		this.listener(0);
 	}
 
 	/**
@@ -113,7 +114,6 @@ public class Discovery {
 	/**
 	 * Listens for the given composite service name, blocks until a minimum number of replies is collected.
 	 * @param serviceName - the composite name of the service
-	 * @param minRepliesNeeded - the minimum number of replies required.
 	 * @return the discovery results as an array
 	 */
 	public void listener(int minRepliesNeeded) {
@@ -131,7 +131,7 @@ public class Discovery {
 			    //long currentTime = startingTime;
 			    int counter = 0;
 			    
-			    while( nReplies < minRepliesNeeded && counter < 10000) {
+			    while( true ) {
 					try {
 						pkt.setLength(MAX_DATAGRAM_SIZE);
 						ms.receive(pkt);
@@ -185,6 +185,7 @@ public class Discovery {
 	 * null if there is no valid URI table for the given serviceName. 
 	 * 
 	 */
+	/*
 	public URI[] knownUrisOf(String serviceName) {
 		ConcurrentHashMap<URI,Long> URITable = servicesNet.get(serviceName);
 		if (URITable == null) return null;
@@ -193,6 +194,13 @@ public class Discovery {
 		URI[] knownURIs = keys.toArray(new URI[25]); 
 		return knownURIs;
 	}	
+	*/
+	
+	public URI[] knownUrisOf(String serviceName) {
+		var uris = servicesNet.get(serviceName);
+		return uris == null ? null : uris.keySet().toArray(new URI[0]);
+	}
+	
 	
 	
 	private void joinGroupInAllInterfaces(MulticastSocket ms) throws SocketException {

@@ -18,7 +18,7 @@ public class JavaUsers implements Users {
 	@Override
 	public Result<String> createUser(User user) {
 		Log.info("createUser : " + user);
-
+		
 		var userId = user.getUserId();
 
 		// Check if user data is valid
@@ -67,7 +67,7 @@ public class JavaUsers implements Users {
 			Log.info("password is incorrect.");
 			return Result.error(Result.ErrorCode.FORBIDDEN);
 		}
-
+		
 		return Result.ok(user);
 	}
 

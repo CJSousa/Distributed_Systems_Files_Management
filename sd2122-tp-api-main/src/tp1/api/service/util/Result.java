@@ -92,6 +92,10 @@ public interface Result<T> {
 			return ErrorCode.FORBIDDEN;
 		case INTERNAL_SERVER_ERROR:
 			return ErrorCode.INTERNAL_ERROR;
+		case NO_CONTENT:
+			return ErrorCode.OK;
+		case OK:
+			return ErrorCode.OK;
 		default:
 			return ErrorCode.NOT_IMPLEMENTED;
 		}

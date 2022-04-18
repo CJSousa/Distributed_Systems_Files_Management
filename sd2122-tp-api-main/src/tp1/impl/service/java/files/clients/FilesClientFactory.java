@@ -18,16 +18,16 @@ public class FilesClientFactory {
 		
 		// With multicast, find available URI
 		Discovery discovery = Discovery.getInstance();
-		discovery.listener(MIN_REPLIES);
+		//discovery.listener(MIN_REPLIES);
 
 		URI[] availableServers;
-		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}
+		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) { System.out.println("Waiting for URIs");}
 		serverURI = availableServers[FIRST_SERVER_AVAILABLE].toString();
 
 		//
-		if (serverURI.endsWith("rest"))
+		//if(pedido get de request) 
+		if (serverURI.endsWith("rest")) 
 			return new RestFilesClient(URI.create(serverURI));
-			
 		// else
 		// return new SoapUsersClient(serverURI );
 
@@ -37,5 +37,7 @@ public class FilesClientFactory {
 	}
 	
 	public static String getAvailableURI() { return serverURI; }
+	
+	//private static 
 
 }

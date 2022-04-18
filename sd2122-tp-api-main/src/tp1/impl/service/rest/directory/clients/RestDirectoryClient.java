@@ -19,10 +19,10 @@ import tp1.impl.service.rest.clients.RestClient;
 public class RestDirectoryClient extends RestClient implements Directory {
 
 	final WebTarget target;
-	
+
 	public RestDirectoryClient(URI serverURI) {
 		super(serverURI);
-		target = client.target( serverURI ).path( RestDirectory.PATH );
+		target = client.target(serverURI).path(RestDirectory.PATH);
 	}
 
 	@Override
@@ -32,14 +32,12 @@ public class RestDirectoryClient extends RestClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.reTry(() -> clt_deleteFile(filename, userId, password));
 	}
 
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.reTry(() -> clt_shareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
@@ -50,8 +48,7 @@ public class RestDirectoryClient extends RestClient implements Directory {
 
 	@Override
 	public Result<byte[]> getFile(String filename, String userId, String accUserId, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.reTry(() -> clt_getFile(filename, userId, accUserId, password));
 	}
 
 	@Override
@@ -59,20 +56,51 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password){
-		
-		Response r = target.path(userId).path(filename)
-				.queryParam(RestUsers.PASSWORD, password)
-				.request()
-				.accept(MediaType.APPLICATION_JSON)
-				.post(Entity.entity(data, MediaType.APPLICATION_OCTET_STREAM));
+
+	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password) {
+
+		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request()
+				.accept(MediaType.APPLICATION_JSON).post(Entity.entity(data, MediaType.APPLICATION_OCTET_STREAM));
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			//return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
 			return Result.ok(r.readEntity(FileInfo.class));
 		} else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	}
+
+	private Result<byte[]> clt_getFile(String filename, String userId, String accUserId, String password) {
+
+		Response r = target.path(userId).path(filename).queryParam(RestUsers.USER_ID, accUserId)
+				.queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_OCTET_STREAM).get();
+
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			return Result.ok(r.readEntity(byte[].class));
+		} else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	}
+
+	private Result<Void> clt_deleteFile(String filename, String userId, String password) {
+
+		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request().delete();
+
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			return Result.ok();
+		} else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	}
+	
+	private Result<Void> clt_shareFile(String filename, String userId, String userIdShare, String password) {
+		Response r = target.path(userId).path(filename).path("share").path(userIdShare).queryParam(RestUsers.PASSWORD, password).request().post(null);
+		
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			return Result.ok();
+		} else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+		
 	}
 
 }

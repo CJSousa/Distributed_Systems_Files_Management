@@ -87,7 +87,7 @@ public class JavaFiles implements Files {
 		}
 		
 		// Check if fileId exists - but could data be null in write method?
-		if( data == null ) {
+		if( data == null || !files.contains(fileId)) {
 			Log.info("fileId does not exist.");
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 		}

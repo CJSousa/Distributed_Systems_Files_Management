@@ -21,6 +21,7 @@ public class RestFilesClient extends RestClient implements Files {
 	public RestFilesClient(URI serverURI) {
 		super(serverURI);
 		target = client.target(serverURI).path(RestFiles.PATH);
+		System.out.println(target);
 	}
 
 	@Override
@@ -55,13 +56,12 @@ public class RestFilesClient extends RestClient implements Files {
 
 		Response r = target.path(fileId)
 				.queryParam(RestFiles.TOKEN, token)
-				.request().accept(MediaType.APPLICATION_JSON)
+				.request()
 				.post(Entity.entity(data, MediaType.APPLICATION_OCTET_STREAM));
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			//return r.readEntity(new GenericType<Result<Void>>() {});
-			return Result.ok(r.readEntity(Void.class));
-		} else
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode())
+			return Result.ok();
+		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
@@ -76,13 +76,11 @@ public class RestFilesClient extends RestClient implements Files {
 		Response r = target.path(fileId)
 				.queryParam(RestFiles.TOKEN, token)
 				.request()
-				.accept(MediaType.APPLICATION_JSON)
 				.delete();
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			//return r.readEntity(new GenericType<Result<Void>>() {});
-			return Result.ok(r.readEntity(Void.class));
-		} else
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
+			return Result.ok();
+		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
@@ -100,8 +98,9 @@ public class RestFilesClient extends RestClient implements Files {
 				.request()
 				.accept(MediaType.APPLICATION_JSON)
 				.get();
-
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) //return r.readEntity(new GenericType<Result<byte[]>>() {});
+		
+		//return r.readEntity(new GenericType<Result<byte[]>>() {});
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return Result.ok(r.readEntity(byte[].class));
 		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));

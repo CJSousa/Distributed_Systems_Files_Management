@@ -1,5 +1,6 @@
 package tp1.impl.service.rest.files;
 
+import jakarta.inject.Singleton;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response.Status;
 import tp1.api.service.rest.RestFiles;
@@ -7,6 +8,7 @@ import tp1.api.service.util.Files;
 import tp1.api.service.util.Result;
 import tp1.impl.service.java.files.JavaFiles;
 
+@Singleton
 public class FilesResource implements RestFiles {
 	
 	final Files impl = new JavaFiles();

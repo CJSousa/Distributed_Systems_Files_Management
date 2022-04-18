@@ -31,7 +31,7 @@ public class RestFilesServer {
 			
 		ResourceConfig config = new ResourceConfig();
 		config.register(FilesResource.class);
-		//config.register(CustomLoggingFilter.class);
+		config.register(CustomLoggingFilter.class);
 		//For further knowledge on errors:
 		config.register(GenericExceptionMapper.class);
 		
