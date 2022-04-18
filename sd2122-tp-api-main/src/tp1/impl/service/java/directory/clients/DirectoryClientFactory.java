@@ -21,7 +21,6 @@ public class DirectoryClientFactory {
 
 		// With multicast, find available URI
 		Discovery discovery = Discovery.getInstance();
-		discovery.listener(MIN_REPLIES);
 
 		URI[] availableServers;
 		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}

@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import tp1.api.User;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
+import tp1.impl.service.java.directory.clients.DirectoryClientFactory;
+import tp1.impl.service.java.users.clients.UsersClientFactory;
 import tp1.impl.service.rest.users.UsersResource;
 
 public class JavaUsers implements Users {
@@ -115,6 +117,16 @@ public class JavaUsers implements Users {
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 		}
 
+		// Process delete
+		var dirResult = DirectoryClientFactory.getClient().deleteFilesOfUser(userId);
+		
+		//DEBUG
+		System.out.println("-----------------------------------");
+		System.out.println("RESULT FROM DIRECTORY: " + dirResult);
+		System.out.println("-----------------------------------");
+		
+		if(!dirResult.isOK()) return Result.error(Result.ErrorCode.BAD_REQUEST);
+		
 		users.remove(userId);
 
 		return Result.ok(userToRemove);

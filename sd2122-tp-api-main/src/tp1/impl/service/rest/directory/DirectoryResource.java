@@ -64,6 +64,12 @@ public class DirectoryResource implements RestDirectory {
 		else
 			throw new WebApplicationException(this.getError(result));
 	}
+	
+	//overide??
+	public void deleteFilesOfUser(String userId) {
+		var result = impl.deleteFilesOfUser(userId);
+		if (!result.isOK()) throw new WebApplicationException(this.getError(result));
+	}
 
 	/**
 	 * Transforms an Error Code Result to a comprehensible Status Response

@@ -93,7 +93,16 @@ public class JavaDirectory implements Directory {
 		if (!fileResult.isOK())
 			return Result.error(fileResult.error());
 
+		// Process delete
+
+		Set<String> usersSharedWith = files.get(fileId).getSharedWith();
+
+		for (String s : usersSharedWith) {
+			userFiles.get(s).remove(fileId);
+		}
+
 		files.remove(fileId);
+
 		return Result.ok();
 	}
 
@@ -128,21 +137,23 @@ public class JavaDirectory implements Directory {
 		if (!file.getOwner().equals(userId))
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 
-		if (!userId.equals(userIdShare)) {
+		// Process share
 
-			// Add userIdShare to set of user IDs with whom the file has been shared
-			Set<String> sharedWith = file.getSharedWith();
-			sharedWith.add(userIdShare);
-			file.setSharedWith(sharedWith);
-			
-			// Check if userIdShare exists in directory
-			Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
-			if (userIdSharedFiles == null)
-				userFiles.put(userIdShare, new HashMap<String, FileInfo>());
+		// if (!userId.equals(userIdShare)) {
 
-			// Add file to userIdShare
-			userIdSharedFiles.put(fileId, file);
-		}
+		// Add userIdShare to set of user IDs with whom the file has been shared
+		Set<String> sharedWith = file.getSharedWith();
+		sharedWith.add(userIdShare);
+		file.setSharedWith(sharedWith);
+
+		// Check if userIdShare exists in directory
+		Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
+		if (userIdSharedFiles == null)
+			userFiles.put(userIdShare, new HashMap<String, FileInfo>());
+
+		// Add file to userIdShare
+		userIdSharedFiles.put(fileId, file);
+		// }
 
 		return Result.ok();
 	}
@@ -166,10 +177,10 @@ public class JavaDirectory implements Directory {
 
 		if (files == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		
+
 		// Check if userIdShare exists in directory
 		Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
-		
+
 		if (userIdSharedFiles == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 
@@ -179,12 +190,14 @@ public class JavaDirectory implements Directory {
 		FileInfo file = files.get(fileId);
 
 		if (file == null)
-			return Result.error(Result.ErrorCode.BAD_REQUEST);
+			return Result.error(Result.ErrorCode.NOT_FOUND);
 
 		if (!file.getOwner().equals(userId))
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 
 		Set<String> sharedWith = file.getSharedWith();
+
+		// Process unshare
 
 		// MAYBE WE DONT NEED SECOND CONDITION?
 		if (sharedWith.contains(userIdShare) && userIdSharedFiles.containsKey(fileId)) {
@@ -195,7 +208,8 @@ public class JavaDirectory implements Directory {
 			file.setSharedWith(sharedWith);
 
 			// Remove file from userIdShare
-			userIdSharedFiles.remove(fileId);
+			if (!userId.equals(userIdShare))
+				userIdSharedFiles.remove(fileId);
 		}
 
 		return Result.ok();
@@ -205,13 +219,13 @@ public class JavaDirectory implements Directory {
 	public Result<byte[]> getFile(String filename, String userId, String accUserId, String password) {
 
 		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
-		
+
 		// Check if accUserId exists in the system
 		if (!accUserResult.isOK())
 			return Result.error(accUserResult.error());
 
 		var userError = UsersClientFactory.getClient().getUser(userId, password).error();
-		
+
 		// Check if accUserId exists in the system
 		if (userError != Result.ErrorCode.FORBIDDEN && !userId.equals(accUserId))
 			return Result.error(userError);
@@ -222,7 +236,7 @@ public class JavaDirectory implements Directory {
 
 		if (userIdFiles == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		
+
 		if (accUserFiles == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 
@@ -234,9 +248,9 @@ public class JavaDirectory implements Directory {
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 
 		// Check if file can be read
-		if (!this.canRead(accUserFiles, fileId, file, accUserId)) 
+		if (!this.canRead(accUserFiles, fileId, file, accUserId))
 			return Result.error(Result.ErrorCode.FORBIDDEN);
-		else 
+		else
 			throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
 	}
 
@@ -264,7 +278,36 @@ public class JavaDirectory implements Directory {
 
 	}
 
-	// Auxiliary Method
+	// Auxiliary Methods
+
+	// override?
+	public Result<Void> deleteFilesOfUser(String userId) {
+
+		// Check if userId exists in directory
+		Map<String, FileInfo> files = userFiles.get(userId);
+
+		// If it does not work just create a copy of files and delete from it and then
+		// replace
+		if (files != null) {
+			for (FileInfo f : files.values()) {
+				String fileId = userId + DELIMITER + f.getFilename();
+
+				// First check sharedWith because it could include owner
+				Set<String> sharedWith = f.getSharedWith();
+				for (String s : sharedWith) {
+					userFiles.get(s).remove(fileId);
+					// e se ficar null? Tratar?
+				}
+
+				// Delete user from map
+				if (f.getOwner().equals(userId))
+					files = null;
+			}
+		}
+		
+		return Result.ok();
+
+	}
 
 	/**
 	 * Check if a user can read a file

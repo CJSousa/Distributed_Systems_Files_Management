@@ -110,4 +110,12 @@ public interface Directory {
 	 *         BAD_REQUEST otherwise.
 	 */
 	Result<List<FileInfo>> lsFile(String userId, String password);
+
+	/**
+	 * ADD BIOS
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	Result<Void> deleteFilesOfUser(String userId);
 }
