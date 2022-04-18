@@ -42,8 +42,7 @@ public class RestDirectoryClient extends RestClient implements Directory {
 
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.reTry(() -> clt_unshareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
@@ -53,8 +52,7 @@ public class RestDirectoryClient extends RestClient implements Directory {
 
 	@Override
 	public Result<List<FileInfo>> lsFile(String userId, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.reTry(() -> clt_lsFile(userId, password));
 	}
 
 	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password) {
@@ -93,6 +91,7 @@ public class RestDirectoryClient extends RestClient implements Directory {
 	}
 	
 	private Result<Void> clt_shareFile(String filename, String userId, String userIdShare, String password) {
+		
 		Response r = target.path(userId).path(filename).path("share").path(userIdShare).queryParam(RestUsers.PASSWORD, password).request().post(null);
 		
 		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
@@ -102,5 +101,30 @@ public class RestDirectoryClient extends RestClient implements Directory {
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 		
 	}
+	
+	
+	private Result<Void> clt_unshareFile(String filename, String userId, String userIdShare, String password) {
+		
+		Response r = target.path(userId).path(filename).path("share").path(userIdShare).queryParam(RestUsers.PASSWORD, password).request().delete();
+		
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			return Result.ok();
+		} else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	
+	}
+	
+	private Result<List<FileInfo>> clt_lsFile(String userId, String password){
+		
+		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_JSON).get();
+		
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
+			return r.readEntity(new GenericType<Result<List<FileInfo>>>() {});
+		} else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+		
+	}
+
 
 }

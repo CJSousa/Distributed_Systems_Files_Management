@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import tp1.api.FileInfo;
@@ -135,7 +134,7 @@ public class JavaDirectory implements Directory {
 			Set<String> sharedWith = file.getSharedWith();
 			sharedWith.add(userIdShare);
 			file.setSharedWith(sharedWith);
-
+			
 			// Check if userIdShare exists in directory
 			Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
 			if (userIdSharedFiles == null)
@@ -167,6 +166,12 @@ public class JavaDirectory implements Directory {
 
 		if (files == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
+		
+		// Check if userIdShare exists in directory
+		Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
+		
+		if (userIdSharedFiles == null)
+			return Result.error(Result.ErrorCode.NOT_FOUND);
 
 		// Check if file can be unshared
 
@@ -181,11 +186,8 @@ public class JavaDirectory implements Directory {
 
 		Set<String> sharedWith = file.getSharedWith();
 
-		// Check if userIdShare exists in directory
-		Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
-
 		// MAYBE WE DONT NEED SECOND CONDITION?
-		if (sharedWith.contains(userIdShare) && userIdSharedFiles != null && userIdSharedFiles.containsKey(fileId)) {
+		if (sharedWith.contains(userIdShare) && userIdSharedFiles.containsKey(fileId)) {
 
 			// Remove userIdShare from the set of user IDs with whom the file has been
 			// shared
@@ -202,47 +204,40 @@ public class JavaDirectory implements Directory {
 	@Override
 	public Result<byte[]> getFile(String filename, String userId, String accUserId, String password) {
 
-		var userResult = UsersClientFactory.getClient().getUser(userId, password);
-
-		// Check if userId exists in the system
-		if (!userResult.isOK())
-			return Result.error(userResult.error());
-
+		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
+		
 		// Check if accUserId exists in the system
-		var accUserError = UsersClientFactory.getClient().getUser(accUserId, password).error();
-		if (accUserError != Result.ErrorCode.FORBIDDEN && !userId.equals(accUserId))
-			return Result.error(accUserError);
+		if (!accUserResult.isOK())
+			return Result.error(accUserResult.error());
+
+		var userError = UsersClientFactory.getClient().getUser(userId, password).error();
+		
+		// Check if accUserId exists in the system
+		if (userError != Result.ErrorCode.FORBIDDEN && !userId.equals(accUserId))
+			return Result.error(userError);
 
 		// Check if userId and accUserId exist in directory
-		Map<String, FileInfo> files = userFiles.get(userId);
+		Map<String, FileInfo> userIdFiles = userFiles.get(userId);
+		Map<String, FileInfo> accUserFiles = userFiles.get(accUserId);
 
-
-		if (files == null)
-			return Result.error(Result.ErrorCode.BAD_REQUEST);
+		if (userIdFiles == null)
+			return Result.error(Result.ErrorCode.NOT_FOUND);
+		
+		if (accUserFiles == null)
+			return Result.error(Result.ErrorCode.NOT_FOUND);
 
 		// Check if file exists
 		String fileId = userId + DELIMITER + filename;
-		FileInfo file = files.get(fileId);
+		FileInfo file = userIdFiles.get(fileId);
 
 		if (file == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 
 		// Check if file can be read
-		if (!this.canRead(userFiles.get(accUserId), fileId, file, accUserId)) {
-			System.out.println(filename + " shared with: " + file.getSharedWith());
-			System.out.println(accUserId + " has access to: " + userFiles.get(accUserId));
+		if (!this.canRead(accUserFiles, fileId, file, accUserId)) 
 			return Result.error(Result.ErrorCode.FORBIDDEN);
-		}
-			
-
-		throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
-
-		// Check if read request can be made
-		/*
-		 * if (!fileResult.isOK()) return Result.error(fileResult.error());
-		 * 
-		 * return Result.ok(fileResult.value());
-		 */
+		else 
+			throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
 	}
 
 	@Override
@@ -281,7 +276,7 @@ public class JavaDirectory implements Directory {
 	 * @return true if the reader can read the file
 	 */
 	private boolean canRead(Map<String, FileInfo> readerFiles, String fileId, FileInfo file, String readerId) {
-		return readerFiles != null && readerFiles.containsKey(fileId)
+		return readerFiles.containsKey(fileId)
 				&& (file.getOwner().equals(readerId) || file.getSharedWith().contains(readerId));
 	}
 
