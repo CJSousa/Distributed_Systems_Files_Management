@@ -20,7 +20,7 @@ public class JavaUsers implements Users {
 	@Override
 	public Result<String> createUser(User user) {
 		Log.info("createUser : " + user);
-		
+
 		var userId = user.getUserId();
 
 		// Check if user data is valid
@@ -51,7 +51,7 @@ public class JavaUsers implements Users {
 		}
 
 		var user = users.get(userId);
-		
+
 		// Check if user exists
 		if (user == null) {
 			Log.info("User does not exist.");
@@ -69,7 +69,7 @@ public class JavaUsers implements Users {
 			Log.info("password is incorrect.");
 			return Result.error(Result.ErrorCode.FORBIDDEN);
 		}
-		
+
 		return Result.ok(user);
 	}
 
@@ -78,9 +78,10 @@ public class JavaUsers implements Users {
 		Log.info("updateUser : user = " + userId + "; pwd = " + password + " ; user = " + user);
 
 		var result = this.getUser(userId, password);
-		
-		if(!result.isOK()) return Result.error(result.error());
-		
+
+		if (!result.isOK())
+			return Result.error(result.error());
+
 		var newUser = result.value();
 		var newFullName = user.getFullName();
 		var newEmail = user.getEmail();
@@ -106,9 +107,10 @@ public class JavaUsers implements Users {
 		Log.info("deleteUser : user = " + userId + "; pwd = " + password);
 
 		var result = this.getUser(userId, password);
-		
-		if(!result.isOK()) return Result.error(result.error());
-		
+
+		if (!result.isOK())
+			return Result.error(result.error());
+
 		var userToRemove = result.value();
 
 		// Check if user is valid
@@ -118,15 +120,11 @@ public class JavaUsers implements Users {
 		}
 
 		// Process delete
-		var dirResult = DirectoryClientFactory.getClient().deleteFilesOfUser(userId);
-		
-		//DEBUG
-		System.out.println("-----------------------------------");
-		System.out.println("RESULT FROM DIRECTORY: " + dirResult);
-		System.out.println("-----------------------------------");
-		
-		if(!dirResult.isOK()) return Result.error(Result.ErrorCode.BAD_REQUEST);
-		
+		var dirResult = DirectoryClientFactory.getClient().deleteFilesOfUser(userId, password);
+
+		if (!dirResult.isOK())
+			return Result.error(Result.ErrorCode.BAD_REQUEST);
+
 		users.remove(userId);
 
 		return Result.ok(userToRemove);

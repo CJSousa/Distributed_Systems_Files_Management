@@ -29,20 +29,27 @@ public class DirectoryResource implements RestDirectory {
 	@Override
 	public void deleteFile(String filename, String userId, String password) {
 		var result = impl.deleteFile(filename, userId, password);
-		if (!result.isOK()) throw new WebApplicationException(this.getError(result));
+		if (!result.isOK())
+			throw new WebApplicationException(this.getError(result));
 
 	}
 
 	@Override
 	public void shareFile(String filename, String userId, String userIdShare, String password) {
 		var result = impl.shareFile(filename, userId, userIdShare, password);
-		if (!result.isOK()) throw new WebApplicationException(this.getError(result));
+		// DEBUG
+		System.out.println("-----------------------------------");
+		System.out.println("SHARE: " + result);
+		System.out.println("-----------------------------------");
+		if (!result.isOK())
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
 	public void unshareFile(String filename, String userId, String userIdShare, String password) {
 		var result = impl.unshareFile(filename, userId, userIdShare, password);
-		if (!result.isOK()) throw new WebApplicationException(this.getError(result));
+		if (!result.isOK())
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	@Override
@@ -64,11 +71,13 @@ public class DirectoryResource implements RestDirectory {
 		else
 			throw new WebApplicationException(this.getError(result));
 	}
+
+	@Override
+	public void deleteFilesOfUser(String userId, String password) {
+		var result = impl.deleteFilesOfUser(userId, password);
 	
-	//overide??
-	public void deleteFilesOfUser(String userId) {
-		var result = impl.deleteFilesOfUser(userId);
-		if (!result.isOK()) throw new WebApplicationException(this.getError(result));
+		if (!result.isOK())
+			throw new WebApplicationException(this.getError(result));
 	}
 
 	/**
@@ -90,7 +99,7 @@ public class DirectoryResource implements RestDirectory {
 		case INTERNAL_ERROR:
 			return Status.INTERNAL_SERVER_ERROR;
 		default:
-			return Status.NOT_IMPLEMENTED;
+			return Status.INTERNAL_SERVER_ERROR;
 		}
 	}
 

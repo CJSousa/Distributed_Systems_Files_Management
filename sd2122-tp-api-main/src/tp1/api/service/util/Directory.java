@@ -115,7 +115,8 @@ public interface Directory {
 	 * ADD BIOS
 	 * 
 	 * @param userId
+	 * @param password 
 	 * @return
 	 */
-	Result<Void> deleteFilesOfUser(String userId);
+	Result<Void> deleteFilesOfUser(String userId, String password);
 }

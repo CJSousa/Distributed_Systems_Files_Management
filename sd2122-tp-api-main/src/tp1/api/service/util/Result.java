@@ -97,7 +97,7 @@ public interface Result<T> {
 		case OK:
 			return ErrorCode.OK;
 		default:
-			return ErrorCode.NOT_IMPLEMENTED;
+			return ErrorCode.INTERNAL_ERROR;
 		}
 	}
 

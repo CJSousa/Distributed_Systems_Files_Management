@@ -146,5 +146,14 @@ public interface RestDirectory {
 			@QueryParam("password") String password);
 
 
+	/**
+	 * ADD BIOS 
+	 * 
+	 * @param userId
+	 * @param password
+	 */
+	@DELETE
+	@Path("/{userId}")
+	void deleteFilesOfUser(@PathParam("userId") String userId, @QueryParam("password") String password);
 
 }

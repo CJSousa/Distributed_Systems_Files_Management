@@ -10,6 +10,7 @@ import java.util.Set;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import tp1.api.FileInfo;
+import tp1.api.service.rest.RestUsers;
 import tp1.api.service.util.Directory;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Result.ErrorCode;
@@ -262,52 +263,42 @@ public class JavaDirectory implements Directory {
 		if (!userResult.isOK())
 			return Result.error(userResult.error());
 
-		// Check if userId exists in directory
+		// Check if userId has access to any files
 		Map<String, FileInfo> files = userFiles.get(userId);
-
-		if (files == null)
-			return Result.error(Result.ErrorCode.BAD_REQUEST);
 
 		List<FileInfo> filesList = new ArrayList<>();
 
-		for (FileInfo f : files.values()) {
-			filesList.add(f);
-		}
+		if (files != null) {
 
+			for (FileInfo f : files.values()) {
+				filesList.add(f);
+			}
+		}
 		return Result.ok(filesList);
 
 	}
 
-	// Auxiliary Methods
-
-	// override?
-	public Result<Void> deleteFilesOfUser(String userId) {
-
-		// Check if userId exists in directory
+	@Override
+	public Result<Void> deleteFilesOfUser(String userId, String password) {
 		Map<String, FileInfo> files = userFiles.get(userId);
-
-		// If it does not work just create a copy of files and delete from it and then
-		// replace
+		
 		if (files != null) {
-			for (FileInfo f : files.values()) {
-				String fileId = userId + DELIMITER + f.getFilename();
 
-				// First check sharedWith because it could include owner
-				Set<String> sharedWith = f.getSharedWith();
-				for (String s : sharedWith) {
-					userFiles.get(s).remove(fileId);
-					// e se ficar null? Tratar?
+			for (FileInfo f : new ArrayList<FileInfo>(files.values())) {
+
+				String filename = f.getFilename();
+				
+				if (f.getOwner().equals(userId)) {
+					var result = this.deleteFile(filename, userId, password);
+					System.out.println("Delete request result: " + result);
 				}
-
-				// Delete user from map
-				if (f.getOwner().equals(userId))
-					files = null;
 			}
 		}
 		
 		return Result.ok();
-
 	}
+
+	// Auxiliary Methods
 
 	/**
 	 * Check if a user can read a file

@@ -56,8 +56,8 @@ public class RestDirectoryClient extends RestClient implements Directory {
 	}
 	
 	//override?
-	public Result<Void> deleteFilesOfUser(String userId) {
-		return super.reTry(() -> clt_deleteFilesOfUser(userId));
+	public Result<Void> deleteFilesOfUser(String userId, String password) {
+		return super.reTry(() -> clt_deleteFilesOfUser(userId, password));
 	}
 
 	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password) {
@@ -131,14 +131,13 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		
 	}
 	
-	private Result<Void> clt_deleteFilesOfUser(String userId){
+	private Result<Void> clt_deleteFilesOfUser(String userId, String password){
 		
-		Response r = target.path(userId).request().delete();
+		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request().delete();
 
-		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
 			return Result.ok();
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
