@@ -36,8 +36,8 @@ public class FilesClientFactory {
 
 	}
 	
+	//private?
 	public static String getAvailableURI() { return serverURI; }
 	
-	//private static 
 
 }
