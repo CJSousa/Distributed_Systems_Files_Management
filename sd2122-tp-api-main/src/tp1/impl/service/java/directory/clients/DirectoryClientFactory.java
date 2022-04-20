@@ -1,14 +1,14 @@
 package tp1.impl.service.java.directory.clients;
 
+import java.net.MalformedURLException;
 import java.net.URI;
-
 import tp1.api.service.util.Directory;
 import tp1.discovery.Discovery;
 import tp1.impl.service.rest.directory.clients.RestDirectoryClient;
+import tp1.impl.service.soap.directory.clients.SoapDirectoryClient;
 
 public class DirectoryClientFactory {
 	
-	private static final int MIN_REPLIES = 1;
 	private static final int FIRST_SERVER_AVAILABLE = 0;
 	private static final String SERVICE_NAME = "directory";
 	
@@ -16,6 +16,7 @@ public class DirectoryClientFactory {
 	 * 
 	 * 
 	 * @return
+	 * @throws MalformedURLException 
 	 */
 	public static Directory getClient() {
 
@@ -24,15 +25,12 @@ public class DirectoryClientFactory {
 
 		URI[] availableServers;
 		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}
-		String serverURI = availableServers[FIRST_SERVER_AVAILABLE].toString();
-		// 
-		if( serverURI.endsWith("rest") )
-			return new RestDirectoryClient(URI.create(serverURI)); 
-		//else 
-			//return new SoapUsersClient(serverURI ); 
-	
-		//Remove after
-		return null;
+		URI serverURI = availableServers[FIRST_SERVER_AVAILABLE];
+		
+		if (serverURI.toString().endsWith("rest"))
+			return new RestDirectoryClient(serverURI);
+		else
+			return new SoapDirectoryClient(serverURI);
 
 	}
 

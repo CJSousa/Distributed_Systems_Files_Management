@@ -37,10 +37,6 @@ public class DirectoryResource implements RestDirectory {
 	@Override
 	public void shareFile(String filename, String userId, String userIdShare, String password) {
 		var result = impl.shareFile(filename, userId, userIdShare, password);
-		// DEBUG
-		System.out.println("-----------------------------------");
-		System.out.println("SHARE: " + result);
-		System.out.println("-----------------------------------");
 		if (!result.isOK())
 			throw new WebApplicationException(this.getError(result));
 	}

@@ -9,7 +9,6 @@ import java.net.MulticastSocket;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URI;
-import java.util.Collection;
 import java.util.Enumeration;
 import java.util.logging.Logger;
 import java.util.concurrent.ConcurrentHashMap;
@@ -177,31 +176,11 @@ public class Discovery {
 		}).start();
 	}
 
-	/**
-	 * Returns the known servers for a service.
-	 * 
-	 * @param  serviceName the name of the service being discovered
-	 * @return an array of URI with the service instances discovered, 
-	 * null if there is no valid URI table for the given serviceName. 
-	 * 
-	 */
-	/*
-	public URI[] knownUrisOf(String serviceName) {
-		ConcurrentHashMap<URI,Long> URITable = servicesNet.get(serviceName);
-		if (URITable == null) return null;
-		Collection<URI> keys = URITable.keySet();
-		if(keys == null) return null;
-		URI[] knownURIs = keys.toArray(new URI[25]); 
-		return knownURIs;
-	}	
-	*/
 	
 	public URI[] knownUrisOf(String serviceName) {
 		var uris = servicesNet.get(serviceName);
 		return uris == null ? null : uris.keySet().toArray(new URI[0]);
 	}
-	
-	
 	
 	private void joinGroupInAllInterfaces(MulticastSocket ms) throws SocketException {
 		Enumeration<NetworkInterface> ifs = NetworkInterface.getNetworkInterfaces();

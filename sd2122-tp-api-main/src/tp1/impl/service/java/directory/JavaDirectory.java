@@ -1,16 +1,18 @@
 package tp1.impl.service.java.directory;
 
+
 import java.net.URI;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import tp1.api.FileInfo;
-import tp1.api.service.rest.RestUsers;
 import tp1.api.service.util.Directory;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Result.ErrorCode;
@@ -21,7 +23,7 @@ public class JavaDirectory implements Directory {
 
 	private static final String DELIMITER = "!*!*!*!";
 
-	private final Map<String, HashMap<String, FileInfo>> userFiles = new HashMap<String, HashMap<String, FileInfo>>();
+	private final Map<String, ConcurrentHashMap<String, FileInfo>> userFiles = new ConcurrentHashMap<String, ConcurrentHashMap<String, FileInfo>>();
 	// <serverId, userId> como é que sabemos os servidores que responderem ao pedido
 	// getClient
 	// <serverId, fileID>
@@ -31,16 +33,16 @@ public class JavaDirectory implements Directory {
 	public Result<FileInfo> writeFile(String filename, byte[] data, String userId, String password) {
 
 		var userResult = UsersClientFactory.getClient().getUser(userId, password);
-
+		
 		// Check if userId exists in the system
 		if (!userResult.isOK())
 			return Result.error(userResult.error());
 
 		// Check if userId exists in directory
-		HashMap<String, FileInfo> files = userFiles.get(userId);
+		ConcurrentHashMap<String, FileInfo> files = userFiles.get(userId);
 
 		if (files == null) {
-			files = new HashMap<String, FileInfo>();
+			files = new ConcurrentHashMap<String, FileInfo>();
 			userFiles.put(userId, files);
 		}
 
@@ -49,10 +51,10 @@ public class JavaDirectory implements Directory {
 		String fileId = userId + DELIMITER + filename;
 
 		Result fileResult = FilesClientFactory.getClient().writeFile(fileId, data, password);
-
+		
 		if (!fileResult.isOK())
 			return Result.error(userResult.error());
-
+		
 		FileInfo file = new FileInfo(userId, filename, FilesClientFactory.getAvailableURI() + "/files/" + fileId,
 				new HashSet<String>());
 		files.put(fileId, file);
@@ -140,21 +142,18 @@ public class JavaDirectory implements Directory {
 
 		// Process share
 
-		// if (!userId.equals(userIdShare)) {
-
 		// Add userIdShare to set of user IDs with whom the file has been shared
 		Set<String> sharedWith = file.getSharedWith();
 		sharedWith.add(userIdShare);
 		file.setSharedWith(sharedWith);
 
 		// Check if userIdShare exists in directory
-		Map<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
+		ConcurrentHashMap<String, FileInfo> userIdSharedFiles = userFiles.get(userIdShare);
 		if (userIdSharedFiles == null)
-			userFiles.put(userIdShare, new HashMap<String, FileInfo>());
+			userFiles.put(userIdShare, new ConcurrentHashMap<String, FileInfo>());
 
 		// Add file to userIdShare
 		userIdSharedFiles.put(fileId, file);
-		// }
 
 		return Result.ok();
 	}
@@ -200,7 +199,6 @@ public class JavaDirectory implements Directory {
 
 		// Process unshare
 
-		// MAYBE WE DONT NEED SECOND CONDITION?
 		if (sharedWith.contains(userIdShare) && userIdSharedFiles.containsKey(fileId)) {
 
 			// Remove userIdShare from the set of user IDs with whom the file has been
@@ -281,20 +279,20 @@ public class JavaDirectory implements Directory {
 	@Override
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
 		Map<String, FileInfo> files = userFiles.get(userId);
-		
+
 		if (files != null) {
 
 			for (FileInfo f : new ArrayList<FileInfo>(files.values())) {
 
 				String filename = f.getFilename();
-				
+
 				if (f.getOwner().equals(userId)) {
 					var result = this.deleteFile(filename, userId, password);
 					System.out.println("Delete request result: " + result);
 				}
 			}
 		}
-		
+
 		return Result.ok();
 	}
 

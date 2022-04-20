@@ -15,54 +15,45 @@ import tp1.impl.service.soap.clients.SoapClient;
 
 public class SoapUsersClient extends SoapClient implements Users {
 
-	final SoapUsers users;
+	private SoapUsers users;
 
-	public SoapUsersClient(URI serverURI) throws MalformedURLException {
+	public SoapUsersClient(URI serverURI) {
 		QName qname = new QName(SoapUsers.NAMESPACE, SoapUsers.NAME);
-		Service service = Service.create(URI.create(serverURI + "wsdl").toURL(), qname);
-		SoapUsers soapUsers = service.getPort(tp1.api.service.soap.SoapUsers.class);
-		this.users = soapUsers;
-		SoapClient.setTimeouts(users);
+		Service service;
+		try {
+			service = Service.create(URI.create(serverURI + "wsdl").toURL(), qname);
+			SoapUsers soapUsers = service.getPort(tp1.api.service.soap.SoapUsers.class);
+			this.users = soapUsers;
+			SoapClient.setTimeouts(users);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public Result<String> createUser(User user) {
-		return super.reTry(() -> 
-			users.createUser(user)
-		);
+		return super.reTry(() -> users.createUser(user));
 	}
 
 	@Override
 	public Result<User> getUser(String userId, String password) {
-		/*
-		 * return super.reTry( () -> { users.getUser(userId, password); });
-		 */
-
-		return null;
+		return super.reTry(() -> users.getUser(userId, password));
 	}
 
 	@Override
 	public Result<User> updateUser(String userId, String password, User user) {
-		/*
-		 * return super.reTry( () -> { users.updateUser(userId, password, user); });
-		 */
-		return null;
+		return super.reTry(() -> users.updateUser(userId, password, user));
 	}
 
 	@Override
 	public Result<User> deleteUser(String userId, String password) {
-		/*
-		 * return super.reTry( () -> { users.deleteUser(userId, password); });
-		 */
-		return null;
+		return super.reTry(() -> users.deleteUser(userId, password));
 	}
 
 	@Override
 	public Result<List<User>> searchUsers(String pattern) {
-		/*
-		 * return super.reTry( () -> { users.searchUsers(pattern); });
-		 */
-		return null;
+		return super.reTry(() -> users.searchUsers(pattern));
 	}
 
 }
