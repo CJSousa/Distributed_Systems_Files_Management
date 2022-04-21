@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import jakarta.inject.Singleton;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import tp1.api.FileInfo;
@@ -19,6 +20,7 @@ import tp1.api.service.util.Result.ErrorCode;
 import tp1.impl.service.java.files.clients.FilesClientFactory;
 import tp1.impl.service.java.users.clients.UsersClientFactory;
 
+@Singleton
 public class JavaDirectory implements Directory {
 
 	private static final String DELIMITER = "!*!*!*!";
@@ -55,7 +57,7 @@ public class JavaDirectory implements Directory {
 		if (!fileResult.isOK())
 			return Result.error(userResult.error());
 		
-		FileInfo file = new FileInfo(userId, filename, FilesClientFactory.getAvailableURI() + "/files/" + fileId,
+		FileInfo file = new FileInfo(userId, filename, FilesClientFactory.getAvailableURI().toString() + "/files/" + fileId,
 				new HashSet<String>());
 		files.put(fileId, file);
 

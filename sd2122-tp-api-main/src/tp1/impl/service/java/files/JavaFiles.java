@@ -3,15 +3,17 @@ package tp1.impl.service.java.files;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
+
+import jakarta.inject.Singleton;
 import tp1.api.service.util.Files;
 import java.io.IOException;
 import java.nio.file.Paths;
 import tp1.api.service.util.Result;
 import tp1.impl.service.rest.files.FilesResource;
 
+@Singleton
 public class JavaFiles implements Files {
 	
-
 	private final Set<String> files = new HashSet<String>();
 	private static Logger Log = Logger.getLogger(FilesResource.class.getName());
 

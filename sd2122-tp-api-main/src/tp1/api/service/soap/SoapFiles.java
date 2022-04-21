@@ -14,8 +14,8 @@ public interface SoapFiles {
 	byte[] getFile(String fileId, String token) throws FilesException;
 
 	@WebMethod
-	Void deleteFile(String fileId, String token) throws FilesException;
+	void deleteFile(String fileId, String token) throws FilesException;
 	
 	@WebMethod
-	Void writeFile(String fileId, byte[] data, String token) throws FilesException;	
+	void writeFile(String fileId, byte[] data, String token) throws FilesException;	
 }

@@ -1,10 +1,12 @@
 package tp1.impl.service.soap.files;
 
+import jakarta.jws.WebService;
 import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
 import tp1.impl.service.java.files.JavaFiles;
 
+@WebService
 public class FilesWebService implements SoapFiles {
 
 	final Files impl = new JavaFiles();
@@ -19,20 +21,17 @@ public class FilesWebService implements SoapFiles {
 	}
 
 	@Override
-	public Void deleteFile(String fileId, String token) throws FilesException {
+	public void deleteFile(String fileId, String token) throws FilesException {
 		var result = impl.deleteFile(fileId, token);
 		if (!result.isOK())
 			throw new FilesException(result.error().toString());
-		return null;
-
 	}
 
 	@Override
-	public Void writeFile(String fileId, byte[] data, String token) throws FilesException {
+	public void writeFile(String fileId, byte[] data, String token) throws FilesException {
 		var result = impl.writeFile(fileId, data, token);
 		if (!result.isOK())
 			throw new FilesException(result.error().toString());
-		return null;
 	}
 
 }

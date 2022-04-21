@@ -29,9 +29,11 @@ public class DirectoryClientFactory {
 		
 		if (serverURI.toString().endsWith("rest"))
 			return new RestDirectoryClient(serverURI);
-		else
+		else {
+			System.out.println("URI: " + serverURI);
 			return new SoapDirectoryClient(serverURI);
-
+		}
+			
 	}
 
 }

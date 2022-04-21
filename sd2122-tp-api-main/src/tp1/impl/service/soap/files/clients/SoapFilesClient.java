@@ -4,6 +4,9 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import javax.xml.namespace.QName;
 import jakarta.xml.ws.Service;
+import jakarta.xml.ws.WebServiceException;
+import tp1.api.service.soap.DirectoryException;
+import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
 import tp1.api.service.util.Result;
@@ -17,12 +20,11 @@ public class SoapFilesClient extends SoapClient implements Files {
 		QName qname = new QName(SoapFiles.NAMESPACE, SoapFiles.NAME);
 		Service service;
 		try {
-			service = Service.create(URI.create(serverURI + "wsdl").toURL(), qname);
+			service = Service.create(URI.create(serverURI + "/files?wsdl").toURL(), qname);
 			SoapFiles soapFiles = service.getPort(tp1.api.service.soap.SoapFiles.class);
 			this.files = soapFiles;
 			SoapClient.setTimeouts(files);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

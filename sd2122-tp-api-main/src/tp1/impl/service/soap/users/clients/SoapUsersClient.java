@@ -21,12 +21,12 @@ public class SoapUsersClient extends SoapClient implements Users {
 		QName qname = new QName(SoapUsers.NAMESPACE, SoapUsers.NAME);
 		Service service;
 		try {
-			service = Service.create(URI.create(serverURI + "wsdl").toURL(), qname);
+			System.out.println("URL: " + serverURI);
+			service = Service.create(URI.create(serverURI + "?wsdl").toURL(), qname);
 			SoapUsers soapUsers = service.getPort(tp1.api.service.soap.SoapUsers.class);
 			this.users = soapUsers;
 			SoapClient.setTimeouts(users);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -10,7 +10,7 @@ public class FilesClientFactory {
 
 	private static final int FIRST_SERVER_AVAILABLE = 0;
 	private static final String SERVICE_NAME = "files";
-	private static String serverURI;
+	private static URI serverURI;
 
 	public static Files getClient() {
 
@@ -20,16 +20,15 @@ public class FilesClientFactory {
 		URI[] availableServers;
 		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {
 		}
-		serverURI = availableServers[FIRST_SERVER_AVAILABLE].toString();
+		serverURI = availableServers[FIRST_SERVER_AVAILABLE];
 
-		if (serverURI.endsWith("rest"))
-			return new RestFilesClient(URI.create(serverURI));
+		if (serverURI.toString().endsWith("rest"))
+			return new RestFilesClient(serverURI);
 		else
-			return new SoapFilesClient(URI.create(serverURI));
-
+			return new SoapFilesClient(serverURI);
 	}
 
-	public static String getAvailableURI() {
+	public static URI getAvailableURI() {
 		return serverURI;
 	}
 

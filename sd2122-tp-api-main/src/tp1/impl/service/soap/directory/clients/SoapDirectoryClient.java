@@ -8,7 +8,9 @@ import java.util.List;
 import javax.xml.namespace.QName;
 
 import jakarta.xml.ws.Service;
+import jakarta.xml.ws.WebServiceException;
 import tp1.api.FileInfo;
+import tp1.api.service.soap.DirectoryException;
 import tp1.api.service.soap.SoapDirectory;
 import tp1.api.service.soap.SoapUsers;
 import tp1.api.service.util.Directory;
@@ -23,12 +25,11 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 		QName qname = new QName(SoapUsers.NAMESPACE, SoapUsers.NAME);
 		Service service;
 		try {
-			service = Service.create(URI.create(serverURI + "wsdl").toURL(), qname);
+			service = Service.create(URI.create(serverURI + "?wsdl").toURL(), qname);
 			SoapDirectory soapDirectory = service.getPort(tp1.api.service.soap.SoapDirectory.class);
 			this.directory = soapDirectory;
 			SoapClient.setTimeouts(directory);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -40,25 +41,45 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
-		return super.reTry(() -> directory.deleteFile(filename, userId, password));
-		/*
+		//return super.reTry(() -> directory.deleteFile(filename, userId, password));
 		try {
-			this.directory.deleteFile(filename, userId, password);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
-	*/
+		    directory.deleteFile(filename, userId, password);
+		} catch( DirectoryException x ) {
+		    // handle service error
+		} catch( WebServiceException we) {
+		    // handle invocation error, maybe retry?
+		}
+		
+		return Result.ok();
+	
 	}
 
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
-		return super.reTry(() -> directory.shareFile(filename, userId, userIdShare, password));
+		try {
+		    directory.shareFile(filename, userId, userIdShare, password);
+		} catch( DirectoryException x ) {
+		    // handle service error
+		} catch( WebServiceException we) {
+		    // handle invocation error, maybe retry?
+		}
+		
+		return Result.ok();
+		
 	}
 
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
-		return super.reTry(() -> directory.unshareFile(filename, userId, userIdShare, password));
+		try {
+		    directory.unshareFile(filename, userId, userIdShare, password);
+		} catch( DirectoryException x ) {
+		    // handle service error
+		} catch( WebServiceException we) {
+		    // handle invocation error, maybe retry?
+		}
+		
+		return Result.ok();
+		
 	}
 
 	@Override
@@ -73,7 +94,16 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
-		return super.reTry(() -> directory.deleteFilesOfUser(userId, password));
+		try {
+		    directory.deleteFilesOfUser(userId, password);
+		} catch( DirectoryException x ) {
+		    // handle service error
+		} catch( WebServiceException we) {
+		    // handle invocation error, maybe retry?
+		}
+		
+		return Result.ok();
+		
 	}
 
 }

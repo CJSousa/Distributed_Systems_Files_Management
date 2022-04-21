@@ -6,12 +6,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
+import jakarta.inject.Singleton;
 import tp1.api.User;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Users;
 import tp1.impl.service.java.directory.clients.DirectoryClientFactory;
 import tp1.impl.service.rest.users.UsersResource;
 
+@Singleton
 public class JavaUsers implements Users {
 
 	private final Map<String, User> users = new ConcurrentHashMap<String, User>();

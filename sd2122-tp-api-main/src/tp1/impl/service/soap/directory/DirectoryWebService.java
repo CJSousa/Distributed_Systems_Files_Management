@@ -1,12 +1,15 @@
 package tp1.impl.service.soap.directory;
 
 import java.util.List;
+
+import jakarta.jws.WebService;
 import tp1.api.FileInfo;
 import tp1.api.service.soap.DirectoryException;
 import tp1.api.service.soap.SoapDirectory;
 import tp1.api.service.util.Directory;
 import tp1.impl.service.java.directory.JavaDirectory;
 
+@WebService
 public class DirectoryWebService implements SoapDirectory {
 
 	final Directory impl = new JavaDirectory();
@@ -21,29 +24,26 @@ public class DirectoryWebService implements SoapDirectory {
 	}
 
 	@Override
-	public Void deleteFile(String filename, String userId, String password) throws DirectoryException {
+	public void deleteFile(String filename, String userId, String password) throws DirectoryException {
 		var result = impl.deleteFile(filename, userId, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
-		return null;
 	}
 
 	@Override
-	public Void shareFile(String filename, String userId, String userIdShare, String password)
+	public void shareFile(String filename, String userId, String userIdShare, String password)
 			throws DirectoryException {
 		var result = impl.shareFile(filename, userId, userIdShare, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
-		return null;
 	}
 
 	@Override
-	public Void unshareFile(String filename, String userId, String userIdShare, String password)
+	public void unshareFile(String filename, String userId, String userIdShare, String password)
 			throws DirectoryException {
 		var result = impl.unshareFile(filename, userId, userIdShare, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
-		return null;
 	}
 
 	@Override
@@ -65,11 +65,10 @@ public class DirectoryWebService implements SoapDirectory {
 	}
 
 	@Override
-	public Void deleteFilesOfUser(String userId, String password) throws DirectoryException {
+	public void deleteFilesOfUser(String userId, String password) throws DirectoryException {
 		var result = impl.deleteFilesOfUser(userId, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
-		return null;
 	}
 
 }

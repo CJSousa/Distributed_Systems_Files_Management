@@ -4,12 +4,14 @@ import java.net.InetAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jakarta.xml.ws.Endpoint;
+import tp1.discovery.Discovery;
 import tp1.impl.service.soap.files.FilesWebService;
+import tp1.impl.service.soap.users.UsersWebService;
 
 public class SoapFilesServer {
 	
 	public static final int PORT = 8080;
-	public static final String SERVICE_NAME = "files";
+	public static final String SERVICE = "files";
 	public static String SERVER_BASE_URI = "http://%s:%s/soap";
 
 	private static Logger Log = Logger.getLogger(SoapFilesServer.class.getName());
@@ -25,10 +27,13 @@ public class SoapFilesServer {
 
 		String ip = InetAddress.getLocalHost().getHostAddress();
 		String serverURI = String.format(SERVER_BASE_URI, ip, PORT);
+		
+		Discovery discovery = Discovery.getInstance();
+		discovery.announce(SERVICE, serverURI);
 
 		Endpoint.publish(serverURI.replace(ip, "0.0.0.0"), new FilesWebService());
 
-		Log.info(String.format("%s Soap Server ready @ %s\n", SERVICE_NAME, serverURI));
+		Log.info(String.format("%s Soap Server ready @ %s\n", SERVICE, serverURI));
 
 	}
 
