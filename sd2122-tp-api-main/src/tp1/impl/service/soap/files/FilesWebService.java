@@ -6,7 +6,7 @@ import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
 import tp1.impl.service.java.files.JavaFiles;
 
-@WebService
+@WebService(serviceName=SoapFiles.NAME, targetNamespace=SoapFiles.NAMESPACE, endpointInterface=SoapFiles.INTERFACE)
 public class FilesWebService implements SoapFiles {
 
 	final Files impl = new JavaFiles();

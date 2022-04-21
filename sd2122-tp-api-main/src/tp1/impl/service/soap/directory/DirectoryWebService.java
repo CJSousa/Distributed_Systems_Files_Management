@@ -9,7 +9,7 @@ import tp1.api.service.soap.SoapDirectory;
 import tp1.api.service.util.Directory;
 import tp1.impl.service.java.directory.JavaDirectory;
 
-@WebService
+@WebService(serviceName=SoapDirectory.NAME, targetNamespace=SoapDirectory.NAMESPACE, endpointInterface=SoapDirectory.INTERFACE)
 public class DirectoryWebService implements SoapDirectory {
 
 	final Directory impl = new JavaDirectory();
