@@ -21,26 +21,29 @@ public class DirectoryWebService implements SoapDirectory {
 	}
 
 	@Override
-	public void deleteFile(String filename, String userId, String password) throws DirectoryException {
+	public Void deleteFile(String filename, String userId, String password) throws DirectoryException {
 		var result = impl.deleteFile(filename, userId, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
+		return null;
 	}
 
 	@Override
-	public void shareFile(String filename, String userId, String userIdShare, String password)
+	public Void shareFile(String filename, String userId, String userIdShare, String password)
 			throws DirectoryException {
 		var result = impl.shareFile(filename, userId, userIdShare, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
+		return null;
 	}
 
 	@Override
-	public void unshareFile(String filename, String userId, String userIdShare, String password)
+	public Void unshareFile(String filename, String userId, String userIdShare, String password)
 			throws DirectoryException {
 		var result = impl.unshareFile(filename, userId, userIdShare, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
+		return null;
 	}
 
 	@Override
@@ -62,10 +65,11 @@ public class DirectoryWebService implements SoapDirectory {
 	}
 
 	@Override
-	public void deleteFilesOfUser(String userId, String password) throws DirectoryException {
+	public Void deleteFilesOfUser(String userId, String password) throws DirectoryException {
 		var result = impl.deleteFilesOfUser(userId, password);
 		if (!result.isOK())
 			throw new DirectoryException(result.error().toString());
+		return null;
 	}
 
 }

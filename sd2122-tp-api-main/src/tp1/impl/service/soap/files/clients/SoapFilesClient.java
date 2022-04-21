@@ -2,11 +2,8 @@ package tp1.impl.service.soap.files.clients;
 
 import java.net.MalformedURLException;
 import java.net.URI;
-
 import javax.xml.namespace.QName;
-
 import jakarta.xml.ws.Service;
-import tp1.api.service.soap.SoapException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
 import tp1.api.service.util.Result;
@@ -33,23 +30,11 @@ public class SoapFilesClient extends SoapClient implements Files {
 	@Override
 	public Result<Void> writeFile(String fileId, byte[] data, String token) {
 		return super.reTry(() -> files.writeFile(fileId, data, token));
-		/*try {
-			this.files.writeFile(fileId, data, token);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
-		*/
 	}
 
 	@Override
 	public Result<Void> deleteFile(String fileId, String token) {
-		try {
-			this.files.deleteFile(fileId, token);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
+		return super.reTry(() -> files.deleteFile(fileId, token));
 	}
 
 	@Override

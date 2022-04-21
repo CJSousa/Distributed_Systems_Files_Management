@@ -6,7 +6,7 @@ import tp1.api.service.util.Files;
 import tp1.impl.service.java.files.JavaFiles;
 
 public class FilesWebService implements SoapFiles {
-	
+
 	final Files impl = new JavaFiles();
 
 	@Override
@@ -19,19 +19,20 @@ public class FilesWebService implements SoapFiles {
 	}
 
 	@Override
-	public void deleteFile(String fileId, String token) throws FilesException {
+	public Void deleteFile(String fileId, String token) throws FilesException {
 		var result = impl.deleteFile(fileId, token);
 		if (!result.isOK())
 			throw new FilesException(result.error().toString());
-		
+		return null;
+
 	}
 
 	@Override
-	public void writeFile(String fileId, byte[] data, String token) throws FilesException {
+	public Void writeFile(String fileId, byte[] data, String token) throws FilesException {
 		var result = impl.writeFile(fileId, data, token);
 		if (!result.isOK())
 			throw new FilesException(result.error().toString());
-		
+		return null;
 	}
 
 }

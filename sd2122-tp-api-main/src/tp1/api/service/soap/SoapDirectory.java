@@ -20,13 +20,13 @@ public interface SoapDirectory {
 	FileInfo writeFile(String filename, byte []data, String userId, String password) throws DirectoryException;
 
 	@WebMethod
-	void deleteFile(String filename, String userId, String password) throws DirectoryException;
+	Void deleteFile(String filename, String userId, String password) throws DirectoryException;
 
 	@WebMethod
-	void shareFile(String filename, String userId, String userIdShare, String password) throws DirectoryException;
+	Void shareFile(String filename, String userId, String userIdShare, String password) throws DirectoryException;
 
 	@WebMethod
-	void unshareFile(String filename, String userId, String userIdShare, String password) throws DirectoryException;
+	Void unshareFile(String filename, String userId, String userIdShare, String password) throws DirectoryException;
 
 	@WebMethod
 	byte[] getFile(String filename,  String userId, String accUserId, String password) throws DirectoryException;
@@ -35,6 +35,6 @@ public interface SoapDirectory {
 	List<FileInfo> lsFile(String userId, String password) throws DirectoryException;
 	
 	@WebMethod
-	void deleteFilesOfUser(String userId, String password) throws DirectoryException;
+	Void deleteFilesOfUser(String userId, String password) throws DirectoryException;
 
 }

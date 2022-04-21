@@ -1,6 +1,7 @@
 package tp1.impl.service.soap.directory.clients;
 
 import java.net.MalformedURLException;
+
 import java.net.URI;
 import java.util.List;
 
@@ -9,7 +10,6 @@ import javax.xml.namespace.QName;
 import jakarta.xml.ws.Service;
 import tp1.api.FileInfo;
 import tp1.api.service.soap.SoapDirectory;
-import tp1.api.service.soap.SoapException;
 import tp1.api.service.soap.SoapUsers;
 import tp1.api.service.util.Directory;
 import tp1.api.service.util.Result;
@@ -40,32 +40,25 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
+		return super.reTry(() -> directory.deleteFile(filename, userId, password));
+		/*
 		try {
 			this.directory.deleteFile(filename, userId, password);
 			return Result.ok();
 		} catch (SoapException sx) {
 			return Result.error(sx.getErrorCode());
 		} //catch (WebServiceException)
+	*/
 	}
 
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
-		try {
-			this.directory.shareFile(filename, userId, userIdShare, password);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
+		return super.reTry(() -> directory.shareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
-		try {
-			this.directory.unshareFile(filename, userId, userIdShare, password);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
+		return super.reTry(() -> directory.unshareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
@@ -80,12 +73,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
-		try {
-			this.directory.deleteFilesOfUser(userId, password);
-			return Result.ok();
-		} catch (SoapException sx) {
-			return Result.error(sx.getErrorCode());
-		} //catch (WebServiceException)
+		return super.reTry(() -> directory.deleteFilesOfUser(userId, password));
 	}
 
 }
