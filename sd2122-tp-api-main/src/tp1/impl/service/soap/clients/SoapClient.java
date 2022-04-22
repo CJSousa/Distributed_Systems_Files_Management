@@ -14,8 +14,8 @@ public class SoapClient {
 
 	protected static final int REQUEST_TIMEOUT = 10000;
 	protected static final int CONNECT_TIMEOUT = 10000;
-	protected static final int RETRY_SLEEP = 3000;
-	protected static final int MAX_RETRIES = 10; // depois experimentar para 3
+	protected static final int RETRY_SLEEP = 1000;
+	protected static final int MAX_RETRIES = 3; 
 
 	public <T> Result<T> reTry(ThrowsSupplier<T> func) {
 		// Mudar erro default
