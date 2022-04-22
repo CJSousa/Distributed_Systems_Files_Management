@@ -91,8 +91,7 @@ public class JavaDirectory implements Directory {
 		if (!file.getOwner().equals(userId))
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 
-		// Result fileResult = FilesClientFactory.getClient().deleteFile(fileId,
-		// Token.get());
+		// Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, Token.get());
 
 		var fileResult = FilesClientFactory.getClient().deleteFile(fileId, "token");
 

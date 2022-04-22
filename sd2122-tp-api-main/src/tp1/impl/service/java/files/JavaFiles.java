@@ -22,7 +22,7 @@ public class JavaFiles implements Files {
 	
 		Log.info("writeFile : fileId = " + fileId + "; token = " + token);
 		 
-		// Check if token is valid
+		// Check if token is valid - change
 		if( token == null ) {
 			Log.info("Token invalid.");
 			return Result.error(Result.ErrorCode.FORBIDDEN);
@@ -58,7 +58,7 @@ public class JavaFiles implements Files {
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 		}
 		
-		// Check if token is valid
+		// Check if token is valid - change
 		if( token == null ) {
 			Log.info("Token invalid.");
 			return Result.error(Result.ErrorCode.FORBIDDEN);
@@ -95,10 +95,12 @@ public class JavaFiles implements Files {
 		}
 		
 		// Check if token is valid
+		/* SHOULD WE RETURN REGARDLESS OF TOKEN?
 		if( token == null ) {
 			Log.info("Token invalid.");
 			return Result.error(Result.ErrorCode.FORBIDDEN);
 		}
+		*/
 		
 		// Check if fileId is valid
 		if ( fileId == null ) {

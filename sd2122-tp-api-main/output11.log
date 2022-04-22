@@ -1,0 +1,455 @@
+Using default tag: latest
+latest: Pulling from nunopreguica/sd2122-tester-tp1
+Digest: sha256:58741980c8f976e0b34ca79c5884cfdd37c8422be0dcd1ddb4d0718f0aea8242
+Status: Image is up to date for nunopreguica/sd2122-tester-tp1:latest
+docker.io/nunopreguica/sd2122-tester-tp1:latest
+SD2122 +++ TP1 +++ Testing image: sd2122-tp1-58403-58655
+Version 05.2 - 16/04/2022
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1a )	 Testing Docker environment [executing: docker info]
+---------------------------------------------------------------
+Docker ID: VRJV:7BB7:PYSS:PXXG:VYH3:QSKU:ZAQQ:GZJL:45CS:45H7:RORG:DDKK
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1b )	Testing: Docker engine CPU cores...
+---------------------------------------------------------------
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1c )	Checking trabs.props [executing: docker run sd2122-tp1-58403-58655 /bin/cat trabs.props and nunopreguica/sd2122tpbase]
+---------------------------------------------------------------
+; Read properties from: ./trabs.props
+;	USERS_REST_SERVER_MAINCLASS=tp1.impl.service.rest.users.servers.RestUsersServer
+;	DISCOVERY_MULTICAST_PORT=2266
+;	DISCOVERY_MULTICAST_IP=226.226.226.226
+;	FILES_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.files.servers.SoapFilesServer
+;	DIR_REST_PORT=8080
+;	USERS_EXTRA_ARGS=mysecret
+;	DIR_EXTRA_ARGS=mysecret
+;	USERS_REST_PORT=8080
+;	FILES_REST_SERVER_MAINCLASS=tp1.impl.service.rest.files.servers.RestFilesServer
+;	DIR_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.directory.servers.SoapDirectoryServer
+;	FILES_REST_PORT=8080
+;	DIR_REST_SERVER_MAINCLASS=tp1.impl.service.rest.directory.servers.RestDirectoryServer
+;	DIR_SOAP_PORT=8080
+;	USERS_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.users.servers.SoapUsersServer
+;	FILES_EXTRA_ARGS=mysecret
+;	FILES_SOAP_PORT=8080
+;	USERS_SOAP_PORT=8080
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7f )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11d )	 Testing Access to Files : get, update : [0,0,0] REST servers ; [1,1,1] SOAP servers; [0,0,0] PROXY servers
+---------------------------------------------------------------
+Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+INFO: Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name users1.ourorg -h users1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+Started: users1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+a5464a0d933a260129af78015df982e3ab92400d2d0bac891b8970e1a6ed3c82
+Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+INFO: Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name dir1.ourorg -h dir1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+Started: dir1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+fabe4c092fba062907fdeba6fcb4cced0e2d7f72508783dbe7b29b87c7195281
+Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+INFO: Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name files1.ourorg -h files1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+Started: files1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+e17796eda31b004fffbac7244c8549871708ae294da1f68190c4a16ff752bbb9
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Creating 5 users
+1/5                                                                                [CreateUser SOAP] User [email=jackie.rau@ourorg, userId=jackie.rau, fullName=Sergio Cartwright, password=pcfr3k96] -> OK:jackie.rau
+2/5                                                                                [CreateUser SOAP] User [email=gregory.wiza@ourorg, userId=gregory.wiza, fullName=Cynthia Jenkins, password=i2p8a933fl] -> OK:gregory.wiza
+3/5                                                                                [CreateUser SOAP] User [email=terence.bartoletti@ourorg, userId=terence.bartoletti, fullName=Duncan Rau, password=9ckdkq2g5v64p] -> OK:terence.bartoletti
+4/5                                                                                [CreateUser SOAP] User [email=dillon.bayer@ourorg, userId=dillon.bayer, fullName=Miyoko Hayes, password=gm7h08scerl0y] -> OK:dillon.bayer
+5/5                                                                                [CreateUser SOAP] User [email=digna.hilll@ourorg, userId=digna.hilll, fullName=Burl Schaden, password=jazhvzdqm4u5] -> OK:digna.hilll
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Writing 15 new files
+1/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; password = pcfr3k96 ; data = 611afc30bf -> OK:FileInfo [owner=jackie.rau, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!occaecati.xlsx, sharedWith=null]
+2/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = jackie.rau ; password = pcfr3k96 ; data = e50c243edd -> OK:FileInfo [owner=jackie.rau, filename=consectetur.js, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!consectetur.js, sharedWith=null]
+3/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 4e64a22e01 -> OK:FileInfo [owner=digna.hilll, filename=ducimus.doc, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!ducimus.doc, sharedWith=null]
+4/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 28913e1260 -> OK:FileInfo [owner=digna.hilll, filename=voluptas.flac, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!voluptas.flac, sharedWith=null]
+5/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = d520b2fcd7 -> OK:FileInfo [owner=terence.bartoletti, filename=porro.csv, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!porro.csv, sharedWith=null]
+6/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 7f92d786ca -> OK:FileInfo [owner=terence.bartoletti, filename=fugiat.gif, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!fugiat.gif, sharedWith=null]
+7/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = gregory.wiza ; password = i2p8a933fl ; data = 304958d5c0 -> OK:FileInfo [owner=gregory.wiza, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!blanditiis.pages, sharedWith=null]
+8/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = jackie.rau ; password = pcfr3k96 ; data = d3cb073382 -> OK:FileInfo [owner=jackie.rau, filename=facere.xls, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!facere.xls, sharedWith=null]
+9/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = gregory.wiza ; password = i2p8a933fl ; data = 0e5bee898a -> OK:FileInfo [owner=gregory.wiza, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!cumque.bmp, sharedWith=null]
+10/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 990eef0f6f -> OK:FileInfo [owner=terence.bartoletti, filename=qui.xlsx, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!qui.xlsx, sharedWith=null]
+11/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = temporibus.webm ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = ded93c5915 -> OK:FileInfo [owner=dillon.bayer, filename=temporibus.webm, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!temporibus.webm, sharedWith=null]
+12/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = magnam.odt ; userId = gregory.wiza ; password = i2p8a933fl ; data = 98ab4bbc23 -> OK:FileInfo [owner=gregory.wiza, filename=magnam.odt, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!magnam.odt, sharedWith=null]
+13/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consequatur.bmp ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = fac0e5edfa -> OK:FileInfo [owner=terence.bartoletti, filename=consequatur.bmp, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!consequatur.bmp, sharedWith=null]
+14/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = sit.mp4 ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 936eb56a45 -> OK:FileInfo [owner=dillon.bayer, filename=sit.mp4, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!sit.mp4, sharedWith=null]
+15/15                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = dignissimos.ppt ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 12a90112ca -> OK:FileInfo [owner=terence.bartoletti, filename=dignissimos.ppt, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!dignissimos.ppt, sharedWith=null]
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 15 files from files
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!occaecati.xlsx ; token = woldcard -> OK:[B@7a66c35a
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!consectetur.js ; token = woldcard -> OK:[B@73e4387
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = digna.hilll!*!*!*!ducimus.doc ; token = woldcard -> OK:[B@4137aab0
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = digna.hilll!*!*!*!voluptas.flac ; token = woldcard -> OK:[B@682e422c
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!porro.csv ; token = woldcard -> OK:[B@2726a511
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!fugiat.gif ; token = woldcard -> OK:[B@686cf8ad
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = gregory.wiza!*!*!*!blanditiis.pages ; token = woldcard -> OK:[B@66e341e9
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!facere.xls ; token = woldcard -> OK:[B@546ed2a0
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = gregory.wiza!*!*!*!cumque.bmp ; token = woldcard -> OK:[B@27ec8754
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!qui.xlsx ; token = woldcard -> OK:[B@19662208
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = dillon.bayer!*!*!*!temporibus.webm ; token = woldcard -> OK:[B@62f9c790
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = gregory.wiza!*!*!*!magnam.odt ; token = woldcard -> OK:[B@93bf0e0
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!consequatur.bmp ; token = woldcard -> OK:[B@656842bc
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = dillon.bayer!*!*!*!sit.mp4 ; token = woldcard -> OK:[B@3dec3f87
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!dignissimos.ppt ; token = woldcard -> OK:[B@5dbab232
+---------- Getting 15 files
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@52ecc989
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@52f8a6f4
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@6486fe7b
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@4645679e
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@539c4830
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@28b523a
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@63d677f5
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@2997ddfc
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@78d73b1b
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@34edd065
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = temporibus.webm ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@29d070c7
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = magnam.odt ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@44dfdd58
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consequatur.bmp ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@72a8361b
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = sit.mp4 ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@c48b543
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = dignissimos.ppt ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@4652c74d
+---------- Updating Value on files & get on discovery & files
+[ShareFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; userIdShare = gregory.wiza ; password = pcfr3k96 -> OK:null
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@29bbc63c
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [Files.WriteFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!occaecati.xlsx ; token = woldcard ; data = 1e86852f81 -> OK:null
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!occaecati.xlsx ; token = null -> OK:[B@2c48cede
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!consectetur.js ; token = null -> OK:[B@47fcefb3
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@68e2d03e
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = jackie.rau ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@32ab408e
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@78b03788
+OK                                                                                                                   
+killByImage(sd2122-tp1-58403-58655): Removing container: [/files1.ourorg]
+killByImage(sd2122-tp1-58403-58655): Removing container: [/dir1.ourorg]
+killByImage(sd2122-tp1-58403-58655): Removing container: [/users1.ourorg]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11e )	 Testing Access to Files : deleteUser : : [0,0,0] REST servers ; [1,1,1] SOAP servers; [0,0,0] PROXY servers
+---------------------------------------------------------------
+Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+INFO: Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name users1.ourorg -h users1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+Started: users1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+314591774cfda4daff333a4bb5a9322cbd87bf05c2b8a4460418cd2b3c397d78
+Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+INFO: Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name dir1.ourorg -h dir1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+Started: dir1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+2fe4c228c49f2594bbec88fb2e8a3bcb59c5a0fc5c87489c09a62c58f01507f2
+Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+INFO: Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name files1.ourorg -h files1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+Started: files1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+6fe2d4050b8540d2f82d091bbf46761e18c0fc097023c3161f79e13ad3c62bf3
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Creating 5 users
+1/5                                                                                [CreateUser SOAP] User [email=jackie.rau@ourorg, userId=jackie.rau, fullName=Sergio Cartwright, password=pcfr3k96] -> OK:jackie.rau
+2/5                                                                                [CreateUser SOAP] User [email=gregory.wiza@ourorg, userId=gregory.wiza, fullName=Cynthia Jenkins, password=i2p8a933fl] -> OK:gregory.wiza
+3/5                                                                                [CreateUser SOAP] User [email=terence.bartoletti@ourorg, userId=terence.bartoletti, fullName=Duncan Rau, password=9ckdkq2g5v64p] -> OK:terence.bartoletti
+4/5                                                                                [CreateUser SOAP] User [email=dillon.bayer@ourorg, userId=dillon.bayer, fullName=Miyoko Hayes, password=gm7h08scerl0y] -> OK:dillon.bayer
+5/5                                                                                [CreateUser SOAP] User [email=digna.hilll@ourorg, userId=digna.hilll, fullName=Burl Schaden, password=jazhvzdqm4u5] -> OK:digna.hilll
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Writing 10 new files
+1/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 8251c6ae44 -> OK:FileInfo [owner=digna.hilll, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!occaecati.xlsx, sharedWith=null]
+2/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = gregory.wiza ; password = i2p8a933fl ; data = 114a773fe3 -> OK:FileInfo [owner=gregory.wiza, filename=consectetur.js, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!consectetur.js, sharedWith=null]
+3/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = jackie.rau ; password = pcfr3k96 ; data = 6d2a8f335a -> OK:FileInfo [owner=jackie.rau, filename=ducimus.doc, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!ducimus.doc, sharedWith=null]
+4/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = bfea7aa2a6 -> OK:FileInfo [owner=terence.bartoletti, filename=voluptas.flac, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!voluptas.flac, sharedWith=null]
+5/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = jackie.rau ; password = pcfr3k96 ; data = b6751b0bce -> OK:FileInfo [owner=jackie.rau, filename=porro.csv, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!porro.csv, sharedWith=null]
+6/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = jackie.rau ; password = pcfr3k96 ; data = d850a2bc9b -> OK:FileInfo [owner=jackie.rau, filename=fugiat.gif, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!fugiat.gif, sharedWith=null]
+7/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = b84b4f3d77 -> OK:FileInfo [owner=dillon.bayer, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!blanditiis.pages, sharedWith=null]
+8/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 7c91cdda67 -> OK:FileInfo [owner=dillon.bayer, filename=facere.xls, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!facere.xls, sharedWith=null]
+9/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = c43ccfc09a -> OK:FileInfo [owner=digna.hilll, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!cumque.bmp, sharedWith=null]
+10/10                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = gregory.wiza ; password = i2p8a933fl ; data = 7605ed4527 -> OK:FileInfo [owner=gregory.wiza, filename=qui.xlsx, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!qui.xlsx, sharedWith=null]
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 10 files
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@4fbc516f
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@25765a49
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@15d0b458
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@65930e02
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@18be3205
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@12c78f36
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@129c760d
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@180f33b2
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@48c3a0ef
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@6247c08c
+---------- Deleting user and ...
+[ShareFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = digna.hilll ; userIdShare = jackie.rau ; password = jazhvzdqm4u5 -> OK:null
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@5e3405a1
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = digna.hilll ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@79e16dd9
+[DeleteUser SOAP] digna.hilll, jazhvzdqm4u5 -> OK:User [email=digna.hilll@ourorg, userId=digna.hilll, fullName=Burl Schaden, password=jazhvzdqm4u5]
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- ... checking if still accessible
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = digna.hilll!*!*!*!occaecati.xlsx ; token = null -> -1 NOT_FOUND
+tp1.api.service.soap.FilesException: NOT_FOUND
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createUserDefinedException(SOAPFaultBuilder.java:302)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:111)
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:223)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:176)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:263)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:89)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:62)
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:131)
+	at com.sun.proxy.$Proxy77.getFile(Unknown Source)
+	at tp1.clt.soap.SOAPFilesServiceClt$1.call(SOAPFilesServiceClt.java:146)
+	at tp1.clt.soap.SOAPFilesServiceClt$1.call(SOAPFilesServiceClt.java:143)
+	at tp1.clt.soap.SOAPFilesServiceClt.callMethod(SOAPFilesServiceClt.java:96)
+	at tp1.clt.soap.SOAPFilesServiceClt.getFile(SOAPFilesServiceClt.java:143)
+	at tp1.SiteState.lambda$execFilesGetFile$24(SiteState.java:661)
+	at tp1.SiteState.runOp(SiteState.java:289)
+	at tp1.SiteState.execFilesGetFile(SiteState.java:661)
+	at tp1.SiteState.execFilesGetFile(SiteState.java:641)
+	at tests.FilesTest.execFilesGetFile(FilesTest.java:486)
+	at tests.workloads.FilesFilesDeleteUserWorkload.execute(FilesFilesDeleteUserWorkload.java:80)
+	at tests.BaseTest.test(BaseTest.java:215)
+	at tests.Tester.lambda$main$36(Tester.java:198)
+	at tests.Tester.doRun(Tester.java:423)
+	at tests.Tester.main(Tester.java:198)
+
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = gregory.wiza!*!*!*!consectetur.js ; token = null -> OK:[B@f96654
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!ducimus.doc ; token = null -> OK:[B@637506d8
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = terence.bartoletti!*!*!*!voluptas.flac ; token = null -> OK:[B@1760e688
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!porro.csv ; token = null -> OK:[B@18f4086e
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = jackie.rau!*!*!*!fugiat.gif ; token = null -> OK:[B@538f45f1
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = dillon.bayer!*!*!*!blanditiis.pages ; token = null -> OK:[B@5cf3a7f9
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = dillon.bayer!*!*!*!facere.xls ; token = null -> OK:[B@6bd2f039
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = digna.hilll!*!*!*!cumque.bmp ; token = null -> -1 NOT_FOUND
+tp1.api.service.soap.FilesException: NOT_FOUND
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createUserDefinedException(SOAPFaultBuilder.java:302)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:111)
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:223)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:176)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:263)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:89)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:62)
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:131)
+	at com.sun.proxy.$Proxy77.getFile(Unknown Source)
+	at tp1.clt.soap.SOAPFilesServiceClt$1.call(SOAPFilesServiceClt.java:146)
+	at tp1.clt.soap.SOAPFilesServiceClt$1.call(SOAPFilesServiceClt.java:143)
+	at tp1.clt.soap.SOAPFilesServiceClt.callMethod(SOAPFilesServiceClt.java:96)
+	at tp1.clt.soap.SOAPFilesServiceClt.getFile(SOAPFilesServiceClt.java:143)
+	at tp1.SiteState.lambda$execFilesGetFile$24(SiteState.java:661)
+	at tp1.SiteState.runOp(SiteState.java:289)
+	at tp1.SiteState.execFilesGetFile(SiteState.java:661)
+	at tp1.SiteState.execFilesGetFile(SiteState.java:641)
+	at tests.FilesTest.execFilesGetFile(FilesTest.java:486)
+	at tests.workloads.FilesFilesDeleteUserWorkload.execute(FilesFilesDeleteUserWorkload.java:80)
+	at tests.BaseTest.test(BaseTest.java:215)
+	at tests.Tester.lambda$main$36(Tester.java:198)
+	at tests.Tester.doRun(Tester.java:423)
+	at tests.Tester.main(Tester.java:198)
+
+[Files.GetFile SOAP] URI:http://172.18.0.5:8080/soap/files/?wsdl ; fileId = gregory.wiza!*!*!*!qui.xlsx ; token = null -> OK:[B@4fc71437
+OK                                                                                                                   
+killByImage(sd2122-tp1-58403-58655): Removing container: [/files1.ourorg]
+killByImage(sd2122-tp1-58403-58655): Removing container: [/dir1.ourorg]
+killByImage(sd2122-tp1-58403-58655): Removing container: [/users1.ourorg]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12a )	 Checking faults in Users with Users Service : create, get, ls, share, unshare : : [0,0,0] REST servers ; [1,1,1] SOAP servers; [0,0,0] PROXY servers
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12a )	 This test is assuming that you use a timeout of 10 seconds. You can change this value with option "-timeout num_sec" .
+If you have not configured timeouts in the clients, or if you timeout is different, the result of the test is not reliable.
+---------------------------------------------------------------
+Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+INFO: Starting SOAP services: Users : <1> replicas : mainClass = <tp1.impl.service.soap.users.servers.SoapUsersServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name users1.ourorg -h users1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+Started: users1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.users.servers.SoapUsersServer mysecret
+04350920c2148c36c0d718e98d7c85a7231e781b9baaa16777bec310ed4bb2c2
+Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+INFO: Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name dir1.ourorg -h dir1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+Started: dir1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+a9d79942079b33bfd572d447ab80e8de25256630a08f4d01f0b17116f79c82b0
+Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+INFO: Starting SOAP services: Files : <1> replicas : mainClass = <tp1.impl.service.soap.files.servers.SoapFilesServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name files1.ourorg -h files1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+Started: files1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.files.servers.SoapFilesServer mysecret
+42b6c96d18982f98380f9e920b9c1e7bc6a68b6822c01ce0efa95f7365ec8fbb
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Creating 5 users
+1/5                                                                                [CreateUser SOAP] User [email=jackie.rau@ourorg, userId=jackie.rau, fullName=Sergio Cartwright, password=pcfr3k96] -> OK:jackie.rau
+2/5                                                                                [CreateUser SOAP] User [email=gregory.wiza@ourorg, userId=gregory.wiza, fullName=Cynthia Jenkins, password=i2p8a933fl] -> OK:gregory.wiza
+3/5                                                                                [CreateUser SOAP] User [email=terence.bartoletti@ourorg, userId=terence.bartoletti, fullName=Duncan Rau, password=9ckdkq2g5v64p] -> OK:terence.bartoletti
+4/5                                                                                [CreateUser SOAP] User [email=dillon.bayer@ourorg, userId=dillon.bayer, fullName=Miyoko Hayes, password=gm7h08scerl0y] -> OK:dillon.bayer
+5/5                                                                                [CreateUser SOAP] User [email=digna.hilll@ourorg, userId=digna.hilll, fullName=Burl Schaden, password=jazhvzdqm4u5] -> OK:digna.hilll
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Writing 20 new files
+1/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = c3ba427073 -> OK:FileInfo [owner=dillon.bayer, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!occaecati.xlsx, sharedWith=null]
+2/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = c312c21c97 -> OK:FileInfo [owner=digna.hilll, filename=consectetur.js, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!consectetur.js, sharedWith=null]
+3/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = gregory.wiza ; password = i2p8a933fl ; data = 813bf12cf3 -> OK:FileInfo [owner=gregory.wiza, filename=ducimus.doc, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!ducimus.doc, sharedWith=null]
+4/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = gregory.wiza ; password = i2p8a933fl ; data = 6c37fccf29 -> OK:FileInfo [owner=gregory.wiza, filename=voluptas.flac, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!voluptas.flac, sharedWith=null]
+5/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = jackie.rau ; password = pcfr3k96 ; data = 8c152ea80f -> OK:FileInfo [owner=jackie.rau, filename=porro.csv, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!porro.csv, sharedWith=null]
+6/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = dc9c683b3d -> OK:FileInfo [owner=digna.hilll, filename=fugiat.gif, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!fugiat.gif, sharedWith=null]
+7/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 8e5f4ac36a -> OK:FileInfo [owner=digna.hilll, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!blanditiis.pages, sharedWith=null]
+8/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 59c329e226 -> OK:FileInfo [owner=digna.hilll, filename=facere.xls, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!facere.xls, sharedWith=null]
+9/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 627afd4684 -> OK:FileInfo [owner=dillon.bayer, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!cumque.bmp, sharedWith=null]
+10/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 507e09d1e2 -> OK:FileInfo [owner=terence.bartoletti, filename=qui.xlsx, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!qui.xlsx, sharedWith=null]
+11/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = temporibus.webm ; userId = jackie.rau ; password = pcfr3k96 ; data = ce8458a755 -> OK:FileInfo [owner=jackie.rau, filename=temporibus.webm, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!temporibus.webm, sharedWith=null]
+12/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = magnam.odt ; userId = jackie.rau ; password = pcfr3k96 ; data = df46dc1649 -> OK:FileInfo [owner=jackie.rau, filename=magnam.odt, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!magnam.odt, sharedWith=null]
+13/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consequatur.bmp ; userId = jackie.rau ; password = pcfr3k96 ; data = b271652bab -> OK:FileInfo [owner=jackie.rau, filename=consequatur.bmp, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!consequatur.bmp, sharedWith=null]
+14/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = sit.mp4 ; userId = jackie.rau ; password = pcfr3k96 ; data = 3b688d8e36 -> OK:FileInfo [owner=jackie.rau, filename=sit.mp4, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!sit.mp4, sharedWith=null]
+15/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = dignissimos.ppt ; userId = gregory.wiza ; password = i2p8a933fl ; data = 32f2ac2249 -> OK:FileInfo [owner=gregory.wiza, filename=dignissimos.ppt, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!dignissimos.ppt, sharedWith=null]
+16/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aut.csv ; userId = gregory.wiza ; password = i2p8a933fl ; data = d2ccfa7a7a -> OK:FileInfo [owner=gregory.wiza, filename=aut.csv, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!aut.csv, sharedWith=null]
+17/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = repellendus.ppt ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = a4d49a05e5 -> OK:FileInfo [owner=terence.bartoletti, filename=repellendus.ppt, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!repellendus.ppt, sharedWith=null]
+18/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = error.jpg ; userId = gregory.wiza ; password = i2p8a933fl ; data = 3e117a4294 -> OK:FileInfo [owner=gregory.wiza, filename=error.jpg, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!error.jpg, sharedWith=null]
+19/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = et.numbers ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 529ac2116d -> OK:FileInfo [owner=dillon.bayer, filename=et.numbers, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!et.numbers, sharedWith=null]
+20/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugit.ppt ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 982a34f788 -> OK:FileInfo [owner=digna.hilll, filename=fugit.ppt, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!fugit.ppt, sharedWith=null]
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 20 files
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@6f2b608e
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = sit.mp4 ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@420068a
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = temporibus.webm ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@4d4337f9
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@1a7f2d34
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@770c3ca2
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = error.jpg ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@711261c7
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@659565ed
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@2ae0eb98
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consequatur.bmp ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@42a89cef
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@52a23575
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@390e814c
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = magnam.odt ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@18fcfe7e
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = dignissimos.ppt ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@5319e4fc
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugit.ppt ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@44b82007
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@464017f5
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = repellendus.ppt ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@397f9672
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = et.numbers ; userId = dillon.bayer ; accUserId = dillon.bayer ; password = gm7h08scerl0y -> OK:[B@34dda1b4
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aut.csv ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> OK:[B@5cb4ba80
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = terence.bartoletti ; accUserId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[B@507187c1
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = digna.hilll ; accUserId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[B@5bb90b89
+---------- Ls 
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = dillon.bayer ; password = gm7h08scerl0y -> OK:[FileInfo [owner=dillon.bayer, filename=et.numbers, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!et.numbers, sharedWith=null], FileInfo [owner=dillon.bayer, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!cumque.bmp, sharedWith=null], FileInfo [owner=dillon.bayer, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!occaecati.xlsx, sharedWith=null]]
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = digna.hilll ; password = jazhvzdqm4u5 -> OK:[FileInfo [owner=digna.hilll, filename=fugit.ppt, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!fugit.ppt, sharedWith=null], FileInfo [owner=digna.hilll, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!blanditiis.pages, sharedWith=null], FileInfo [owner=digna.hilll, filename=consectetur.js, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!consectetur.js, sharedWith=null], FileInfo [owner=digna.hilll, filename=facere.xls, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!facere.xls, sharedWith=null], FileInfo [owner=digna.hilll, filename=fugiat.gif, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!fugiat.gif, sharedWith=null]]
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = jackie.rau ; password = pcfr3k96 -> OK:[FileInfo [owner=jackie.rau, filename=magnam.odt, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!magnam.odt, sharedWith=null], FileInfo [owner=jackie.rau, filename=consequatur.bmp, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!consequatur.bmp, sharedWith=null], FileInfo [owner=jackie.rau, filename=sit.mp4, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!sit.mp4, sharedWith=null], FileInfo [owner=jackie.rau, filename=porro.csv, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!porro.csv, sharedWith=null], FileInfo [owner=jackie.rau, filename=temporibus.webm, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!temporibus.webm, sharedWith=null]]
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = gregory.wiza ; password = i2p8a933fl -> OK:[FileInfo [owner=gregory.wiza, filename=aut.csv, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!aut.csv, sharedWith=null], FileInfo [owner=gregory.wiza, filename=ducimus.doc, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!ducimus.doc, sharedWith=null], FileInfo [owner=gregory.wiza, filename=dignissimos.ppt, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!dignissimos.ppt, sharedWith=null], FileInfo [owner=gregory.wiza, filename=voluptas.flac, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!voluptas.flac, sharedWith=null], FileInfo [owner=gregory.wiza, filename=error.jpg, fileURL=http://172.18.0.5:8080/soap/files/gregory.wiza!*!*!*!error.jpg, sharedWith=null]]
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p -> OK:[FileInfo [owner=terence.bartoletti, filename=qui.xlsx, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!qui.xlsx, sharedWith=null], FileInfo [owner=terence.bartoletti, filename=repellendus.ppt, fileURL=http://172.18.0.5:8080/soap/files/terence.bartoletti!*!*!*!repellendus.ppt, sharedWith=null]]
+---------- Share & ls 
+[ShareFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = digna.hilll ; userIdShare = dillon.bayer ; password = jazhvzdqm4u5 -> OK:null
+[LsFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; userId = dillon.bayer ; password = gm7h08scerl0y -> OK:[FileInfo [owner=dillon.bayer, filename=et.numbers, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!et.numbers, sharedWith=null], FileInfo [owner=digna.hilll, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/soap/files/digna.hilll!*!*!*!blanditiis.pages, sharedWith=[dillon.bayer]], FileInfo [owner=dillon.bayer, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!cumque.bmp, sharedWith=null], FileInfo [owner=dillon.bayer, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/soap/files/dillon.bayer!*!*!*!occaecati.xlsx, sharedWith=null]]
+---------- Starting network failure between Users and directory for 20000 ms
+exec [/sbin/iptables -A INPUT -p tcp --destination-port 8080 -j DROP] in users1.ourorg
+exec [/sbin/iptables --flush] in users1.ourorg
+[WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; password = pcfr3k96 ; data = 67d38e2f2b -> OK:FileInfo [owner=jackie.rau, filename=aspernatur.css, fileURL=http://172.18.0.5:8080/soap/files/jackie.rau!*!*!*!aspernatur.css, sharedWith=null]
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@4f4b7a2e
+---------- Starting network failure between Users and directory for 20000 ms
+exec [/sbin/iptables -A INPUT -p tcp --destination-port 8080 -j DROP] in users1.ourorg
+exec [/sbin/iptables --flush] in users1.ourorg
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@77430c79
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@7d48299e
+---------- Starting network failure between Users and directory for 20000 ms
+exec [/sbin/iptables -A INPUT -p tcp --destination-port 8080 -j DROP] in users1.ourorg
+exec [/sbin/iptables --flush] in users1.ourorg
+[ShareFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; userIdShare = gregory.wiza ; password = pcfr3k96 -> OK:null
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@7a3ab73a
+---------- Starting network failure between Users and directory for 20000 ms
+exec [/sbin/iptables -A INPUT -p tcp --destination-port 8080 -j DROP] in users1.ourorg
+exec [/sbin/iptables --flush] in users1.ourorg
+[UnshareFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; userIdShare = gregory.wiza ; password = pcfr3k96 -> OK:null
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                nsleeping: 2 s                                                                                
+sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aspernatur.css ; userId = jackie.rau ; accUserId = jackie.rau ; password = pcfr3k96 -> OK:[B@62682ece
+---------- Starting network failure between Users and directory for 20000 ms
+exec [/sbin/iptables -A INPUT -p tcp --destination-port 8080 -j DROP] in users1.ourorg
+^C
