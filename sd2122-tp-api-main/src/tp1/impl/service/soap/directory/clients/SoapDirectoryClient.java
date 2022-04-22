@@ -22,7 +22,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 	private SoapDirectory directory;
 	
 	public SoapDirectoryClient(URI serverURI) {
-		QName qname = new QName(SoapUsers.NAMESPACE, SoapUsers.NAME);
+		QName qname = new QName(SoapDirectory.NAMESPACE, SoapDirectory.NAME);
 		Service service;
 		try {
 			service = Service.create(URI.create(serverURI + "?wsdl").toURL(), qname);
@@ -41,45 +41,18 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
-		//return super.reTry(() -> directory.deleteFile(filename, userId, password));
-		try {
-		    directory.deleteFile(filename, userId, password);
-		} catch( DirectoryException x ) {
-		    // handle service error
-		} catch( WebServiceException we) {
-		    // handle invocation error, maybe retry?
-		}
-		
-		return Result.ok();
+		return super.reTry(() -> directory.deleteFile(filename, userId, password));
 	
 	}
 
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
-		try {
-		    directory.shareFile(filename, userId, userIdShare, password);
-		} catch( DirectoryException x ) {
-		    // handle service error
-		} catch( WebServiceException we) {
-		    // handle invocation error, maybe retry?
-		}
-		
-		return Result.ok();
-		
+		return super.reTry(() -> directory.shareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
-		try {
-		    directory.unshareFile(filename, userId, userIdShare, password);
-		} catch( DirectoryException x ) {
-		    // handle service error
-		} catch( WebServiceException we) {
-		    // handle invocation error, maybe retry?
-		}
-		
-		return Result.ok();
-		
+		return super.reTry(() -> directory.unshareFile(filename, userId, userIdShare, password));	
 	}
 
 	@Override
@@ -94,16 +67,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
-		try {
-		    directory.deleteFilesOfUser(userId, password);
-		} catch( DirectoryException x ) {
-		    // handle service error
-		} catch( WebServiceException we) {
-		    // handle invocation error, maybe retry?
-		}
-		
-		return Result.ok();
-		
+		return super.reTry(() -> directory.deleteFilesOfUser(userId, password));
 	}
 
 }

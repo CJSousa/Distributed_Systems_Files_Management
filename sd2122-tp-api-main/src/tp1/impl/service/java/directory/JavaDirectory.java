@@ -17,6 +17,7 @@ import tp1.api.FileInfo;
 import tp1.api.service.util.Directory;
 import tp1.api.service.util.Result;
 import tp1.api.service.util.Result.ErrorCode;
+import tp1.impl.service.java.directory.clients.DirectoryClientFactory;
 import tp1.impl.service.java.files.clients.FilesClientFactory;
 import tp1.impl.service.java.users.clients.UsersClientFactory;
 
@@ -247,12 +248,20 @@ public class JavaDirectory implements Directory {
 
 		if (file == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-
+		
 		// Check if file can be read
 		if (!this.canRead(accUserFiles, fileId, file, accUserId))
 			return Result.error(Result.ErrorCode.FORBIDDEN);
-		else
+		
+		// Improve?
+		else if(file.getFileURL().contains("rest")) 
 			throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
+		
+		else {
+			var fileResult = FilesClientFactory.getClient().getFile(fileId, fileId);
+			if(!fileResult.isOK()) return Result.error(fileResult.error());
+			return fileResult;
+		}
 	}
 
 	@Override
@@ -288,10 +297,8 @@ public class JavaDirectory implements Directory {
 
 				String filename = f.getFilename();
 
-				if (f.getOwner().equals(userId)) {
-					var result = this.deleteFile(filename, userId, password);
-					System.out.println("Delete request result: " + result);
-				}
+				if (f.getOwner().equals(userId)) 
+					this.deleteFile(filename, userId, password);
 			}
 		}
 

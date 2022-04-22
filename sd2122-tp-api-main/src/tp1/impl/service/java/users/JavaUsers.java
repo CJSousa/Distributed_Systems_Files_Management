@@ -123,7 +123,7 @@ public class JavaUsers implements Users {
 
 		// Process delete
 		var dirResult = DirectoryClientFactory.getClient().deleteFilesOfUser(userId, password);
-
+		
 		if (!dirResult.isOK())
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 

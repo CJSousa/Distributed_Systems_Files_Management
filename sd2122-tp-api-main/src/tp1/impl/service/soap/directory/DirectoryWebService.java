@@ -9,7 +9,7 @@ import tp1.api.service.soap.SoapDirectory;
 import tp1.api.service.util.Directory;
 import tp1.impl.service.java.directory.JavaDirectory;
 
-@WebService(serviceName=SoapDirectory.NAME, targetNamespace=SoapDirectory.NAMESPACE, endpointInterface=SoapDirectory.INTERFACE)
+@WebService(serviceName = SoapDirectory.NAME, targetNamespace = SoapDirectory.NAMESPACE, endpointInterface = SoapDirectory.INTERFACE)
 public class DirectoryWebService implements SoapDirectory {
 
 	final Directory impl = new JavaDirectory();
@@ -66,9 +66,13 @@ public class DirectoryWebService implements SoapDirectory {
 
 	@Override
 	public void deleteFilesOfUser(String userId, String password) throws DirectoryException {
-		var result = impl.deleteFilesOfUser(userId, password);
-		if (!result.isOK())
-			throw new DirectoryException(result.error().toString());
+		try {
+			var result = impl.deleteFilesOfUser(userId, password);
+			if (!result.isOK())
+				throw new DirectoryException(result.error().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

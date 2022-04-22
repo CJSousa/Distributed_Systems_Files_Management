@@ -27,13 +27,12 @@ public class DirectoryClientFactory {
 		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {}
 		URI serverURI = availableServers[FIRST_SERVER_AVAILABLE];
 		
-		if (serverURI.toString().endsWith("rest"))
+		if (serverURI.toString().endsWith("rest")) 
 			return new RestDirectoryClient(serverURI);
-		else {
-			System.out.println("URI: " + serverURI);
+		else 
 			return new SoapDirectoryClient(serverURI);
-		}
 			
 	}
+	
 
 }

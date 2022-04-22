@@ -2,7 +2,6 @@ package tp1.impl.service.soap.users;
 
 import java.util.List;
 
-
 import jakarta.jws.WebService;
 import tp1.api.User;
 import tp1.api.service.soap.SoapUsers;
@@ -10,7 +9,7 @@ import tp1.api.service.soap.UsersException;
 import tp1.api.service.util.Users;
 import tp1.impl.service.java.users.JavaUsers;
 
-@WebService(serviceName=SoapUsers.NAME, targetNamespace=SoapUsers.NAMESPACE, endpointInterface=SoapUsers.INTERFACE)
+@WebService(serviceName = SoapUsers.NAME, targetNamespace = SoapUsers.NAMESPACE, endpointInterface = SoapUsers.INTERFACE)
 public class UsersWebService implements SoapUsers {
 
 	final Users impl = new JavaUsers();
