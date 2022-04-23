@@ -42,7 +42,6 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
 		return super.reTry(() -> directory.deleteFile(filename, userId, password));
-	
 	}
 
 	@Override

@@ -1,6 +1,9 @@
 package tp1.impl.service.java.files.clients;
 
 import java.net.URI;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 import tp1.api.service.util.Files;
 import tp1.discovery.Discovery;
 import tp1.impl.service.rest.files.clients.RestFilesClient;
@@ -8,47 +11,30 @@ import tp1.impl.service.soap.files.clients.SoapFilesClient;
 
 public class FilesClientFactory {
 
-    private static final int FIRST_SERVER_AVAILABLE = 0;
-    private static final String SERVICE_NAME = "files";
-    private static URI serverURI;
+	private static final String SERVICE_NAME = "files";
+	private static URI serverURI;
+	private static ConcurrentMap<URI, Files> clientInstance = new ConcurrentHashMap<>();
 
-    /*
-    public static Files getClient() {
+	public static URI getAvailableURI() {
+		return serverURI;
+	}
 
-        // With multicast, find available URI
-        Discovery discovery = Discovery.getInstance();
+	public static URI[] getAvailableServers() {
+		URI[] availableServers;
+		Discovery discovery = Discovery.getInstance();
+		while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {
+		}
 
-        URI[] availableServers;
-        while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {
-        }
-        serverURI = availableServers[FIRST_SERVER_AVAILABLE];
-        //Math.random entre 0 - 1
+		return availableServers;
+	}
 
-        if (serverURI.toString().endsWith("rest"))
-            return new RestFilesClient(serverURI);
-        else
-            return new SoapFilesClient(serverURI);
-    }
-*/
-    public static URI getAvailableURI() {
-        return serverURI;
-    }
-
-    public static URI[] getAvailableServers() {
-         URI[] availableServers;
-            
-            Discovery discovery = Discovery.getInstance();
-            while ((availableServers = discovery.knownUrisOf(SERVICE_NAME)) == null) {
-            }
-
-            return availableServers;
-    }
-
-    public static Files getClient(URI uri) {
-        if (uri.toString().contains("rest"))
-            return new RestFilesClient(uri);
-        else
-            return new SoapFilesClient(uri);
-    }
+	public static Files getClient(URI uri) {
+		if (uri.toString().contains("rest"))
+			return new RestFilesClient(uri);
+		else {
+			var client = clientInstance.computeIfAbsent(uri, k -> new SoapFilesClient(serverURI));
+			return client;
+		}
+	}
 
 }

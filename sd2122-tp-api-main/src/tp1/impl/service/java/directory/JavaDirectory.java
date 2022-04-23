@@ -50,6 +50,9 @@ public class JavaDirectory implements Directory {
 		// Write file
 
 		String fileId = userId + DELIMITER + filename;
+		
+		System.out.println("FILE NAME:  " + filename);
+		
 		FileInfo file = files.get(fileId);
 		URI uri;
 		Result fileResult;
@@ -60,8 +63,7 @@ public class JavaDirectory implements Directory {
 		for (URI serverURI : serverURIs) {
 			servers.putIfAbsent(serverURI, new AtomicInteger());
 		}
-		System.out.println("URIs size " + serverURIs.length);
-
+		
 		// -----------------DISCOVERY
 
 		if (file != null) {
@@ -77,17 +79,26 @@ public class JavaDirectory implements Directory {
 
 		} else {
 			uri = this.getFittestServer();
+			
+			System.out.println("URI:  " + uri);
+	
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
 
+			System.out.println("GOT FILE RESULT ");
+			
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
 
 			file = new FileInfo(userId, filename, uri.toString() + "/files/" + fileId, new HashSet<String>());
 			//servers.get(uri).getAndAdd(data.length);
 			servers.get(uri).getAndIncrement();
+			
+			System.out.println("URL INSIDE ESLE:  " + file.getFileURL());
 
 		}
-
+		
+		System.out.println("FINAL URL IN FILE:  " + file.getFileURL());
+		
 		files.put(fileId, file);
 
 		return Result.ok(file);
