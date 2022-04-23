@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Logger;
 
 import jakarta.inject.Singleton;
@@ -16,7 +17,7 @@ import tp1.impl.service.rest.users.UsersResource;
 @Singleton
 public class JavaUsers implements Users {
 
-	private final Map<String, User> users = new ConcurrentHashMap<String, User>();
+	private final ConcurrentMap<String, User> users = new ConcurrentHashMap<String, User>();
 	private static Logger Log = Logger.getLogger(UsersResource.class.getName());
 
 	@Override

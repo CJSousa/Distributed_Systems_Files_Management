@@ -19,8 +19,6 @@ public class UsersClientFactory {
 	 * @throws MalformedURLException 
 	 */
 	public static Users getClient() {
-		
-		System.out.println("Inside Client Factory global");
 
 		// With multicast, find available URI
 		Discovery discovery = Discovery.getInstance();
