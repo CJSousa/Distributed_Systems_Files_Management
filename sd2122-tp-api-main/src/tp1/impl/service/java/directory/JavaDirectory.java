@@ -1,6 +1,5 @@
 package tp1.impl.service.java.directory;
 
-
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -35,7 +34,7 @@ public class JavaDirectory implements Directory {
 	public Result<FileInfo> writeFile(String filename, byte[] data, String userId, String password) {
 
 		var userResult = UsersClientFactory.getClient().getUser(userId, password);
-		
+
 		// Check if userId exists in the system
 		if (!userResult.isOK())
 			return Result.error(userResult.error());
@@ -47,47 +46,50 @@ public class JavaDirectory implements Directory {
 			files = new ConcurrentHashMap<String, FileInfo>();
 			userFiles.put(userId, files);
 		}
-		
+
 		// Write file
 
 		String fileId = userId + DELIMITER + filename;
 		FileInfo file = files.get(fileId);
 		URI uri;
 		Result fileResult;
-		
-		//-----------------DISCOVERY
-		
+
+		// -----------------DISCOVERY
+
 		URI[] serverURIs = FilesClientFactory.getAvailableServers();
-		for(URI serverURI : serverURIs) {
+		for (URI serverURI : serverURIs) {
 			servers.putIfAbsent(serverURI, new AtomicInteger());
 		}
 		System.out.println("URIs size " + serverURIs.length);
-		
-		//-----------------DISCOVERY
-		
-		if( file != null ) {
+
+		// -----------------DISCOVERY
+
+		if (file != null) {
 			String[] url = file.getFileURL().split("/files");
 			uri = URI.create(url[0]);
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
-			
+
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
-			
+
+			//int fileSizeAdjustment = data.length - servers.get(uri).get();
+			//servers.get(uri).getAndAdd(fileSizeAdjustment);
+
 		} else {
 			uri = this.getFittestServer();
-			System.out.println("URI AFTER FITTEST: " + uri);
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
-			
+
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
-			
+
 			file = new FileInfo(userId, filename, uri.toString() + "/files/" + fileId, new HashSet<String>());
+			//servers.get(uri).getAndAdd(data.length);
 			servers.get(uri).getAndIncrement();
-	
+
 		}
 
 		files.put(fileId, file);
-		
+
 		return Result.ok(file);
 	}
 
@@ -117,10 +119,12 @@ public class JavaDirectory implements Directory {
 		if (!file.getOwner().equals(userId))
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 
-		// Result fileResult = FilesClientFactory.getClient().deleteFile(fileId, Token.get());
+		// Result fileResult = FilesClientFactory.getClient().deleteFile(fileId,
+		// Token.get());
 
 		String[] url = file.getFileURL().split("/files");
 		URI uri = URI.create(url[0]);
+		
 		var fileResult = FilesClientFactory.getClient(uri).deleteFile(fileId, "token");
 
 		if (!fileResult.isOK())
@@ -135,6 +139,7 @@ public class JavaDirectory implements Directory {
 		}
 
 		files.remove(fileId);
+		//servers.get(uri).getAndAdd(-getFileResult.value().length);
 		servers.get(uri).getAndDecrement();
 
 		return Result.ok();
@@ -276,20 +281,21 @@ public class JavaDirectory implements Directory {
 
 		if (file == null)
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		
+
 		// Check if file can be read
 		if (!this.canRead(accUserFiles, fileId, file, accUserId))
 			return Result.error(Result.ErrorCode.FORBIDDEN);
-		
+
 		// Improve?
-		else if(file.getFileURL().contains("rest")) 
+		else if (file.getFileURL().contains("rest"))
 			throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
-		
+
 		else {
 			String[] url = file.getFileURL().split("/files");
 			URI uri = URI.create(url[0]);
 			var fileResult = FilesClientFactory.getClient(uri).getFile(fileId, fileId);
-			if(!fileResult.isOK()) return Result.error(fileResult.error());
+			if (!fileResult.isOK())
+				return Result.error(fileResult.error());
 			return fileResult;
 		}
 	}
@@ -327,7 +333,7 @@ public class JavaDirectory implements Directory {
 
 				String filename = f.getFilename();
 
-				if (f.getOwner().equals(userId)) 
+				if (f.getOwner().equals(userId))
 					this.deleteFile(filename, userId, password);
 			}
 		}
@@ -350,21 +356,20 @@ public class JavaDirectory implements Directory {
 		return readerFiles.containsKey(fileId)
 				&& (file.getOwner().equals(readerId) || file.getSharedWith().contains(readerId));
 	}
-	
+
 	/**
 	 * 
 	 * @return
 	 */
 	private URI getFittestServer() {
-		System.out.println("INSIDE FITTEST");
 		URI lightestServer = null;
 		AtomicInteger smallestCounter = new AtomicInteger();
-		for(Entry<URI, AtomicInteger> server : servers.entrySet()) {
+		for (Entry<URI, AtomicInteger> server : servers.entrySet()) {
 			var value = server.getValue().get();
-			if( lightestServer == null || value <= smallestCounter.get() ) {
+			if (lightestServer == null || value <= smallestCounter.get()) {
 				smallestCounter.set(value);
 				lightestServer = server.getKey();
-			}	
+			}
 		}
 		return lightestServer;
 	}
