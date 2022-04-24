@@ -36,37 +36,112 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 
 	@Override
 	public Result<FileInfo> writeFile(String filename, byte[] data, String userId, String password) {
-		return super.reTry(() -> directory.writeFile(filename, data, userId, password));
+		return super.reTry(() -> clt_writeFile(filename, data, userId, password));
 	}
 
 	@Override
 	public Result<Void> deleteFile(String filename, String userId, String password) {
-		return super.reTry(() -> directory.deleteFile(filename, userId, password));
+		return super.reTry(() -> clt_deleteFile(filename, userId, password));
 	}
 
 	@Override
 	public Result<Void> shareFile(String filename, String userId, String userIdShare, String password) {
-		return super.reTry(() -> directory.shareFile(filename, userId, userIdShare, password));
+		return super.reTry(() -> clt_shareFile(filename, userId, userIdShare, password));
 	}
 
 	@Override
 	public Result<Void> unshareFile(String filename, String userId, String userIdShare, String password) {
-		return super.reTry(() -> directory.unshareFile(filename, userId, userIdShare, password));	
+		return super.reTry(() -> clt_unshareFile(filename, userId, userIdShare, password));	
 	}
 
 	@Override
 	public Result<byte[]> getFile(String filename, String userId, String accUserId, String password) {
-		return super.reTry(() -> directory.getFile(filename, userId, accUserId, password));
+		return super.reTry(() -> clt_getFile(filename, userId, accUserId, password));
 	}
 
 	@Override
 	public Result<List<FileInfo>> lsFile(String userId, String password) {
-		return super.reTry(() -> directory.lsFile(userId, password));
+		return super.reTry(() -> clt_lsFile(userId, password));
 	}
 
 	@Override
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
-		return super.reTry(() -> directory.deleteFilesOfUser(userId, password));
+		return super.reTry(() -> clt_deleteFilesOfUser(userId, password));
+	}
+	
+	@Override
+	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
+		return super.reTry(() -> clt_findFile(filename, userId, accUserId, password));
+	}
+	
+
+	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password){
+		try {
+            return Result.ok(directory.writeFile(filename, data, userId, password));
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+    }
+	
+	private Result<Void> clt_deleteFile(String filename, String userId, String password){
+		try {
+			directory.deleteFile(filename, userId, password);
+            return Result.ok();
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	
+	private Result<Void> clt_shareFile(String filename, String userId, String userIdShare, String password){
+		try {
+			directory.shareFile(filename, userId, userIdShare, password);
+            return Result.ok();
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	
+	private Result<Void> clt_unshareFile(String filename, String userId, String userIdShare, String password){
+		try {
+			directory.unshareFile(filename, userId, userIdShare, password);
+            return Result.ok();
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	
+	private Result<byte[]> clt_getFile(String filename, String userId, String accUserId, String password){
+		try {
+            return Result.ok(directory.getFile(filename, userId, accUserId, password));
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	
+	private Result<List<FileInfo>> clt_lsFile(String userId, String password){
+		try {
+            return Result.ok(directory.lsFile(userId, password));
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	
+	private Result<Void> clt_deleteFilesOfUser(String userId, String password){
+		try {
+			directory.deleteFilesOfUser(userId, password);;
+            return Result.ok();
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
 	}
 
+	private Result<FileInfo> clt_findFile(String filename, String userId, String accUserId, String password) {
+		try {
+            return Result.ok(directory.findFile(filename, userId, accUserId, password));
+        } catch (DirectoryException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+
+	
 }

@@ -1,9 +1,11 @@
 package tp1.impl.service.rest.directory;
 
+import java.net.URI;
 import java.util.List;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import tp1.api.FileInfo;
 import tp1.api.service.rest.RestDirectory;
@@ -50,12 +52,23 @@ public class DirectoryResource implements RestDirectory {
 
 	@Override
 	public byte[] getFile(String filename, String userId, String accUserId, String password) {
-		var result = impl.getFile(filename, userId, accUserId, password);
 
-		if (result.isOK())
-			return result.value();
-		else
-			throw new WebApplicationException(this.getError(result));
+		FileInfo file = this.findFile(filename, userId, accUserId, password);
+
+		URI uri = URI.create(file.getFileURL());
+		String[] info = uri.getPath().split("/");
+
+		if (info[1].equals("rest"))
+			throw new WebApplicationException(Response.temporaryRedirect(uri).build());
+		else {
+			var result = impl.getFile(filename, userId, accUserId, password);
+
+			if (result.isOK())
+				return result.value();
+			else
+				throw new WebApplicationException(this.getError(result));
+		}
+
 	}
 
 	@Override
@@ -71,8 +84,18 @@ public class DirectoryResource implements RestDirectory {
 	@Override
 	public void deleteFilesOfUser(String userId, String password) {
 		var result = impl.deleteFilesOfUser(userId, password);
-	
+
 		if (!result.isOK())
+			throw new WebApplicationException(this.getError(result));
+	}
+	
+	@Override
+	public FileInfo findFile(String filename, String userId, String accUserId, String password) {
+		var result = impl.findFile(filename, userId, accUserId, password);
+
+		if (result.isOK())
+			return result.value();
+		else
 			throw new WebApplicationException(this.getError(result));
 	}
 
@@ -98,5 +121,7 @@ public class DirectoryResource implements RestDirectory {
 			return Status.INTERNAL_SERVER_ERROR;
 		}
 	}
+
+
 
 }

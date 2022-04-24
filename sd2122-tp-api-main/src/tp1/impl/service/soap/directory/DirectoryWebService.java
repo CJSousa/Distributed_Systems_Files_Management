@@ -48,11 +48,18 @@ public class DirectoryWebService implements SoapDirectory {
 
 	@Override
 	public byte[] getFile(String filename, String userId, String accUserId, String password) throws DirectoryException {
-		var result = impl.getFile(filename, userId, accUserId, password);
-		if (result.isOK())
-			return result.value();
-		else
-			throw new DirectoryException(result.error().toString());
+		try {
+			var result = impl.getFile(filename, userId, accUserId, password);
+			if (result.isOK())
+				return result.value();
+			else
+				throw new DirectoryException(result.error().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e);
+			throw e;
+		}
+
 	}
 
 	@Override
@@ -72,6 +79,22 @@ public class DirectoryWebService implements SoapDirectory {
 				throw new DirectoryException(result.error().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public FileInfo findFile(String filename, String userId, String accUserId, String password)
+			throws DirectoryException {
+		try {
+			var result = impl.findFile(filename, userId, accUserId, password);
+			if (result.isOK())
+				return result.value();
+			else
+				throw new DirectoryException(result.error().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e);
+			throw e;
 		}
 	}
 

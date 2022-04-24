@@ -71,6 +71,13 @@ public class JavaFiles implements Files {
 		}
 		
 		files.remove(fileId);
+		
+		try {
+			java.nio.file.Files.delete(Paths.get(fileId));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return Result.ok();
 		
 	}

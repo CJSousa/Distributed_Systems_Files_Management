@@ -37,4 +37,7 @@ public interface SoapDirectory {
 	@WebMethod
 	void deleteFilesOfUser(String userId, String password) throws DirectoryException;
 
+	@WebMethod
+	FileInfo findFile (String filename,  String userId, String accUserId, String password) throws DirectoryException;
+
 }

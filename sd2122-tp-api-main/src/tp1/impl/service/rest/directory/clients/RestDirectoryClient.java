@@ -59,7 +59,13 @@ public class RestDirectoryClient extends RestClient implements Directory {
 	public Result<Void> deleteFilesOfUser(String userId, String password) {
 		return super.reTry(() -> clt_deleteFilesOfUser(userId, password));
 	}
+	
 
+	@Override
+	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
+		return super.reTry(() -> clt_findFile(filename, userId, accUserId, password));
+	}
+	
 	private Result<FileInfo> clt_writeFile(String filename, byte[] data, String userId, String password) {
 
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request()
@@ -138,6 +144,18 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
 			return Result.ok();
 		 else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	}
+
+	private Result<FileInfo> clt_findFile(String filename, String userId, String accUserId, String password) {
+		
+		Response r = target.path(userId).path(filename).queryParam(RestUsers.USER_ID, accUserId)
+				.queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_JSON).get();
+
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
+			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+			return Result.ok(r.readEntity(FileInfo.class));
+		} else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 

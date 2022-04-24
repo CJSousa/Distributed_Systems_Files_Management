@@ -12,12 +12,7 @@ import tp1.impl.service.soap.files.clients.SoapFilesClient;
 public class FilesClientFactory {
 
 	private static final String SERVICE_NAME = "files";
-	private static URI serverURI;
 	private static ConcurrentMap<URI, Files> clientInstance = new ConcurrentHashMap<>();
-
-	public static URI getAvailableURI() {
-		return serverURI;
-	}
 
 	public static URI[] getAvailableServers() {
 		URI[] availableServers;
@@ -32,7 +27,7 @@ public class FilesClientFactory {
 		if (uri.toString().contains("rest"))
 			return new RestFilesClient(uri);
 		else {
-			var client = clientInstance.computeIfAbsent(uri, k -> new SoapFilesClient(serverURI));
+			var client = clientInstance.computeIfAbsent(uri, k -> new SoapFilesClient(uri));
 			return client;
 		}
 	}

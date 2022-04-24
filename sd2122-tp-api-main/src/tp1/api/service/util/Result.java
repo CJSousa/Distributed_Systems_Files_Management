@@ -23,7 +23,7 @@ public interface Result<T> {
 	 *         does not exist INTERNAL_ERROR - something unexpected happened
 	 */
 	enum ErrorCode {
-		OK, CONFLICT, NOT_FOUND, BAD_REQUEST, FORBIDDEN, INTERNAL_ERROR, NOT_IMPLEMENTED
+		OK, CONFLICT, NOT_FOUND, BAD_REQUEST, FORBIDDEN, INTERNAL_ERROR, NOT_IMPLEMENTED, REQUESTED_TIMEOUT
 	};
 
 	/**
@@ -94,6 +94,8 @@ public interface Result<T> {
 			return ErrorCode.INTERNAL_ERROR;
 		case NO_CONTENT:
 			return ErrorCode.OK;
+		case REQUEST_TIMEOUT:
+			return ErrorCode.REQUESTED_TIMEOUT;
 		case OK:
 			return ErrorCode.OK;
 		default:

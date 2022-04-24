@@ -119,4 +119,8 @@ public interface Directory {
 	 * @return
 	 */
 	Result<Void> deleteFilesOfUser(String userId, String password);
+
+	
+	
+	Result<FileInfo> findFile(String filename, String userId, String accUserId, String password);
 }

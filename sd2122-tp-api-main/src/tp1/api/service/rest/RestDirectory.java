@@ -155,5 +155,10 @@ public interface RestDirectory {
 	@DELETE
 	@Path("/{userId}")
 	void deleteFilesOfUser(@PathParam("userId") String userId, @QueryParam("password") String password);
+	
+	@GET
+	@Path("/{userId}/{filename}")
+	@Produces(MediaType.APPLICATION_JSON)
+	FileInfo findFile(@PathParam("filename") String filename, @PathParam("userId") String userId, @PathParam("accUserId") String accUserId, @QueryParam("password") String password);
 
 }

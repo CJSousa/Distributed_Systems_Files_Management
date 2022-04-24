@@ -2,6 +2,7 @@ package tp1.impl.service.java.directory;
 
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -50,9 +51,7 @@ public class JavaDirectory implements Directory {
 		// Write file
 
 		String fileId = userId + DELIMITER + filename;
-		
-		System.out.println("FILE NAME:  " + filename);
-		
+
 		FileInfo file = files.get(fileId);
 		URI uri;
 		Result fileResult;
@@ -63,42 +62,42 @@ public class JavaDirectory implements Directory {
 		for (URI serverURI : serverURIs) {
 			servers.putIfAbsent(serverURI, new AtomicInteger());
 		}
-		
+
 		// -----------------DISCOVERY
 
 		if (file != null) {
 			String[] url = file.getFileURL().split("/files");
 			uri = URI.create(url[0]);
+
+			// if( !serverIsUp(serverURIs, uri) ) return null; //re try discovery? throw
+			// exception?
+
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
 
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
 
-			//int fileSizeAdjustment = data.length - servers.get(uri).get();
-			//servers.get(uri).getAndAdd(fileSizeAdjustment);
+			// int fileSizeAdjustment = data.length - servers.get(uri).get();
+			// servers.get(uri).getAndAdd(fileSizeAdjustment);
 
 		} else {
-			uri = this.getFittestServer();
-			
-			System.out.println("URI:  " + uri);
-	
+
+			uri = this.getFittestServer(serverURIs);
+
+			// if( !serverIsUp(serverURIs, uri) ) return null; //re try discovery? throw
+			// exception?
+
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
 
-			System.out.println("GOT FILE RESULT ");
-			
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
 
 			file = new FileInfo(userId, filename, uri.toString() + "/files/" + fileId, new HashSet<String>());
-			//servers.get(uri).getAndAdd(data.length);
+			// servers.get(uri).getAndAdd(data.length);
 			servers.get(uri).getAndIncrement();
-			
-			System.out.println("URL INSIDE ESLE:  " + file.getFileURL());
 
 		}
-		
-		System.out.println("FINAL URL IN FILE:  " + file.getFileURL());
-		
+
 		files.put(fileId, file);
 
 		return Result.ok(file);
@@ -135,7 +134,7 @@ public class JavaDirectory implements Directory {
 
 		String[] url = file.getFileURL().split("/files");
 		URI uri = URI.create(url[0]);
-		
+
 		var fileResult = FilesClientFactory.getClient(uri).deleteFile(fileId, "token");
 
 		if (!fileResult.isOK())
@@ -150,7 +149,7 @@ public class JavaDirectory implements Directory {
 		}
 
 		files.remove(fileId);
-		//servers.get(uri).getAndAdd(-getFileResult.value().length);
+		// servers.get(uri).getAndAdd(-getFileResult.value().length);
 		servers.get(uri).getAndDecrement();
 
 		return Result.ok();
@@ -297,18 +296,28 @@ public class JavaDirectory implements Directory {
 		if (!this.canRead(accUserFiles, fileId, file, accUserId))
 			return Result.error(Result.ErrorCode.FORBIDDEN);
 
-		// Improve?
-		else if (file.getFileURL().contains("rest"))
-			throw new WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL())).build());
+		String[] url = file.getFileURL().split("/files");
+		URI uri = URI.create(url[0]);
+		
+		var fileResult = FilesClientFactory.getClient(uri).getFile(fileId, "token");
+		
+		if (!fileResult.isOK())
+			return Result.error(fileResult.error());
+		
+		return fileResult;
 
-		else {
-			String[] url = file.getFileURL().split("/files");
-			URI uri = URI.create(url[0]);
-			var fileResult = FilesClientFactory.getClient(uri).getFile(fileId, fileId);
-			if (!fileResult.isOK())
-				return Result.error(fileResult.error());
-			return fileResult;
-		}
+		/*
+		 * // Improve? else if(file.getFileURL().contains("rest")) throw new
+		 * WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL
+		 * ())).build());
+		 * 
+		 * else { String[] url = file.getFileURL().split("/files"); URI uri =
+		 * URI.create(url[0]); var fileResult =
+		 * FilesClientFactory.getClient(uri).getFile(fileId, "token");
+		 * if(!fileResult.isOK()) return Result.error(fileResult.error()); return
+		 * fileResult; }
+		 */
+
 	}
 
 	@Override
@@ -354,6 +363,22 @@ public class JavaDirectory implements Directory {
 
 	// Auxiliary Methods
 
+	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
+
+		// Checking stuff?
+		// Check if userId and accUserId exist in directory
+		Map<String, FileInfo> userIdFiles = userFiles.get(accUserId);
+
+		// Check if file exists
+		String fileId = userId + DELIMITER + filename;
+		FileInfo file = userIdFiles.get(fileId);
+		System.out.println("USER " + accUserId + " has " + userIdFiles.get(accUserId));
+		System.out.println("This is file " + fileId);
+
+		return Result.ok(file);
+
+	}
+
 	/**
 	 * Check if a user can read a file
 	 * 
@@ -372,17 +397,21 @@ public class JavaDirectory implements Directory {
 	 * 
 	 * @return
 	 */
-	private URI getFittestServer() {
+	private URI getFittestServer(URI[] serversUp) {
 		URI lightestServer = null;
 		AtomicInteger smallestCounter = new AtomicInteger();
 		for (Entry<URI, AtomicInteger> server : servers.entrySet()) {
 			var value = server.getValue().get();
-			if (lightestServer == null || value <= smallestCounter.get()) {
+			if (serverIsUp(serversUp, server.getKey()) && (lightestServer == null || value <= smallestCounter.get())) {
 				smallestCounter.set(value);
 				lightestServer = server.getKey();
 			}
 		}
 		return lightestServer;
+	}
+
+	private boolean serverIsUp(URI[] serversUp, URI server) {
+		return Arrays.asList(serversUp).contains(server);
 	}
 
 }
