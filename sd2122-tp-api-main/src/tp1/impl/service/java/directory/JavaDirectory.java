@@ -48,7 +48,7 @@ public class JavaDirectory implements Directory {
 			userFiles.put(userId, files);
 		}
 
-		// Write file
+		// Process write file
 
 		String fileId = userId + DELIMITER + filename;
 
@@ -58,6 +58,8 @@ public class JavaDirectory implements Directory {
 		Result fileResult;
 
 		if (file != null && fileData != null) {
+			
+			// File had already been written
 
 			uri = fileData.getServerURI();
 
@@ -66,7 +68,7 @@ public class JavaDirectory implements Directory {
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
 
-			int fileSizeAdjustment = data.length - servers.get(uri).get();
+			int fileSizeAdjustment = data.length - filesData.get(fileId).getSize();
 			servers.get(uri).getAndAdd(fileSizeAdjustment);
 			
 			files.put(fileId, file);
@@ -75,15 +77,17 @@ public class JavaDirectory implements Directory {
 			filesData.put(fileId, fileData);
 
 		} else {
+			
+			// File was never written before 
 
 			uri = this.getFittestServer();
 			fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
 
-			if(fileResult == null) {
+			if(fileResult == null || Result.ErrorCode.REQUESTED_TIMEOUT == fileResult.error()) {
 				uri = this.getFittestServer();
 				fileResult = FilesClientFactory.getClient(uri).writeFile(fileId, data, password);
 			}
-
+			
 			if (!fileResult.isOK())
 				return Result.error(userResult.error());
 
@@ -93,7 +97,7 @@ public class JavaDirectory implements Directory {
 		
 			files.putIfAbsent(fileId, file);
 
-			fileData = new FileData(file, data.length, uri);
+			fileData = new FileData(data.length, uri);
 			filesData.putIfAbsent(fileId, fileData);
 
 		}
@@ -134,9 +138,6 @@ public class JavaDirectory implements Directory {
 			return Result.error(Result.ErrorCode.BAD_REQUEST);
 		
 		URI serverURI = fileData.getServerURI();
-
-		// Result fileResult = FilesClientFactory.getClient().deleteFile(fileId,
-		// Token.get());
 		
 		var fileResult = FilesClientFactory.getClient(serverURI).deleteFile(fileId, "token");
 
@@ -152,9 +153,8 @@ public class JavaDirectory implements Directory {
 		}
 
 		files.remove(fileId);
-		filesData.remove(fileId);
-
 		servers.get(serverURI).getAndAdd(-fileData.getSize());
+		filesData.remove(fileId);
 
 		return Result.ok();
 	}
@@ -250,13 +250,10 @@ public class JavaDirectory implements Directory {
 		// Process unshare
 
 		if (sharedWith.contains(userIdShare) && userIdSharedFiles.containsKey(fileId)) {
-
-			// Remove userIdShare from the set of user IDs with whom the file has been
-			// shared
+			
 			sharedWith.remove(userIdShare);
 			file.setSharedWith(sharedWith);
 
-			// Remove file from userIdShare
 			if (!userId.equals(userIdShare))
 				userIdSharedFiles.remove(fileId);
 		}
@@ -272,13 +269,13 @@ public class JavaDirectory implements Directory {
 		if (!file.isOK())
 			return Result.error(file.error());
 
-		//String[] url = file.value().getFileURL().split("/files");
-		//URI uri = URI.create(url[0]);
-
 		String fileId = userId + DELIMITER + filename;
 		
-		//TRATAR ERRO?
-		URI serverURI = filesData.get(fileId).getServerURI();
+		FileData fileData = filesData.get(fileId);
+		if (fileData == null)
+			return Result.error(Result.ErrorCode.BAD_REQUEST);
+		
+		URI serverURI = fileData.getServerURI();
 
 		var fileResult = FilesClientFactory.getClient(serverURI).getFile(fileId, "token");
 
@@ -332,8 +329,8 @@ public class JavaDirectory implements Directory {
 		return Result.ok();
 	}
 
-	// Auxiliary Methods
-
+	
+	@Override
 	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
 
 		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
@@ -373,24 +370,14 @@ public class JavaDirectory implements Directory {
 
 	}
 
-	/**
-	 * Check if a user can read a file
-	 * 
-	 * @param readerFiles - set of files a user has access to
-	 * @param fileId      - fileId of the file to be read
-	 * @param file        - file to be read
-	 * @param readerId    - user requesting to read file
-	 * @return true if the reader can read the file
-	 */
+	// Auxiliary Methods
+
 	private boolean canRead(Map<String, FileInfo> readerFiles, String fileId, FileInfo file, String readerId) {
 		return readerFiles.containsKey(fileId)
 				&& (file.getOwner().equals(readerId) || file.getSharedWith().contains(readerId));
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
+
 	private URI getFittestServer() {
 		URI lightestServer = null;
 		AtomicInteger smallestCounter = new AtomicInteger();

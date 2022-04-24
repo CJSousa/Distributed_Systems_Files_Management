@@ -1,12 +1,10 @@
 package tp1.impl.service.soap.files.clients;
 
 import java.net.MalformedURLException;
+
 import java.net.URI;
 import javax.xml.namespace.QName;
 import jakarta.xml.ws.Service;
-import jakarta.xml.ws.WebServiceException;
-import tp1.api.FileInfo;
-import tp1.api.service.soap.DirectoryException;
 import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
@@ -44,19 +42,13 @@ public class SoapFilesClient extends SoapClient implements Files {
 	public Result<byte[]> getFile(String fileId, String token) {
 		return super.reTry(() -> clt_getFile(fileId, token));
 	}
-	/*
-	@Override
-	public Result<FileInfo> findFile(String fileId, String token) {
-		return super.reTry(() -> clt_findFile(fileId, token));
-	}
-	*/
 
 	private Result<Void> clt_writeFile(String fileId, byte[] data, String token){
 		try {
 			files.writeFile(fileId, data, token);
             return Result.ok();
         } catch (FilesException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -65,7 +57,7 @@ public class SoapFilesClient extends SoapClient implements Files {
 			files.deleteFile(fileId, token);
             return Result.ok();
         } catch (FilesException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -73,19 +65,8 @@ public class SoapFilesClient extends SoapClient implements Files {
 		try {
             return Result.ok(files.getFile(fileId, token));
         } catch (FilesException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
-	
-	/*
-	private Result<FileInfo> clt_findFile(String fileId, String token) {
-		try {
-            return Result.ok(files.findFile(fileId, token));
-        } catch (FilesException e) {
-            return Result.error(SoapClient.errorCode(e));
-        }
-	}
-	*/
-	
 
 }

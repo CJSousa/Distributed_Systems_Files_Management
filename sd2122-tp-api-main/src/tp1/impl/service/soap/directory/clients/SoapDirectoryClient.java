@@ -79,7 +79,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 		try {
             return Result.ok(directory.writeFile(filename, data, userId, password));
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
     }
 	
@@ -88,7 +88,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 			directory.deleteFile(filename, userId, password);
             return Result.ok();
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -97,7 +97,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 			directory.shareFile(filename, userId, userIdShare, password);
             return Result.ok();
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -106,7 +106,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 			directory.unshareFile(filename, userId, userIdShare, password);
             return Result.ok();
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -114,7 +114,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 		try {
             return Result.ok(directory.getFile(filename, userId, accUserId, password));
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -122,7 +122,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 		try {
             return Result.ok(directory.lsFile(userId, password));
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -131,7 +131,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 			directory.deleteFilesOfUser(userId, password);;
             return Result.ok();
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 
@@ -139,7 +139,7 @@ public class SoapDirectoryClient extends SoapClient implements Directory {
 		try {
             return Result.ok(directory.findFile(filename, userId, accUserId, password));
         } catch (DirectoryException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 

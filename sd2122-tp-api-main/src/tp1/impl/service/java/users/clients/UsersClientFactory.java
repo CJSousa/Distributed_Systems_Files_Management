@@ -16,12 +16,6 @@ public class UsersClientFactory {
 	private static final String SERVICE_NAME = "users";
 	private static ConcurrentMap<URI, Users> clientInstance = new ConcurrentHashMap<>();
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws MalformedURLException 
-	 */
 	public static Users getClient() {
 
 		// With multicast, find available URI

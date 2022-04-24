@@ -36,20 +36,6 @@ public class RestFilesClient extends RestClient implements Files {
 		return super.reTry(() -> clt_getFile(fileId, token));
 	}
 	
-	//
-
-
-	/**
-	 * Write a file. If the file exists, overwrites the contents. It consumes
-	 * APPLICATION_OCTET_STREAM, which is used for entities whose sole intended
-	 * purpose is to be saved to disk
-	 * 
-	 * @param fileId - unique id of the file.
-	 * @param data   - contents of the file.
-	 * @param token  - token for accessing the file server (in the first project
-	 *               this will not be used).
-	 * @return fileId
-	 */
 	private Result<Void> clt_writeFile(String fileId, byte[] data, String token) {
 
 		Response r = target.path(fileId)
@@ -63,12 +49,6 @@ public class RestFilesClient extends RestClient implements Files {
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
-	/**
-	 * 
-	 * @param fileId
-	 * @param token
-	 * @return
-	 */
 	private Result<Void> clt_deleteFile(String fileId, String token) {
 
 		Response r = target.path(fileId)
@@ -83,12 +63,6 @@ public class RestFilesClient extends RestClient implements Files {
 
 	}
 
-	/**
-	 * 
-	 * @param fileId
-	 * @param token
-	 * @return
-	 */
 	private Result<byte[]> clt_getFile(String fileId, String token) {
 
 		Response r = target.path(fileId)
@@ -103,21 +77,5 @@ public class RestFilesClient extends RestClient implements Files {
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
-	/*
-	private Result<FileInfo> clt_findFile(String fileId, String token) {
-		
-		Response r = target.path(fileId)
-				.queryParam(RestFiles.TOKEN, token)
-				.request()
-				.accept(MediaType.APPLICATION_JSON)
-				.get();
-		
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
-			return Result.ok(r.readEntity(FileInfo.class));
-		else
-			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
-	}
-
-*/
 
 }

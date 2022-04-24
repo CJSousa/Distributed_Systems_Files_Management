@@ -1,6 +1,5 @@
 package tp1.impl.service.java.directory.clients;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -15,12 +14,7 @@ public class DirectoryClientFactory {
 	private static final String SERVICE_NAME = "directory";
 	private static ConcurrentMap<URI, Directory> clientInstance = new ConcurrentHashMap<>();
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws MalformedURLException
-	 */
+	
 	public static Directory getClient() {
 
 		// With multicast, find available URI

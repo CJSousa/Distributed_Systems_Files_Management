@@ -41,7 +41,7 @@ public class Discovery {
 	// The pre-aggreed multicast endpoint assigned to perform discovery. 
 	static final InetSocketAddress DISCOVERY_ADDR = new InetSocketAddress("226.226.226.226", 2266);
 	static final int DISCOVERY_PERIOD = 1000;
-	static final int DISCOVERY_TIMEOUT = 10000;
+	static final int DISCOVERY_TIMEOUT = 5000;
 
 	// Used separate the two fields that make up a service announcement.
 	private static final String DELIMITER = "\t";
@@ -118,7 +118,6 @@ public class Discovery {
 	 * @param serviceName - the composite name of the service
 	 * @return the discovery results as an array
 	 */
-	@SuppressWarnings("unlikely-arg-type")
 	public void listener(int minRepliesNeeded) {
 		Log.info(String.format("Starting discovery on multicast group: %s, port: %d\n", DISCOVERY_ADDR.getAddress(), DISCOVERY_ADDR.getPort()));
 
@@ -128,11 +127,6 @@ public class Discovery {
 		new Thread(() -> {
 		    try (var ms = new MulticastSocket(DISCOVERY_ADDR.getPort())) {
 			    joinGroupInAllInterfaces(ms);
-			    int nReplies = 0;
-			    //If things go south, change this to a counter
-			    //long startingTime = System.currentTimeMillis();
-			    //long currentTime = startingTime;
-			    int counter = 0;
 			    
 			    while( true ) {
 					try {
@@ -155,30 +149,15 @@ public class Discovery {
 								servicesNet.put(tokens[0], URITable);
 							}
 							URITable.put(newURI, now);
-							nReplies ++;
-							counter = 0;
-							//currentTime = startingTime;
+
 						}
-						
-						counter++;
-						//currentTime = System.currentTimeMillis();
-						//Thread.sleep(DISCOVERY_TIMEOUT alterado) -  nao precisamos do contador
 							
 					} catch (IOException e) {
 						e.printStackTrace();
 						try {
-							for (ConcurrentMap<URI, Long> map : servicesNet.values()) {
-                                Iterator<Map.Entry<URI, Long>> it = map.entrySet().iterator();
-                                while (it.hasNext()) {
-                                    Map.Entry<URI, Long> entry = it.next();
-                                    if (System.currentTimeMillis() - entry.getValue() >= DISCOVERY_TIMEOUT)
-                                    	servicesNet.remove(entry.getKey());
-                                }
-                            }
+							this.cleanMap();
 							Thread.sleep(DISCOVERY_PERIOD);
-							
 						} catch (InterruptedException e1) {
-						// do nothing
 						}
 						Log.finest("Still listening...");
 					}
@@ -205,14 +184,19 @@ public class Discovery {
 				x.printStackTrace();
 			}
 		}
-	}	
+	}
+	
+	private void cleanMap() {
+		for (ConcurrentMap<URI, Long> URITable : servicesNet.values()) {
+			URITable.entrySet().removeIf(e -> System.currentTimeMillis() - e.getValue() >= DISCOVERY_TIMEOUT);
+        }
+	}
 
 	/**
 	 * Starts sending service announcements at regular intervals... 
 	 */
 	public void start() {
 		announce(serviceName, serviceURI);
-		//listener();
 	}
 
 	// Main just for testing purposes

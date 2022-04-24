@@ -48,69 +48,41 @@ public class RestUsersClient extends RestClient implements Users {
 		return super.reTry(() -> clt_searchUsers(pattern));
 	}
 
-	//
 
-	/**
-	 * 
-	 * @param user
-	 * @return
-	 */
 	private Result<String> clt_createUser(User user) {
 		Response r = target.request().accept(MediaType.APPLICATION_JSON)
 				.post(Entity.entity(user, MediaType.APPLICATION_JSON));
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			// r.readEntity(new GenericType<Result<String>>() {});
 			return Result.ok(r.readEntity(String.class));
 
 		} else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
-	/**
-	 * 
-	 * @param userId
-	 * @param password
-	 * @return
-	 */
 	private Result<User> clt_getUser(String userId, String password) {
 
 		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request()
 				.accept(MediaType.APPLICATION_JSON).get();
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity())
-			// return r.readEntity(new GenericType<Result<User>>() {});
 			return Result.ok(r.readEntity(User.class));
 		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
 
-	/**
-	 * 
-	 * @param userId
-	 * @param password
-	 * @param user
-	 * @return
-	 */
 	private Result<User> clt_updateUser(String userId, String password, User user) {
 
 		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request()
 				.accept(MediaType.APPLICATION_JSON).put(Entity.entity(user, MediaType.APPLICATION_JSON));
 
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			// return r.readEntity(new GenericType<Result<User>>() {});
 			return Result.ok(r.readEntity(User.class));
 		} else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
-	/**
-	 * 
-	 * @param userId
-	 * @param password
-	 * @return
-	 */
 	private Result<User> clt_deleteUser(String userId, String password) {
 
 		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request()
@@ -125,11 +97,6 @@ public class RestUsersClient extends RestClient implements Users {
 
 	}
 
-	/**
-	 * 
-	 * @param pattern
-	 * @return
-	 */
 	private Result<List<User>> clt_searchUsers(String pattern) {
 
 		Response r = target.queryParam(RestUsers.QUERY, pattern).request().accept(MediaType.APPLICATION_JSON).get();

@@ -25,8 +25,6 @@ public class RestUsersServer {
 	public static void main(String[] args) {
 		try {
 			
-		//Debug.setLogLevel( Level.INFO, Debug.SD2122 );
-			
 		ResourceConfig config = new ResourceConfig();
 		config.register(UsersResource.class);
 		//config.register(CustomLoggingFilter.class);
@@ -42,7 +40,6 @@ public class RestUsersServer {
 	
 		Log.info(String.format("%s Server ready @ %s\n",  SERVICE, serverURI));
 		
-		//More code can be executed here...
 		} catch( Exception e) {
 			Log.severe(e.getMessage());
 		}

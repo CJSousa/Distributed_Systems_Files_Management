@@ -26,8 +26,6 @@ public class RestDirectoryServer {
 	public static void main(String[] args) {
 		try {
 			
-		//Debug.setLogLevel( Level.INFO, Debug.SD2122 );
-			
 		ResourceConfig config = new ResourceConfig();
 		config.register(DirectoryResource.class);
 		//config.register(CustomLoggingFilter.class);

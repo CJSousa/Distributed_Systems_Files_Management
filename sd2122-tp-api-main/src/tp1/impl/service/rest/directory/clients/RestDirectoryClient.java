@@ -71,10 +71,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request()
 				.accept(MediaType.APPLICATION_JSON).post(Entity.entity(data, MediaType.APPLICATION_OCTET_STREAM));
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return Result.ok(r.readEntity(FileInfo.class));
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
@@ -83,10 +82,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.USER_ID, accUserId)
 				.queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_OCTET_STREAM).get();
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return Result.ok(r.readEntity(byte[].class));
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 
@@ -94,9 +92,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request().delete();
 
-		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
 			return Result.ok();
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 	
@@ -104,10 +102,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		
 		Response r = target.path(userId).path(filename).path("share").path(userIdShare).queryParam(RestUsers.PASSWORD, password).request().post(null);
 		
-		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
 			return Result.ok();
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 		
 	}
@@ -117,10 +114,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		
 		Response r = target.path(userId).path(filename).path("share").path(userIdShare).queryParam(RestUsers.PASSWORD, password).request().delete();
 		
-		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) 
 			return Result.ok();
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	
 	}
@@ -129,9 +125,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		
 		Response r = target.path(userId).queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_JSON).get();
 		
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return r.readEntity(new GenericType<Result<List<FileInfo>>>() {});
-		} else
+		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 		
 	}
@@ -151,10 +147,9 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.USER_ID, accUserId)
 				.queryParam(RestUsers.PASSWORD, password).request().accept(MediaType.APPLICATION_JSON).get();
 
-		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return Result.ok(r.readEntity(FileInfo.class));
-		} else
+		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
 

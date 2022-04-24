@@ -69,16 +69,17 @@ public interface Result<T> {
 	/**
 	 * Convenience method used to return an error
 	 * 
-	 * @return
+	 * @return error
 	 */
 	static <T> ErrorResult<T> error(ErrorCode error) {
 		return new ErrorResult<>(error);
 	}
 
 	/**
-	 * COMPLETE
-	 * @param status
-	 * @return
+	 * Returns an ErrorCode given a status.
+	 * 
+	 * @param status 
+	 * @return error in ErrorCode format
 	 */
 	static ErrorCode getResponseErrorCode(Status status) {
 		switch (status) {

@@ -40,7 +40,6 @@ public class JavaFiles implements Files {
 		try {
 			java.nio.file.Files.write(Paths.get(fileId), data);
 		} catch (IOException e) {
-			//ASK LATER
 			e.printStackTrace();
 		}
 		
@@ -102,14 +101,6 @@ public class JavaFiles implements Files {
 			return Result.error(Result.ErrorCode.NOT_FOUND);
 		}
 		
-		// Check if token is valid
-		/* SHOULD WE RETURN REGARDLESS OF TOKEN?
-		if( token == null ) {
-			Log.info("Token invalid.");
-			return Result.error(Result.ErrorCode.FORBIDDEN);
-		}
-		*/
-		
 		// Check if fileId is valid
 		if ( fileId == null ) {
 			Log.info("fileId invalid.");
@@ -118,13 +109,5 @@ public class JavaFiles implements Files {
 		
 		return Result.ok(data);
 	}
-
-	/*
-	@Override
-	public Result<FileInfo> findFile(String fileId, String token) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	*/
 
 }

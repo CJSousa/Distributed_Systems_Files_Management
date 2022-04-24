@@ -3,12 +3,9 @@ package tp1.impl.service.soap.users.clients;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.List;
-
 import javax.xml.namespace.QName;
-
 import jakarta.xml.ws.Service;
 import tp1.api.User;
-import tp1.api.service.soap.DirectoryException;
 import tp1.api.service.soap.SoapUsers;
 import tp1.api.service.soap.UsersException;
 import tp1.api.service.util.Result;
@@ -23,7 +20,6 @@ public class SoapUsersClient extends SoapClient implements Users {
 		QName qname = new QName(SoapUsers.NAMESPACE, SoapUsers.NAME);
 		Service service;
 		try {
-			System.out.println("URL: " + serverURI);
 			service = Service.create(URI.create(serverURI + "?wsdl").toURL(), qname);
 			SoapUsers soapUsers = service.getPort(tp1.api.service.soap.SoapUsers.class);
 			this.users = soapUsers;
@@ -62,7 +58,7 @@ public class SoapUsersClient extends SoapClient implements Users {
 		try {
             return Result.ok(users.createUser(user));
         } catch (UsersException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 
@@ -70,7 +66,7 @@ public class SoapUsersClient extends SoapClient implements Users {
 		try {
             return Result.ok(users.getUser(userId, password));
         } catch (UsersException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -78,7 +74,7 @@ public class SoapUsersClient extends SoapClient implements Users {
 		try {
             return Result.ok(users.updateUser(userId, password, user));
         } catch (UsersException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -87,7 +83,7 @@ public class SoapUsersClient extends SoapClient implements Users {
 		try {
             return Result.ok(users.deleteUser(userId, password));
         } catch (UsersException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	
@@ -95,7 +91,7 @@ public class SoapUsersClient extends SoapClient implements Users {
 		try {
             return Result.ok(users.searchUsers(pattern));
         } catch (UsersException e) {
-            return Result.error(SoapClient.errorCode(e));
+            return Result.error(SoapClient.getExceptionErrorCode(e));
         }
 	}
 	

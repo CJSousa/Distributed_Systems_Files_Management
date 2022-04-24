@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 import jakarta.xml.ws.Endpoint;
 import tp1.discovery.Discovery;
 import tp1.impl.service.soap.files.FilesWebService;
-import tp1.impl.service.soap.users.UsersWebService;
 
 public class SoapFilesServer {
 	

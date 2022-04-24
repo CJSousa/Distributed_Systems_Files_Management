@@ -1,7 +1,6 @@
 package tp1.impl.service.soap.files;
 
 import jakarta.jws.WebService;
-import tp1.api.FileInfo;
 import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
 import tp1.api.service.util.Files;
@@ -34,16 +33,5 @@ public class FilesWebService implements SoapFiles {
 		if (!result.isOK())
 			throw new FilesException(result.error().toString());
 	}
-
-	/*
-	@Override
-	public FileInfo findFile(String fileId, String token) throws FilesException {
-		var result = impl.findFile(fileId, token);
-		if (result.isOK())
-			return result.value();
-		else
-			throw new FilesException(result.error().toString());
-	}
-	*/
 
 }
