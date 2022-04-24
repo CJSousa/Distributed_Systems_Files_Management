@@ -5,6 +5,7 @@ import java.net.URI;
 import javax.xml.namespace.QName;
 import jakarta.xml.ws.Service;
 import jakarta.xml.ws.WebServiceException;
+import tp1.api.FileInfo;
 import tp1.api.service.soap.DirectoryException;
 import tp1.api.service.soap.FilesException;
 import tp1.api.service.soap.SoapFiles;
@@ -43,7 +44,13 @@ public class SoapFilesClient extends SoapClient implements Files {
 	public Result<byte[]> getFile(String fileId, String token) {
 		return super.reTry(() -> clt_getFile(fileId, token));
 	}
-	
+	/*
+	@Override
+	public Result<FileInfo> findFile(String fileId, String token) {
+		return super.reTry(() -> clt_findFile(fileId, token));
+	}
+	*/
+
 	private Result<Void> clt_writeFile(String fileId, byte[] data, String token){
 		try {
 			files.writeFile(fileId, data, token);
@@ -69,5 +76,16 @@ public class SoapFilesClient extends SoapClient implements Files {
             return Result.error(SoapClient.errorCode(e));
         }
 	}
+	
+	/*
+	private Result<FileInfo> clt_findFile(String fileId, String token) {
+		try {
+            return Result.ok(files.findFile(fileId, token));
+        } catch (FilesException e) {
+            return Result.error(SoapClient.errorCode(e));
+        }
+	}
+	*/
+	
 
 }

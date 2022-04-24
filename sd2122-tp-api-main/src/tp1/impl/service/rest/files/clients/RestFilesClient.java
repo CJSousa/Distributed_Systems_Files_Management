@@ -7,6 +7,7 @@ import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
+import tp1.api.FileInfo;
 import tp1.api.service.rest.RestFiles;
 import tp1.api.service.util.Files;
 import tp1.api.service.util.Result;
@@ -38,8 +39,16 @@ public class RestFilesClient extends RestClient implements Files {
 	public Result<byte[]> getFile(String fileId, String token) {
 		return super.reTry(() -> clt_getFile(fileId, token));
 	}
+	
+	/*
+	@Override
+	public Result<FileInfo> findFile(String fileId, String token) {
+		return super.reTry(() -> clt_findFile(fileId, token));
+	}
+	*/
 
 	//
+
 
 	/**
 	 * Write a file. If the file exists, overwrites the contents. It consumes
@@ -96,15 +105,30 @@ public class RestFilesClient extends RestClient implements Files {
 		Response r = target.path(fileId)
 				.queryParam(RestFiles.TOKEN, token)
 				.request()
-				.accept(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_OCTET_STREAM)
 				.get();
 		
-		//return r.readEntity(new GenericType<Result<byte[]>>() {});
 		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
 			return Result.ok(r.readEntity(byte[].class));
 		else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 
 	}
+	/*
+	private Result<FileInfo> clt_findFile(String fileId, String token) {
+		
+		Response r = target.path(fileId)
+				.queryParam(RestFiles.TOKEN, token)
+				.request()
+				.accept(MediaType.APPLICATION_JSON)
+				.get();
+		
+		if (r.getStatus() == Status.OK.getStatusCode() && r.hasEntity()) 
+			return Result.ok(r.readEntity(FileInfo.class));
+		else
+			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
+	}
+
+*/
 
 }

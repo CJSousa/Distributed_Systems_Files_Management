@@ -2,6 +2,7 @@ package tp1.api.service.soap;
 
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
+import tp1.api.FileInfo;
 
 @WebService(serviceName=SoapFiles.NAME, targetNamespace=SoapFiles.NAMESPACE, endpointInterface=SoapFiles.INTERFACE)
 public interface SoapFiles {
@@ -17,5 +18,10 @@ public interface SoapFiles {
 	void deleteFile(String fileId, String token) throws FilesException;
 	
 	@WebMethod
-	void writeFile(String fileId, byte[] data, String token) throws FilesException;	
+	void writeFile(String fileId, byte[] data, String token) throws FilesException;
+
+	/*
+	@WebMethod
+	FileInfo findFile(String fileId, String token) throws FilesException;
+	*/
 }

@@ -95,7 +95,6 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.PASSWORD, password).request().delete();
 
 		if (r.getStatus() == Status.NO_CONTENT.getStatusCode()) {
-			// return r.readEntity(new GenericType<Result<FileInfo>>() {});
 			return Result.ok();
 		} else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
@@ -146,7 +145,7 @@ public class RestDirectoryClient extends RestClient implements Directory {
 		 else
 			return Result.error(Result.getResponseErrorCode(Status.fromStatusCode(r.getStatus())));
 	}
-
+	
 	private Result<FileInfo> clt_findFile(String filename, String userId, String accUserId, String password) {
 		
 		Response r = target.path(userId).path(filename).queryParam(RestUsers.USER_ID, accUserId)

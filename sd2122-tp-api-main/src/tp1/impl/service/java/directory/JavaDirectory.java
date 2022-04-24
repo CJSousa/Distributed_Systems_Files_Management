@@ -269,6 +269,7 @@ public class JavaDirectory implements Directory {
 
 		if (!file.isOK())
 			return Result.error(file.error());
+		
 
 		String[] url = file.value().getFileURL().split("/files");
 		URI uri = URI.create(url[0]);
@@ -277,9 +278,11 @@ public class JavaDirectory implements Directory {
 		
 		var fileResult = FilesClientFactory.getClient(uri).getFile(fileId, "token");
 
-		if (!fileResult.isOK())
+		if (!fileResult.isOK()) {
+			System.out.println("IN FILE RESULT: " + fileResult.error().toString());
 			return Result.error(fileResult.error());
-
+		}
+			
 		return fileResult;
 
 	}
@@ -329,23 +332,11 @@ public class JavaDirectory implements Directory {
 
 	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
 
-		System.out.println("INSIDE FIND FILE");
-		// Map<String, FileInfo> userIdFiles = userFiles.get(accUserId);
-
-		// Check if file exists
-		// String fileId = userId + DELIMITER + filename;
-		// FileInfo file = userIdFiles.get(fileId);
-		// System.out.println("USER " + accUserId + " has " +
-		// userIdFiles.get(accUserId));
-		// System.out.println("This is file " + fileId);
-
 		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
 
 		// Check if accUserId exists in the system
-		if (!accUserResult.isOK()) {
-			System.out.println("RESULT ACC USER ");
+		if (!accUserResult.isOK()) 
 			return Result.error(accUserResult.error());
-		}
 			
 
 		var userError = UsersClientFactory.getClient().getUser(userId, password).error();
@@ -358,31 +349,24 @@ public class JavaDirectory implements Directory {
 		Map<String, FileInfo> userIdFiles = userFiles.get(userId);
 		Map<String, FileInfo> accUserFiles = userFiles.get(accUserId);
 
-		if (userIdFiles == null) {
-			System.out.println("USER ID FILES");
+		if (userIdFiles == null) 
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		}
+	
 			
-		if (accUserFiles == null) {
-			System.out.println("ACC USER ID FILES");
+		if (accUserFiles == null) 
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		}
 
 		// Check if file exists
 		String fileId = userId + DELIMITER + filename;
 		FileInfo file = userIdFiles.get(fileId);
 
-		if (file == null) {
-			System.out.println("FILE ");
+		if (file == null) 
 			return Result.error(Result.ErrorCode.NOT_FOUND);
-		}
 
 		// Check if file can be read
 		if (!this.canRead(accUserFiles, fileId, file, accUserId))
 			return Result.error(Result.ErrorCode.FORBIDDEN);
 
-		System.out.println("LEAVE FIND FILE");
-	
 		return Result.ok(file);
 
 	}

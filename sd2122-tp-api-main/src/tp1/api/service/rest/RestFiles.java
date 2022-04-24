@@ -10,6 +10,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.core.MediaType;
+import tp1.api.FileInfo;
 
 @Path(RestFiles.PATH)
 public interface RestFiles {
@@ -69,5 +70,11 @@ public interface RestFiles {
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
 	byte[] getFile(@PathParam("fileId") String fileId, 
 			@QueryParam("token") @DefaultValue("") String token);
+	/*
+	@GET
+	@Path("/{fileId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	FileInfo findFile(@PathParam("fileId") String fileId, @QueryParam("token") @DefaultValue("") String token);
+	*/
 
 }

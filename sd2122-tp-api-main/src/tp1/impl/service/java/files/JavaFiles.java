@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 import jakarta.inject.Singleton;
+import tp1.api.FileInfo;
 import tp1.api.service.util.Files;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -117,5 +118,13 @@ public class JavaFiles implements Files {
 		
 		return Result.ok(data);
 	}
+
+	/*
+	@Override
+	public Result<FileInfo> findFile(String fileId, String token) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	*/
 
 }

@@ -1,5 +1,6 @@
 package tp1.api.service.util;
 
+import tp1.api.FileInfo;
 
 public interface Files {
 
@@ -43,5 +44,7 @@ public interface Files {
      *        BAD_REQUEST otherwise.
      */
     Result<byte[]> getFile(String fileId, String token);
+
+	//Result<FileInfo> findFile(String fileId, String token);
 
 }

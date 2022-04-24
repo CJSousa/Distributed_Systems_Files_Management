@@ -175,17 +175,17 @@ Starting REST services: Users : <1> replicas : mainClass = <tp1.impl.service.res
 INFO: Starting REST services: Users : <1> replicas : mainClass = <tp1.impl.service.rest.users.servers.RestUsersServer> ; TLS : false
 CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name users1.ourorg -h users1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.users.servers.RestUsersServer mysecret
 Started: users1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.users.servers.RestUsersServer mysecret
-9c863ca31997df31357c2f50b00431560d90e6fe552f238b4ac2c622838da861
+644fe4e629144cf8f60c61f3ff95f30924d4043b94c06e095bfee8c4bf54aef1
 Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
 INFO: Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
 CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name dir1.ourorg -h dir1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
 Started: dir1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
-d0281eea294d406a317f4ca911e00cde9d004476906c0051d62f910e74972059
+5516c21f08911c384bf7f39e25cf510217880f1bd3bc743bef4673487e210c93
 Starting REST services: Files : <1> replicas : mainClass = <tp1.impl.service.rest.files.servers.RestFilesServer> ; TLS : false
 INFO: Starting REST services: Files : <1> replicas : mainClass = <tp1.impl.service.rest.files.servers.RestFilesServer> ; TLS : false
 CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name files1.ourorg -h files1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.files.servers.RestFilesServer mysecret
 Started: files1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.files.servers.RestFilesServer mysecret
-74dc7c2449727b39ea28620c837e57949ec21f1e758839fcce650c876c3100b1
+6fa69a1d39f199ec3919aa8068b217cff6789bc48f40f803d9bb18cb6439994f
 sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Creating 5 users
 1/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=jackie.rau@ourorg, userId=jackie.rau, fullName=Sergio Cartwright, password=pcfr3k96] -> 200:jackie.rau
 2/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=gregory.wiza@ourorg, userId=gregory.wiza, fullName=Cynthia Jenkins, password=i2p8a933fl] -> 200:gregory.wiza
@@ -213,8 +213,7 @@ sleeping: 9 s                                                                   
 18/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = error.jpg ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 89bf9c605c -> OK:FileInfo [owner=digna.hilll, filename=error.jpg, fileURL=http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!error.jpg, sharedWith=null]
 19/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = et.numbers ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = a7b77b2102 -> OK:FileInfo [owner=dillon.bayer, filename=et.numbers, fileURL=http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!et.numbers, sharedWith=null]
 20/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugit.ppt ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 94483ff6f7 -> OK:FileInfo [owner=terence.bartoletti, filename=fugit.ppt, fileURL=http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!fugit.ppt, sharedWith=null]
-sleeping: 9 s                                                                                nsleeping: 8 s                                                                                sleeping: 7 s                                                                                
-sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 20 files
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 20 files
 [GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> -1 INTERNAL_ERROR
 tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -379,12 +378,14 @@ FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 
 -----------------------------------------------------------------------------------
 dir1.ourorg
 -----------------------------------------------------------------------------------
 INFO: Starting discovery on multicast group: /226.226.226.226, port: 2266
 INFO: Starting Discovery announcements on: /226.226.226.226:2266 for: directory -> http://172.18.0.4:8080/soap
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 INFO: directory Soap Server ready @ http://172.18.0.4:8080/soap
@@ -445,7 +446,6 @@ FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
-FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 ---[HTTP request]---
 Accept: text/xml, multipart/related
 Connection: keep-alive
@@ -460,13 +460,14 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
-FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
-FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
-JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:26 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!occaecati.xlsx</fileURL><filename>occaecati.xlsx</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -488,7 +489,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:26 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consectetur.js</fileURL><filename>consectetur.js</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -508,9 +509,10 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:26 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!ducimus.doc</fileURL><filename>ducimus.doc</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -531,9 +533,8 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 --------------------
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
-FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!voluptas.flac</fileURL><filename>voluptas.flac</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -555,7 +556,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!porro.csv</fileURL><filename>porro.csv</filename><owner>digna.hilll</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -575,9 +576,10 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!fugiat.gif</fileURL><filename>fugiat.gif</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -599,7 +601,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:09 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!blanditiis.pages</fileURL><filename>blanditiis.pages</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -619,10 +621,10 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
-FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!facere.xls</fileURL><filename>facere.xls</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -644,7 +646,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!cumque.bmp</fileURL><filename>cumque.bmp</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -665,9 +667,9 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 --------------------
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
-FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!qui.xlsx</fileURL><filename>qui.xlsx</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -689,7 +691,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:27 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!temporibus.webm</fileURL><filename>temporibus.webm</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -711,7 +713,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!magnam.odt</fileURL><filename>magnam.odt</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -733,7 +735,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consequatur.bmp</fileURL><filename>consequatur.bmp</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -754,8 +756,9 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 --------------------
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!sit.mp4</fileURL><filename>sit.mp4</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -775,10 +778,9 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
-FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!dignissimos.ppt</fileURL><filename>dignissimos.ppt</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -799,8 +801,9 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 --------------------
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!aut.csv</fileURL><filename>aut.csv</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -822,7 +825,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!repellendus.ppt</fileURL><filename>repellendus.ppt</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -844,7 +847,7 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!error.jpg</fileURL><filename>error.jpg</filename><owner>digna.hilll</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
@@ -858,8 +861,8 @@ User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
 Content-type: text/xml; charset=utf-8
 Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
 Content-length: 5740
-<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>et.numbers</arg0><arg1>p7d7IQIvlxz/IUCm5QU2wdJg7Zr8mBMi0yFxsLNh5aZUBZM+BDgC0b3wVqWsgnEMdYOFapaXVJ4jFpFeFvoOkm3yNtkgjkLRpsHo8KqCLJEGm9nL1HK1g2Iuw6OKXAa4f1arCb9c0D50dkB+cvR+R7N3XRcav9QSvJp1zS5Kfn17oq9C4PbD7ePC2AhLyjyUTzXWXqCdE3Gf+eIFEY/1kzMpq6yTtdPVNelaYrA8x/vQizLg8QIDHT9c8BG47Elv4PfpYX8mv/ivhgi4ztzTQ8+v7E9sTcN/E1sX1pzUzRGfPmzHXoqB4Blw4kkJdxOfC8OXLMYrUElWOs5RqvJqTu9ICmx7o+UIQp4eiHfF4jDm1HofhtPySoceIH3Bh5tHNAbvjTvUVKF6Kr/LY/JuEuZyW0iIh1Tw6VBneDeUREE4IqukkY37FBdbXOfM6vcFNsnZNHtu60wElFvKVdK60qWtYhSHDZ2w8L9zneOAGjAiUwAuY7m78CKI5vzWgHwli1bXfLxtsI7lXs6hkV5Mgp8b6XgXGqdc0x9wxWz9aTTgMFHt4QGhq1Xwzyvux/P8wI2aIcSJxPtpJJUJOy+H7vwOqKQ7BkylpivBR8stxZJC1X3paF96/HzKeX1cwY+3GWrv6iSeFTLAI2cFKZBQQgHPEP1YtlRBaFYqTVwt6P/Z2oYAiiIvzZKzeVrAsOjtgIm1Jrok0ubK0Ls+upW1lL8hkRRvwOhujPrKD3kVTpVmVcFODMKgiAfLHv9scCbYtL8Ts2dnKGkk6TFY9NrH1/tlLTubfQWGxTPW11sBNkmEHkEhHQhgqVHdicADV5QQrwGLqw3FZwJwOwTg4qR0oV9Jr6zOIp2yE09ZAC2L2/KUQh0g2Ho7RLZIf9dT6p5WWDV9CMyli5vpjPHSLGeNRd9mOtXIPMNhC/3gPnJ+DX3pmahx/BuGPVmIGWlv29VCa7FWvn36ZOAmScHr+OVH321ZFnpZKw2La7KVM5m7ECo12lqW6tuKCIKRj0wRCESepXkPCG9jQLUu6B6/AHFnxuEOKG3Yd0o13uK7y96IHNU0rDRO4FsyYTJvmhovfYIHNINrdGFaTFS+NiJG9PNHiiNnKj7jIjKvDQKlyGTM+EyYkSMwddutH+jH6VTctpqvXo1/PsD7Yz/X7MKNE9hmsRemoving: files1.ourorg
-JtreJlYRddY53ZKP5HrnRE0p5C6VW1DsK05x4RhmVdtcFrKNCJLgHCLPurEBfME3tuqaXmUoOhMMe1Dw6lLaYFsjxeWPc9clWa4xJWb30vY6VTohgIPK8IIUxWA+/5XwoqEG1Hr+SsYUbHOOK6vyGrcEKHgOoH7ultaWh6Y+tfy6OzJ3L6fI3HlzcdWCVi5gZRxSAZoXY81VwJst3fvadJINQeEHvjx9wM/7NpunhiF0zmjA89FNzyt1qW+xPqSv5CUwBfHo8+MTYZ4HxDEQ9XE9D6IQwf7bRJ8ESJbeCJHSqzFuEgDXAaqSjFoGAC75XEedSew11RswExH21Glb+YluQW6hN09NcY8YUEjyoZwTNx66ZHkpdTzBBY8bBK5WXJTEk41VsKzjwv/9cL0C0SnRX/seTE+5W5/w2Km5g8Lp78JbWQ09IS5aO0z+JdY3Ds8GvOOxhFP9IH4Ka7xeJnfzkoi8njluzsdhyHAyzNQpdSNYwgvdf7OmamYZo4t+1lPlDsTRSUB0C3pm4UyehnkTpxpt0d71ksIj05mVSZx9QxyJc4QnNF3D60RqFOR592e9KJ7Xc5zO7/9qXifWV26YRmbfjFIv/TrBHL+xfv514R3/MmbHg10bTNsGthXEFNWF7JUsJTRTPZr9E8qWHgANtcsLct/cE6bZ3H/ny/OjFJytNJwRGBNz1wR2PVU3OaUU4fCX1DuJtczqo6/w53aXSEuUacraQT6v+DKDGPJ/vmUt7zXg7ve8STkYen88NHv+ox8nzFuRGAEN8ksMZ0gjOdV3mlq9ltLhxfITIHXq1B9tNPSVF4m5xNGbSc6mwgpWSkEBFACBi/A4ET42zjIiRLxKU+r6YMTljvE7O/U1917W5uZjF9MQMaDDAw+hijmscgnbZnlfL4yUs5lTdeR787XJMLffh73iliLvENv8wIBQcfWuBPz2cYPAB/ZtZ1zEI+1pzFQcixnx98kZ2jxb1ZV2d0psw9FvfbCwmJCSHj5XHdFE3bAttwMXOkKPRPgP4GBIknBvLD9xPFjBSBCvSbdKfaXGIUWP9QHqkZ66OltdreJA7QplCN3XZg45x/8L5KbUmJLwzIVWRxF3zooWCdPxYNCxUgx76pMY/q/18AvYDRg/tt/JUYniekUwC0KptDNoiqcUakiqPbvW65G0j2CbQ/jJkIYY8Jw+TBOdWT/mkGBJj4/IT1LBhz7TK0qntBUCrVCmTCgdKm8/fYiUXp2afj3tlH2xUkf0jLYL4CmYwrTpGqWjE5GPeORV3rQdEjhpknUiwIazFU0DDxVXZxdRTICEkxP6abs1xnSZxk7nBfHeqYy8ewksJY6TovJDezP9V50Vr0HoajiiHf3SXIW0VWfNVSj8IKtSax8oIFmXwX/2sZQacaKGBtcqN2n+JumiO7+PqRU1bw0egBKwMONWKFzaF1weQQWK9lu7nBdb4CUGVwDrg/Aw0BAFKCWSJTQUHCQoMa5vzHhcrilO1IKIMRE6/w9JWmZkijEntR0cISgRgPDkx/5LJM936DntwKa3pxrQzlZHIyVM62kgUDZI5GPR3OfO8d9UJ1nIR4p3dTdwkc2oQM/3NWGaPfk/TVuL+it4c2hYc/kl3GPYiRJDPWHNPpX9tE9q8xuPx5Ej7uC1z9CrBZLgKp0IPKyN+VP57Pf9vSmy1mz7vYHTmTcdMsTU1ANMtokLZQmerjPUwOuz6dUqQ7pTBy1skFOKx6WEcEPyLUI9ACcqbb4h4wbXm8uu4M08i8mvxRTv/rxTTMDg7HqGK/skAzAVmLyPYjsxK7Jt+iDQW0KNm27CT5G8CJ8rPwkp2kBjbV0VGXpgw1S7qlnv5HImLx+sFB0dXCHRpQoxx+L0rcGFieKW3spdKrp7899scKVbihd/m5mMUZloHYYk4dUyfB/OGhdBqWpiEJ4bOkcIEPuLZIq8qXEj7ZFPEFJdr2A0vx2cpGxz4hUpliCDDA6+WiZWJvSBnVWILIUlVmse9yV90PU3LjXwPkOe5mKu+z+ZX1J/2mr5qb1g03vRM3fD6q6jNqTIC9VDthm/ASdsg6RIktkz3N1HAV7OCwiNVb/9Z+mebr+7R9J4l85j08C21Q0Kb+fyoBq98xDrNrLrciaXAXF1HvPSUg/EaMzZkuKRfa6aFYS3Nb9NqzVdlOqOIYSZXlH7fLSpx9u04ciYjJbzOGcNTWBuNAmJZB6gxBS1RHNckirlA9o/VAjUZnaYfyf6fq+GRH//ZREylGDEswGdMM0X4QEJ6Q8pjI5F9GW2Ou7B7z9o62Hatn1zJWDkP36JGN18DmWmLycY5K34ciSeOWq1vnpV9KLlIStB4I+091XS3dliKv5EmxdLF+d3TsUprDBL6Km4+KVckKzVql6bftahG8gCZprvYw4jZ40nc4gSfFk/djwAoC8FKshVjK7yaCvbjwqYUapnz60fBxThEqJ4wuXPz0/ruKj3YsAx6obVlAcEteRjYkIIQ1BWrfCY+j4/U3BSE8KajLEHRamGmNU4jnksWC+lH8xFqynm06iwtxnbFZO2sddom4LO8AL+pl2C9qs2h1Uf1UwjzDU1y3Yfao8jhKE/chhfj7GO/PYxrN/lI4bNIzIOgy6FZKjus6WMl8IAlWsPWfiJkD3nyGjZifTddQHHNub2X/qjTfcq8aI8/yfl0dPPmZj6Ntd75miXt1OItSsgZRqpDgCUKFcORztskSFOBkkZqMyAEGIN3JJzl60MslF
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>et.numbers</arg0><arg1>p7d7IQIvlxz/IUCm5QU2wdJg7Zr8mBMi0yFxsLNh5aZUBZM+BDgC0b3wVqWsgnEMdYOFapaXVJ4jFpFeFvoOkm3yNtkgjkLRpsHo8KqCLJEGm9nL1HK1g2Iuw6OKXAa4f1arCb9c0D50dkB+cvR+R7N3XRcav9QSvJp1zS5Kfn17oq9C4PbD7ePC2AhLyjyUTzXWXqCdE3Gf+eIFEY/1kzMpq6yTtdPVNelaYrA8x/vQizLg8QIDHT9c8BG47Elv4PfpYX8mv/ivhgi4ztzTQ8+v7E9sTcN/E1sX1pzUzRGfPmzHXoqB4Blw4kkJdxOfC8OXLMYrUElWOs5RqvJqTu9ICmx7o+UIQp4eiHfF4jDm1HofhtPySoceIH3Bh5tHNAbvjTvUVKF6Kr/LY/JuEuZyW0iIh1Tw6VBneDeUREE4IqukkY37FBdbXOfM6vcFNsnZNHtu60wElFvKVdK60qWtYhSHDZ2w8L9zneOAGjAiUwAuY7m78CKI5vzWgHwli1bXfLxtsI7lXs6hkV5Mgp8b6XgXGqdc0x9wxWz9aTTgMFHt4QGhq1Xwzyvux/P8wI2aIcSJxPtpJJUJOy+H7vwOqKQ7BkylpivBR8stxZJC1X3paF96/HzKeX1cwY+3GWrv6iSeFTLAI2cFKZBQQgHPEP1YtlRBaFYqTVwt6P/Z2oYAiiIvzZKzeVrAsOjtgIm1Jrok0ubK0Ls+upW1lL8hkRRvwOhujPrKD3kVTpVmVcFODMKgiAfLHv9scCbYtL8Ts2dnKGkk6TFY9NrH1/tlLTubfQWGxTPW11sBNkmEHkEhHQhgqVHdicADV5QQrwGLqw3FZwJwOwTg4qR0oV9Jr6zOIp2yE09ZAC2L2/KUQh0Removing: files1.ourorg
+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
 
 Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
@@ -867,12 +870,13 @@ use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase 
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:10 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!et.numbers</fileURL><filename>et.numbers</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
 --------------------
 
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 ---[HTTP request]---
 Accept: text/xml, multipart/related
 Connection: keep-alive
@@ -887,17 +891,14 @@ Message has been truncated
 use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
 --------------------
 
-FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
 ---[HTTP response 200]---
-Date: Sun, 24 Apr 2022 11:26:11 GMT
+Date: Sun, 24 Apr 2022 12:10:28 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!fugit.ppt</fileURL><filename>fugit.ppt</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
 --------------------
 
-FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
-FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
@@ -926,6 +927,8 @@ FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
 FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 ---[HTTP request]---
 Accept: text/xml, multipart/related
 Connection: keep-alive
@@ -938,7 +941,7 @@ Content-length: 285
 --------------------
 
 JerseyWebTarget { http://172.18.0.5:8080/rest/files }
-FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+IN FILE RESULT: INTERNAL_ERROR
 tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
 	at tp1.impl.service.soap.directory.DirectoryWebService.getFile(DirectoryWebService.java:56)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -974,13 +977,13 @@ tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
 	at java.base/java.lang.Thread.run(Thread.java:833)
 tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
 ---[HTTP response 500]---
-Date: Sun, 24 Apr 2022 11:26:21 GMT
+Date: Sun, 24 Apr 2022 12:10:39 GMT
 Transfer-encoding: chunked
 Content-type: text/xml; charset=utf-8
 <?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope"><faultcode>S:Server</faultcode><faultstring>INTERNAL_ERROR</faultstring><detail><ns2:DirectoryException xmlns:ns2="http://sd2122"><errorCode>INTERNAL_ERROR</errorCode><message>INTERNAL_ERROR</message></ns2:DirectoryException></detail></S:Fault></S:Body></S:Envelope>
 --------------------
 
-FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 
 -----------------------------------------------------------------------------------
 files1.ourorg
@@ -1085,9 +1088,11 @@ FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
 FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
 FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
 FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
 
 
 
 Continue (Y/N) ?
+n
 Exiting...
