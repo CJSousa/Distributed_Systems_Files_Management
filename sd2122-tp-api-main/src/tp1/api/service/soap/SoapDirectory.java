@@ -1,11 +1,8 @@
 package tp1.api.service.soap;
 
 import java.util.List;
-
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.QueryParam;
 import tp1.api.FileInfo;
 
 @WebService(serviceName=SoapDirectory.NAME, targetNamespace=SoapDirectory.NAMESPACE, endpointInterface=SoapDirectory.INTERFACE)

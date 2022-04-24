@@ -10,8 +10,11 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URI;
 import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * <p>A class to perform service discovery, based on periodic service contact endpoint 
@@ -38,7 +41,7 @@ public class Discovery {
 	// The pre-aggreed multicast endpoint assigned to perform discovery. 
 	static final InetSocketAddress DISCOVERY_ADDR = new InetSocketAddress("226.226.226.226", 2266);
 	static final int DISCOVERY_PERIOD = 1000;
-	static final int DISCOVERY_TIMEOUT = 5000;
+	static final int DISCOVERY_TIMEOUT = 10000;
 
 	// Used separate the two fields that make up a service announcement.
 	private static final String DELIMITER = "\t";
@@ -115,6 +118,7 @@ public class Discovery {
 	 * @param serviceName - the composite name of the service
 	 * @return the discovery results as an array
 	 */
+	@SuppressWarnings("unlikely-arg-type")
 	public void listener(int minRepliesNeeded) {
 		Log.info(String.format("Starting discovery on multicast group: %s, port: %d\n", DISCOVERY_ADDR.getAddress(), DISCOVERY_ADDR.getPort()));
 
@@ -163,7 +167,16 @@ public class Discovery {
 					} catch (IOException e) {
 						e.printStackTrace();
 						try {
+							for (ConcurrentMap<URI, Long> map : servicesNet.values()) {
+                                Iterator<Map.Entry<URI, Long>> it = map.entrySet().iterator();
+                                while (it.hasNext()) {
+                                    Map.Entry<URI, Long> entry = it.next();
+                                    if (System.currentTimeMillis() - entry.getValue() >= DISCOVERY_TIMEOUT)
+                                    	servicesNet.remove(entry.getKey());
+                                }
+                            }
 							Thread.sleep(DISCOVERY_PERIOD);
+							
 						} catch (InterruptedException e1) {
 						// do nothing
 						}

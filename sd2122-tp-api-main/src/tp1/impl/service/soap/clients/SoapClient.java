@@ -17,46 +17,7 @@ public class SoapClient {
 	protected static final int REQUEST_TIMEOUT = 10000;
 	protected static final int CONNECT_TIMEOUT = 10000;
 	protected static final int RETRY_SLEEP = 1000;
-	protected static final int MAX_RETRIES = 3;; 
-
-	/*
-	public <T> Result<T> reTry(ThrowsSupplier<T> func) {
-		// Mudar erro default
-		Result<T> result = Result.error(Result.ErrorCode.NOT_IMPLEMENTED);
-		for (int i = 0; i < MAX_RETRIES; i++) {
-			try {
-				var resultOk = func.get();
-				result = Result.ok(resultOk);
-				break;
-			} catch (WebServiceException we) { 
-				sleep(RETRY_SLEEP);
-			} catch (Exception e) {
-				if (e instanceof SoapException) result = Result.error(((SoapException) e).getErrorCode());
-				e.printStackTrace(); 
-				break;
-			}
-		}
-		return result;
-	}
-	
-	public <T> Result<T> reTry(VoidSupplier<T> func) {
-		// Mudar erro default
-		Result<T> result = Result.error(Result.ErrorCode.NOT_IMPLEMENTED);
-		for (int i = 0; i < MAX_RETRIES; i++) {
-			try {
-				func.run();
-				return Result.ok();
-			} catch (WebServiceException we) { 
-				sleep(RETRY_SLEEP);
-			} catch (Exception e) {
-				if (e instanceof SoapException) result = Result.error(((SoapException) e).getErrorCode());
-				e.printStackTrace();
-				break;
-			}
-		}
-		return result;
-	}
-	*/
+	protected static final int MAX_RETRIES = 3;
 	
 	@SuppressWarnings("unchecked")
 	public <T> T reTry(Supplier<T> func) {

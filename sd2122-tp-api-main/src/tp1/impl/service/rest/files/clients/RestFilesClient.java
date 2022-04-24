@@ -16,13 +16,9 @@ import tp1.impl.service.rest.clients.RestClient;
 public class RestFilesClient extends RestClient implements Files {
 
 	final WebTarget target;
-
-	// PAY ATTENTION BECAUSE 200 and 204 should both present as 200s
-
 	public RestFilesClient(URI serverURI) {
 		super(serverURI);
 		target = client.target(serverURI).path(RestFiles.PATH);
-		System.out.println(target);
 	}
 
 	@Override
@@ -40,13 +36,6 @@ public class RestFilesClient extends RestClient implements Files {
 		return super.reTry(() -> clt_getFile(fileId, token));
 	}
 	
-	/*
-	@Override
-	public Result<FileInfo> findFile(String fileId, String token) {
-		return super.reTry(() -> clt_findFile(fileId, token));
-	}
-	*/
-
 	//
 
 
