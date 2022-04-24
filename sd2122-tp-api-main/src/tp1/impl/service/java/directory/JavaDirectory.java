@@ -79,6 +79,7 @@ public class JavaDirectory implements Directory {
 
 			// int fileSizeAdjustment = data.length - servers.get(uri).get();
 			// servers.get(uri).getAndAdd(fileSizeAdjustment);
+			files.put(fileId, file);
 
 		} else {
 
@@ -95,10 +96,11 @@ public class JavaDirectory implements Directory {
 			file = new FileInfo(userId, filename, uri.toString() + "/files/" + fileId, new HashSet<String>());
 			// servers.get(uri).getAndAdd(data.length);
 			servers.get(uri).getAndIncrement();
+			files.putIfAbsent(fileId, file);
 
 		}
 
-		files.put(fileId, file);
+		//files.put(fileId, file);
 
 		return Result.ok(file);
 	}
@@ -263,60 +265,22 @@ public class JavaDirectory implements Directory {
 	@Override
 	public Result<byte[]> getFile(String filename, String userId, String accUserId, String password) {
 
-		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
+		var file = this.findFile(filename, userId, accUserId, password);
 
-		// Check if accUserId exists in the system
-		if (!accUserResult.isOK())
-			return Result.error(accUserResult.error());
+		if (!file.isOK())
+			return Result.error(file.error());
 
-		var userError = UsersClientFactory.getClient().getUser(userId, password).error();
-
-		// Check if accUserId exists in the system
-		if (userError != Result.ErrorCode.FORBIDDEN && !userId.equals(accUserId))
-			return Result.error(userError);
-
-		// Check if userId and accUserId exist in directory
-		Map<String, FileInfo> userIdFiles = userFiles.get(userId);
-		Map<String, FileInfo> accUserFiles = userFiles.get(accUserId);
-
-		if (userIdFiles == null)
-			return Result.error(Result.ErrorCode.NOT_FOUND);
-
-		if (accUserFiles == null)
-			return Result.error(Result.ErrorCode.NOT_FOUND);
-
-		// Check if file exists
-		String fileId = userId + DELIMITER + filename;
-		FileInfo file = userIdFiles.get(fileId);
-
-		if (file == null)
-			return Result.error(Result.ErrorCode.NOT_FOUND);
-
-		// Check if file can be read
-		if (!this.canRead(accUserFiles, fileId, file, accUserId))
-			return Result.error(Result.ErrorCode.FORBIDDEN);
-
-		String[] url = file.getFileURL().split("/files");
+		String[] url = file.value().getFileURL().split("/files");
 		URI uri = URI.create(url[0]);
+
+		String fileId = userId + DELIMITER + filename;
 		
 		var fileResult = FilesClientFactory.getClient(uri).getFile(fileId, "token");
-		
+
 		if (!fileResult.isOK())
 			return Result.error(fileResult.error());
-		
-		return fileResult;
 
-		/*
-		 * // Improve? else if(file.getFileURL().contains("rest")) throw new
-		 * WebApplicationException(Response.temporaryRedirect(URI.create(file.getFileURL
-		 * ())).build());
-		 * 
-		 * else { String[] url = file.getFileURL().split("/files"); URI uri =
-		 * URI.create(url[0]); var fileResult =
-		 * FilesClientFactory.getClient(uri).getFile(fileId, "token");
-		 * if(!fileResult.isOK()) return Result.error(fileResult.error()); return
-		 * fileResult; }
-		 */
+		return fileResult;
 
 	}
 
@@ -365,16 +329,60 @@ public class JavaDirectory implements Directory {
 
 	public Result<FileInfo> findFile(String filename, String userId, String accUserId, String password) {
 
-		// Checking stuff?
+		System.out.println("INSIDE FIND FILE");
+		// Map<String, FileInfo> userIdFiles = userFiles.get(accUserId);
+
+		// Check if file exists
+		// String fileId = userId + DELIMITER + filename;
+		// FileInfo file = userIdFiles.get(fileId);
+		// System.out.println("USER " + accUserId + " has " +
+		// userIdFiles.get(accUserId));
+		// System.out.println("This is file " + fileId);
+
+		var accUserResult = UsersClientFactory.getClient().getUser(accUserId, password);
+
+		// Check if accUserId exists in the system
+		if (!accUserResult.isOK()) {
+			System.out.println("RESULT ACC USER ");
+			return Result.error(accUserResult.error());
+		}
+			
+
+		var userError = UsersClientFactory.getClient().getUser(userId, password).error();
+
+		// Check if accUserId exists in the system
+		if (userError != Result.ErrorCode.FORBIDDEN && !userId.equals(accUserId))
+			return Result.error(userError);
+
 		// Check if userId and accUserId exist in directory
-		Map<String, FileInfo> userIdFiles = userFiles.get(accUserId);
+		Map<String, FileInfo> userIdFiles = userFiles.get(userId);
+		Map<String, FileInfo> accUserFiles = userFiles.get(accUserId);
+
+		if (userIdFiles == null) {
+			System.out.println("USER ID FILES");
+			return Result.error(Result.ErrorCode.NOT_FOUND);
+		}
+			
+		if (accUserFiles == null) {
+			System.out.println("ACC USER ID FILES");
+			return Result.error(Result.ErrorCode.NOT_FOUND);
+		}
 
 		// Check if file exists
 		String fileId = userId + DELIMITER + filename;
 		FileInfo file = userIdFiles.get(fileId);
-		System.out.println("USER " + accUserId + " has " + userIdFiles.get(accUserId));
-		System.out.println("This is file " + fileId);
 
+		if (file == null) {
+			System.out.println("FILE ");
+			return Result.error(Result.ErrorCode.NOT_FOUND);
+		}
+
+		// Check if file can be read
+		if (!this.canRead(accUserFiles, fileId, file, accUserId))
+			return Result.error(Result.ErrorCode.FORBIDDEN);
+
+		System.out.println("LEAVE FIND FILE");
+	
 		return Result.ok(file);
 
 	}

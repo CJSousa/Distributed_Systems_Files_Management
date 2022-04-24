@@ -1,0 +1,1093 @@
+Using default tag: latest
+latest: Pulling from nunopreguica/sd2122-tester-tp1
+Digest: sha256:58741980c8f976e0b34ca79c5884cfdd37c8422be0dcd1ddb4d0718f0aea8242
+Status: Image is up to date for nunopreguica/sd2122-tester-tp1:latest
+docker.io/nunopreguica/sd2122-tester-tp1:latest
+SD2122 +++ TP1 +++ Testing image: sd2122-tp1-58403-58655
+Version 05.2 - 16/04/2022
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1a )	 Testing Docker environment [executing: docker info]
+---------------------------------------------------------------
+Docker ID: VRJV:7BB7:PYSS:PXXG:VYH3:QSKU:ZAQQ:GZJL:45CS:45H7:RORG:DDKK
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1b )	Testing: Docker engine CPU cores...
+---------------------------------------------------------------
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1c )	Checking trabs.props [executing: docker run sd2122-tp1-58403-58655 /bin/cat trabs.props and nunopreguica/sd2122tpbase]
+---------------------------------------------------------------
+; Read properties from: ./trabs.props
+;	USERS_REST_SERVER_MAINCLASS=tp1.impl.service.rest.users.servers.RestUsersServer
+;	DISCOVERY_MULTICAST_PORT=2266
+;	DISCOVERY_MULTICAST_IP=226.226.226.226
+;	FILES_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.files.servers.SoapFilesServer
+;	DIR_REST_PORT=8080
+;	USERS_EXTRA_ARGS=mysecret
+;	DIR_EXTRA_ARGS=mysecret
+;	USERS_REST_PORT=8080
+;	FILES_REST_SERVER_MAINCLASS=tp1.impl.service.rest.files.servers.RestFilesServer
+;	DIR_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.directory.servers.SoapDirectoryServer
+;	FILES_REST_PORT=8080
+;	DIR_REST_SERVER_MAINCLASS=tp1.impl.service.rest.directory.servers.RestDirectoryServer
+;	DIR_SOAP_PORT=8080
+;	USERS_SOAP_SERVER_MAINCLASS=tp1.impl.service.soap.users.servers.SoapUsersServer
+;	FILES_EXTRA_ARGS=mysecret
+;	FILES_SOAP_PORT=8080
+;	USERS_SOAP_PORT=8080
+OK                                                                                                                   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7f )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+9c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12c )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12d )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12e )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13a )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13b )	  Skipped...
+---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13c )	 Testing Directory Service : create, get, ls, share, unshare : : [1,0,1] REST servers ; [0,1,0] SOAP servers; [0,0,0] PROXY servers
+---------------------------------------------------------------
+Starting REST services: Users : <1> replicas : mainClass = <tp1.impl.service.rest.users.servers.RestUsersServer> ; TLS : false
+INFO: Starting REST services: Users : <1> replicas : mainClass = <tp1.impl.service.rest.users.servers.RestUsersServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name users1.ourorg -h users1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.users.servers.RestUsersServer mysecret
+Started: users1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.users.servers.RestUsersServer mysecret
+9c863ca31997df31357c2f50b00431560d90e6fe552f238b4ac2c622838da861
+Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+INFO: Starting SOAP services: Directory : <1> replicas : mainClass = <tp1.impl.service.soap.directory.servers.SoapDirectoryServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name dir1.ourorg -h dir1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+Started: dir1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.soap.directory.servers.SoapDirectoryServer mysecret
+d0281eea294d406a317f4ca911e00cde9d004476906c0051d62f910e74972059
+Starting REST services: Files : <1> replicas : mainClass = <tp1.impl.service.rest.files.servers.RestFilesServer> ; TLS : false
+INFO: Starting REST services: Files : <1> replicas : mainClass = <tp1.impl.service.rest.files.servers.RestFilesServer> ; TLS : false
+CMD: /usr/bin/docker run --rm --privileged -d --network=sdnet --name files1.ourorg -h files1.ourorg sd2122-tp1-58403-58655 java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.files.servers.RestFilesServer mysecret
+Started: files1.ourorg : java --add-opens java.base/java.lang=ALL-UNNAMED -cp /home/sd/sd2122.jar tp1.impl.service.rest.files.servers.RestFilesServer mysecret
+74dc7c2449727b39ea28620c837e57949ec21f1e758839fcce650c876c3100b1
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Creating 5 users
+1/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=jackie.rau@ourorg, userId=jackie.rau, fullName=Sergio Cartwright, password=pcfr3k96] -> 200:jackie.rau
+2/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=gregory.wiza@ourorg, userId=gregory.wiza, fullName=Cynthia Jenkins, password=i2p8a933fl] -> 200:gregory.wiza
+3/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=terence.bartoletti@ourorg, userId=terence.bartoletti, fullName=Duncan Rau, password=9ckdkq2g5v64p] -> 200:terence.bartoletti
+4/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=dillon.bayer@ourorg, userId=dillon.bayer, fullName=Miyoko Hayes, password=gm7h08scerl0y] -> 200:dillon.bayer
+5/5                                                                                [PostUser http://172.18.0.3:8080/rest] User [email=digna.hilll@ourorg, userId=digna.hilll, fullName=Burl Schaden, password=jazhvzdqm4u5] -> 200:digna.hilll
+sleeping: 9 s                                                                                sleeping: 8 s                                                                                sleeping: 7 s                                                                                sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Writing 20 new files
+1/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = gregory.wiza ; password = i2p8a933fl ; data = 452250280d -> OK:FileInfo [owner=gregory.wiza, filename=occaecati.xlsx, fileURL=http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!occaecati.xlsx, sharedWith=null]
+2/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consectetur.js ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 9237908f5d -> OK:FileInfo [owner=dillon.bayer, filename=consectetur.js, fileURL=http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consectetur.js, sharedWith=null]
+3/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = ducimus.doc ; userId = jackie.rau ; password = pcfr3k96 ; data = 3f787e83b6 -> OK:FileInfo [owner=jackie.rau, filename=ducimus.doc, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!ducimus.doc, sharedWith=null]
+4/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = voluptas.flac ; userId = gregory.wiza ; password = i2p8a933fl ; data = 93e55a39a9 -> OK:FileInfo [owner=gregory.wiza, filename=voluptas.flac, fileURL=http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!voluptas.flac, sharedWith=null]
+5/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = porro.csv ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = d0a66f12d8 -> OK:FileInfo [owner=digna.hilll, filename=porro.csv, fileURL=http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!porro.csv, sharedWith=null]
+6/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugiat.gif ; userId = gregory.wiza ; password = i2p8a933fl ; data = 1a307e37d8 -> OK:FileInfo [owner=gregory.wiza, filename=fugiat.gif, fileURL=http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!fugiat.gif, sharedWith=null]
+7/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = blanditiis.pages ; userId = gregory.wiza ; password = i2p8a933fl ; data = cda1d526f5 -> OK:FileInfo [owner=gregory.wiza, filename=blanditiis.pages, fileURL=http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!blanditiis.pages, sharedWith=null]
+8/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = facere.xls ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = f1b73b495e -> OK:FileInfo [owner=terence.bartoletti, filename=facere.xls, fileURL=http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!facere.xls, sharedWith=null]
+9/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = cumque.bmp ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 538303f374 -> OK:FileInfo [owner=terence.bartoletti, filename=cumque.bmp, fileURL=http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!cumque.bmp, sharedWith=null]
+10/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = qui.xlsx ; userId = jackie.rau ; password = pcfr3k96 ; data = 072dd64041 -> OK:FileInfo [owner=jackie.rau, filename=qui.xlsx, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!qui.xlsx, sharedWith=null]
+11/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = temporibus.webm ; userId = jackie.rau ; password = pcfr3k96 ; data = 4ff19cb946 -> OK:FileInfo [owner=jackie.rau, filename=temporibus.webm, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!temporibus.webm, sharedWith=null]
+12/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = magnam.odt ; userId = jackie.rau ; password = pcfr3k96 ; data = 16b8c39b21 -> OK:FileInfo [owner=jackie.rau, filename=magnam.odt, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!magnam.odt, sharedWith=null]
+13/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = consequatur.bmp ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = 89ed67b3e3 -> OK:FileInfo [owner=dillon.bayer, filename=consequatur.bmp, fileURL=http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consequatur.bmp, sharedWith=null]
+14/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = sit.mp4 ; userId = jackie.rau ; password = pcfr3k96 ; data = 9ca690b080 -> OK:FileInfo [owner=jackie.rau, filename=sit.mp4, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!sit.mp4, sharedWith=null]
+15/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = dignissimos.ppt ; userId = jackie.rau ; password = pcfr3k96 ; data = ead178ca1a -> OK:FileInfo [owner=jackie.rau, filename=dignissimos.ppt, fileURL=http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!dignissimos.ppt, sharedWith=null]
+16/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = aut.csv ; userId = gregory.wiza ; password = i2p8a933fl ; data = b13d89ca12 -> OK:FileInfo [owner=gregory.wiza, filename=aut.csv, fileURL=http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!aut.csv, sharedWith=null]
+17/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = repellendus.ppt ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = d0762c3997 -> OK:FileInfo [owner=terence.bartoletti, filename=repellendus.ppt, fileURL=http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!repellendus.ppt, sharedWith=null]
+18/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = error.jpg ; userId = digna.hilll ; password = jazhvzdqm4u5 ; data = 89bf9c605c -> OK:FileInfo [owner=digna.hilll, filename=error.jpg, fileURL=http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!error.jpg, sharedWith=null]
+19/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = et.numbers ; userId = dillon.bayer ; password = gm7h08scerl0y ; data = a7b77b2102 -> OK:FileInfo [owner=dillon.bayer, filename=et.numbers, fileURL=http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!et.numbers, sharedWith=null]
+20/20                                                                                [WriteFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = fugit.ppt ; userId = terence.bartoletti ; password = 9ckdkq2g5v64p ; data = 94483ff6f7 -> OK:FileInfo [owner=terence.bartoletti, filename=fugit.ppt, fileURL=http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!fugit.ppt, sharedWith=null]
+sleeping: 9 s                                                                                nsleeping: 8 s                                                                                sleeping: 7 s                                                                                
+sleeping: 6 s                                                                                sleeping: 5 s                                                                                sleeping: 4 s                                                                                sleeping: 3 s                                                                                sleeping: 2 s                                                                                sleeping: 1 s                                                                                sleeping: 0 s                                                                                                                                                                ---------- Getting 20 files
+[GetFile SOAP] URI:http://172.18.0.4:8080/soap/dir/?wsdl ; filename = occaecati.xlsx ; userId = gregory.wiza ; accUserId = gregory.wiza ; password = i2p8a933fl -> -1 INTERNAL_ERROR
+tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createUserDefinedException(SOAPFaultBuilder.java:302)
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:111)
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:223)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:176)
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:263)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:89)
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:62)
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:131)
+	at com.sun.proxy.$Proxy72.getFile(Unknown Source)
+	at tp1.clt.soap.SOAPDirectoryServiceClt$5.call(SOAPDirectoryServiceClt.java:207)
+	at tp1.clt.soap.SOAPDirectoryServiceClt$5.call(SOAPDirectoryServiceClt.java:204)
+	at tp1.clt.soap.SOAPDirectoryServiceClt.callMethod(SOAPDirectoryServiceClt.java:96)
+	at tp1.clt.soap.SOAPDirectoryServiceClt.getFile(SOAPDirectoryServiceClt.java:204)
+	at tp1.SiteState.lambda$execGetFile$18(SiteState.java:477)
+	at tp1.SiteState.runOp(SiteState.java:289)
+	at tp1.SiteState.execGetFile(SiteState.java:477)
+	at tp1.SiteState.execGetFile(SiteState.java:472)
+	at tests.FilesTest.execGetFile(FilesTest.java:422)
+	at tests.workloads.FilesLsMixWorkload.execute(FilesLsMixWorkload.java:50)
+	at tests.BaseTest.test(BaseTest.java:215)
+	at tests.Tester.lambda$main$44(Tester.java:210)
+	at tests.Tester.doRun(Tester.java:423)
+	at tests.Tester.main(Tester.java:210)
+
+TestFailedException: GetFile : gregory.wiza/occaecati.xlsx ; accUserId = gregory.wiza ; pwd = i2p8a933fl
+Expected : 200; received : 400
+	at tp1.SiteState.execGetFile(SiteState.java:490)
+	at tp1.SiteState.execGetFile(SiteState.java:472)
+	at tests.FilesTest.execGetFile(FilesTest.java:422)
+	at tests.workloads.FilesLsMixWorkload.execute(FilesLsMixWorkload.java:50)
+	at tests.BaseTest.test(BaseTest.java:215)
+	at tests.Tester.lambda$main$44(Tester.java:210)
+	at tests.Tester.doRun(Tester.java:423)
+	at tests.Tester.main(Tester.java:210)
+java.lang.RuntimeException: TestFailedException: GetFile : gregory.wiza/occaecati.xlsx ; accUserId = gregory.wiza ; pwd = i2p8a933fl
+Expected : 200; received : 400
+	at tests.workloads.FilesLsMixWorkload.execute(FilesLsMixWorkload.java:100)
+	at tests.BaseTest.test(BaseTest.java:215)
+	at tests.Tester.lambda$main$44(Tester.java:210)
+	at tests.Tester.doRun(Tester.java:423)
+	at tests.Tester.main(Tester.java:210)
+Caused by: TestFailedException: GetFile : gregory.wiza/occaecati.xlsx ; accUserId = gregory.wiza ; pwd = i2p8a933fl
+Expected : 200; received : 400
+	at tp1.SiteState.execGetFile(SiteState.java:490)
+	at tp1.SiteState.execGetFile(SiteState.java:472)
+	at tests.FilesTest.execGetFile(FilesTest.java:422)
+	at tests.workloads.FilesLsMixWorkload.execute(FilesLsMixWorkload.java:50)
+	... 4 more
+FAILED: GetFile : gregory.wiza/occaecati.xlsx ; accUserId = gregory.wiza ; pwd = i2p8a933fl
+Expected : 200; received : 400
+
+
+Removing: users1.ourorg
+Removing: dir1.ourorg
+-----------------------------------------------------------------------------------
+users1.ourorg
+-----------------------------------------------------------------------------------
+INFO: Starting discovery on multicast group: /226.226.226.226, port: 2266
+INFO: Starting Discovery announcements on: /226.226.226.226:2266 for: users -> http://172.18.0.3:8080/rest
+INFO: users Server ready @ http://172.18.0.3:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+
+-----------------------------------------------------------------------------------
+dir1.ourorg
+-----------------------------------------------------------------------------------
+INFO: Starting discovery on multicast group: /226.226.226.226, port: 2266
+INFO: Starting Discovery announcements on: /226.226.226.226:2266 for: directory -> http://172.18.0.4:8080/soap
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+INFO: directory Soap Server ready @ http://172.18.0.4:8080/soap
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5741
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>occaecati.xlsx</arg0><arg1>RSJQKA0nwPy8FA1Gu+mBGbTXsglOD6N6y0NTQUoPBtWoSlsR10YTZAIC8SzpN5qRLWGQt7niF2bbkrhLGT5cwfL4j+F1+kdwqjYMknpUS+ZMVd8AsheRMEhyp7Oi3oiKgOklxSltyM31rMJLL4ONnUEDdHzjCKQMekg43h/L1L13GetbpnXYCo6XIJFe4tI7QcPVbax/6lZ6Vsw1oE0tZD2bmZaWEAzY/4lbzHCpaEUGk81XoFZWY3foqIiJxspt/npjxBSrIiI5MSBQZLdRWkzCe5ID7GbjQhaYIBKjlaQos2a7Mz0R3xCcriZLcXSkVa/GiFNkqlHRE7H4xqPDwO8w++p1NEUXvRMHUMrwNTFmkzQpvLw0Mr8RqjgEc2dwyugMU1QuagtahKlqm4LcGEhfgsairfaCyq1V54GL7L/0+vPPvII8Vml1qfAMdVOHyKeJHBtdHmpU8y2YxG65VuznfOaPnjKRTpIY6X42KtM3okducuHrC+TrDrKpK3Jo9dQSQCAuB1LQwgks58Po0OowF7qmk6N0or+Cz980lRCX4D1TuBduTpzTrh1RZxN6u/9v0egxiK7eZUGjaodsCxyH50gVRn4Swq5SE1nGd9CGsLy5IdIGb4nlxb0hIY1kExcXC+ZCmv02JDJrsECdn60XGhxppH5BuiUbizHHXsDRNRiOUKHhKFBCdb6dnnJflYgRspGFTrkqTkLimBxmW+tzPdFsOHVxTT7LenoPkwQnMqCNmmESALi31ImrCEu3vvGwyMYtGCDL7GqfM3i8+1CLHdM8ZjoI52zDJ5Bt1TLnEwVe4M/3jlHKeU/KEVHngc/S+2AFZsdbOlYsxS5ad8tHd/mtQKS9xZMbatVX/vYvi1UApscsH2BPzGqXh1K7ENgWkhbwg/r0bqxe/kbj2lQ499ng7j6GY25APKyxF1ci0UEXeOZLqA2j5wGC689k7OrbopXoBxd2rbI7etv8Da/1KSIk30atJuH8PrM/eON5DYo8f5A8ZNDGWeTNbkG7K8NTQt4ydUm2HNYddlq0JIAtBc0NQ/9WS/mdnUWnlcdNhkHkX5LP5xn0D77G7SfVCtjFkuK/g2XleF8K1Xgr6ZB/vMXTkDb+EKlmlC8V66QkhiCIVNxcpD9vasNFxo01sxduJ1z+2DY+qZluU3QOMl+Z7Q7uBd6PIYw6/7Hnt3k6JLtvjRIb7aymB4BppRQ7UGiEZe6UOu70JXALCYEnIuo7E7/vZkh/RUCF/7n3ugQRW1v2yO5M1kbqmOaPqOK5URsmCn/BmhVbOjCtIX6rL74X36uheC+6Sh4uu1tdrCw8GbGqLq9fRiBHQe2TbfJz+r5SUtRZEVBVb+p22k3hhT6r1vtg7kZuLl8eA5XLUNlnOMu5cQ7xVmJT2TtL7rbaMPoxg26pI6sAqi9ev2zGDDGPl7q5ySaAj/nB8kHf1murhhhcJIGqJnb2ONhAQ+1khF6odqOo6Dmeys/YJKSQz5DduxZDZ/bFVcM5O1r9//8RTsgyW7QysnV5mnywqRsjgVwdAQBJ3mHF1xVj4vOlJ46et+q9tLwsnqPvQHOco9ZlBgbcg4llY9FriNXBaN7PM8Z8U97S57HIAQAmUw8ZpehndFJpTNH+6uAjuXUVpZc9HXxXhAvOL0Qo0ksHcgCu+IsyJkOQLE9lCmCqkAkqK26aKDipcd1hiNccW5lXuXRJAIboFRlFQ/gF+Qs42bZIi59fafxAqTaw3OrD6gz4vdLpK0LYKmukQaQgFqYbm/Ld1cHqX8Da9viBqosuf2vhTikTQvgTfn4/YUQWpzm6ibEam1tq9GsjQ4+KNmxyySq8j4bm1ocP2NfsaQcejJSl2HsrRuchltyX2kYy/we7UuAiuRhHyaf4UENk6YDK5X8nRGMnVCAepp9oxgoXlWPtv3HmnhOldHLXVWMDVskys/gXZIhkfOiIKB0tmznJe+kn+Xgddzztw/xCoIy/iODcqCFZF35q/+Sk+0JguyQ74CWY6BujnzStMx8oDOuSrmwXTngNPIl0wqr3UgtJv4kDjBRDJj04RURVTQcfoaqujCuZPljuc8gSc1XjdmNeNO11r5CQ3QMvahxnVzq6yROWTWo57BUlwh9fmuko3Nscb7nJhhWPnvKCqrXxbKNvcvjqAO9f6CjgV24NXKBd3KDJeZg6hlQdwzgDOsga3z9M0vPwt23Sn83DyMdCxuDVsFqX6cUEobi4oo5FJyqD8AC7Xa+bQ/EQhbM2Var8NWZR7Tr4D9DeRj5emKJhIbmIfmeiLoKYmQwLnabkGXCA+YBOTlEse+eGwwnQTKlBPe9K5D+LTFbPnuq5qghvgrnAu7EByAGHjzp+Fsy5FsLjyMAYNMimSM+R3av6B0FgKviXvEh6K7kZEUQWg7Eg7A+nmSiHm6Soh4BKVO29LRT1fTTGWOVFN71hx4HStgYBO4YfEsFKe40ZuYIVBAuytYy4c/QtChpiKbbAcvf/7311nJ+Yb5fqQl3v6edg1W+jN808ZgaiWKj9JM/0Gf/Ait53+COiuyZGXL9xCEeZAxORJj2H5mLXDE58GV++eukdLG1dv3B2VTLW/xKJo4nLogtL5P4VVILoJDz6n1I2raUoVqnKcCjwNb3kLreCQEIEaAOUaZ4yc4T7YECDpyqp1TGg2kJCAJ3CuPEBH5f/zkc/0T4wz+XghEb+zsJwTpeNuKqSvwU3UQmhvJLut4AtzX217l+7A9nB56ilIMTukqzCdbJk31zOfAeAxp1eVs9d4EbuV7tl9Ra5sZvgoZdfCmmgbhB5tcwErX2FDCjc2IB9GI6C6cx/5wcwWLdnjHS+W7d0/4CkZMQJMRm7WLebqjpwwBGjlrWQEdxQq1nQzlJZ0/v5JSqJVsZRLlxU57CDVU0F5g6BHciOudlzIL/LfrmH2t2eb6UrQqYkwyZmFCbbvmBbkX8h8CWSj5lHNY6M5SD8AqNjr0MRppYc/Vjk2DGKVbVWn17B8j+n+sBIsJnaMs+I8WZB2HjsQnKq0KWFjyEeSMz7XEMIyOtcXZFDeqp3hxTLCI2q83rBtiQaMdyB6p1KJ8Oh8+lEdWZYAWIj+v1M6XTTOJGvy674BJ+n3GTUxHHeSk0mEKFirctN0SiFp7KMtih7khC0NugJVhVJ7z5fEy00tx9nISCOOed6B5f3DVteLgRPLRcpjZbDn1KnMIyTkaC6ItG/BB8EgrqskjGKiL3KiMJPaALnL4pksGndU01OdqSzoVVQ5/QuxehtxxANKbEAZ3b9kTMAi2kw5HwY/Oy09ZshltT2tgOrQDAYYeJ6fumX1DEoxFaWQL0ccdvottlrzw3Z0ppaU7XieX7xzI3lIKtPWHacI6xAxem8kMM6VAEvFbXYM9V2I1b6rnOhxesnlQN+ipF+zHbqdsr6HcsK2EpeaqWffSWI3fhmFpqFNeEWvvyQQiFYsOTCgcjyAu8/sAIdYkGQXUlpzmre17diHGOD3UUQ6QBBiSKv74A5oksFi9+28a3cBGZo1LCdSHuA4ggLQCtaSmb+vbl9CA8qpS98jYYHWCjbqMix6Cupa6c8N1SA7BmaajoPqlij57SUCMh1Wzl7JuM5hfORZFCRfBWwPu7ucNjpEGaAqolobmusWdXOTuBFSMNHq6OJNVcw/kaprMvNoNk6aNvwjv5jxEeKIXV4uDbV+Uya03dV4lLxfj5w7kMCN/iL7uqJWHlNYa4iGawXM+1p5g/duTPO51ETt0GyB9B7JJzI36bobAoDh95PknXXNbL7F1WxUvmEzXXsVdr0gT3ZOer2WGbsQ9LPUq9pLotzW4T5Zdu8Yc6xRbvlhQillwRXLJ28TbmUGbP/McMDeVorDgUM6X4R4T3atS/x5dtDq7z2L8Jd3cYEUkKRIpcXVgY8s637KRt/OL+m
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!occaecati.xlsx</fileURL><filename>occaecati.xlsx</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5744
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>consectetur.js</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consectetur.js</fileURL><filename>consectetur.js</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5734
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>ducimus.doc</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!ducimus.doc</fileURL><filename>ducimus.doc</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5740
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>voluptas.flac</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!voluptas.flac</fileURL><filename>voluptas.flac</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5737
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>porro.csv</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!porro.csv</fileURL><filename>porro.csv</filename><owner>digna.hilll</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5737
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>fugiat.gif</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!fugiat.gif</fileURL><filename>fugiat.gif</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5743
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>blanditiis.pages</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:09 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!blanditiis.pages</fileURL><filename>blanditiis.pages</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5746
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>facere.xls</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!facere.xls</fileURL><filename>facere.xls</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5746
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>cumque.bmp</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!cumque.bmp</fileURL><filename>cumque.bmp</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5731
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>qui.xlsx</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!qui.xlsx</fileURL><filename>qui.xlsx</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5738
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>temporibus.webm</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!temporibus.webm</fileURL><filename>temporibus.webm</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5733
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>magnam.odt</arg0><arg1>FrjDmyF1qfRqtBU1a8q96daqwjua7CcinHBoct0+oI4Cz3srNjc5Suorg7OLuly68t+Hl/akK+fPlptTc687cwOY3NdQbA/ZE1l6PR52JWbyD5iK67hjPzxzHqoFBLFKbT9SQqZiv8tEw7AWMCT90udyrT3ekJ8ri6Dech8WUi2ryhcA8M1maQ/DrQ7utgPlMxc9aPxOO7zZ6Urxs5jqjLqmyVjscxtEuvR31CqsTIIQ2BNZtMNr/zdlVcmUYHSZrIZL9troscHBeo6G212/HwekK7A5cmS8KV6u/Pk83C8nkhv/AVzv6lIQ2C6b4oBeeRNzegGliVYnEIKLAWBZruTjbF0odHgdz+txZSd+iQsaT4H9SJIgqB8xQ3gpVxk4MFijJh08D7VQcYgI46FHpXBGcIaOkC9g8UtMldeTQqhuqwowMh/yAB61o9JTfXJlWDZX/BVbgHPy6mHS04OPspLo4t679W3iOc4RnKMebq+Cfx/MZGb2fGqSX7fIOQR2pyccK5Eh9UHT+Fg/ICPjrfDMrQDGRKt9FouZWMilgBRLnFudkrpNINOI22u992vce4qZ/8wag0mmfL1YxV0xuC70I8oey6hpVKwXLY+peTROq+xvxyMrEUDYO3sZ9iDOlwU7bZyctNgj/iyQUUbStmnApUVPRrTm+xKE4f/payPezabR8xP8J0TokZzhzEoVH1/2yb+4O85lsJ1MFxTZAPO/26MRHiWIbdYiyMGtnlKY13e9trVT6P4c6KPmtthW1mL2pGgs4NGJOPUpl9uGSFA70F6XQB6Iu1gLkVQVLIodQBr3bMGaMjZVmPKta3ImlrOBNQr6S5ODcWM4LJu3d3EiUOQWDUcjR+ytG3LGgiUOKN79eQRxXrXNcPSflUHUEKR9EmSZylBEqQTU92et4DA1WfiU+GFUoUYXgsF7HyNNDVAQ1gbmveVlnuhyMCX6xnKyK83pihsKE7Y6C8cTHQyDNAjz2KfOmzxMTr5EbflyCrLe3XpymKuBYtDXW96GR4W3L8JSvB0Ha8r62n63lyaecas9AtsgroPPf+eBQSWLveU6UWMs9IEEhm9mbnACqX5rE66+M282B6zS32x9snsdiLQyol38knR2synpGvYZMsposhtMatchgtzGVIR3TE1VnflbZVF60bT8jSvd9WRKsjYQBnuhGAthU4keaXFIanIdv64AXKv+uvUhiWFOzYuAD1NQrHH45tsEeJTKuUsV3WSitsMGS590XRat7ARtYzbNTCcGJGZgJ+/HLj0/SdGYEEPKUbO22Iu8w2rLTbCtjt2Mlhj7yBNgtQ9s9bjGsbmLRsewAvvkmw0iHnqn1Mx0KOscyQ91yUM9yrk0J1xZpuzVbgnzWnUzgVCcJ0JtD9h8BFFsEzuA5wPa7DogOUgrwB7SZg3M5ND5ELR17eRmFTW2lb+I2kc0HgJKvp+eejkN0M5GXns6QndJPplg821x8aTetMmG6zTpax4sDWFXap2imw28RfwSbIS+O1Mqv1zctoRCPGlsfiUh6DOzbO6iP81krm490fHib5PAh26bfOmWKqlsHkw9mJQOX/E7h3BLjPgapCr0N21ct8+ZdeCx5TSx4V84p7FTGCu3BmJ/+CSjg0w9B3b8DsIQSB5LT5j7QzwlVbkfJHhl4bxyBXmV4tZd92eBUF3Au1L7Y88iOIW5RsFZm5edlRdIMZBf2Xt+beY7KXxI6KaFbdXuNvbjoFPHqYZLu+vVL+FzOzuX/y+2cOZ1j6BN3QGPUZmI+3wED2V7eyhcvL2QIncMfllVoYNAELWDm8Z6N7NeIh6Cl/evu9+uCZvZooOOjeqb5ei3qJYzktfO2Y7QxBXQKs05Mj2whXi04tDsM1yRhh3eoo5+zQTUP0Vn8ZtN47kvOi+bgdUfTWiyjtQysCiWIdG3EmOFooUhcSYaCLcGP4W3KYaN4BqBVDi5nvNkKIHZltpsOOHuHxbv/62wGoko14orHzIt/godvNM7TWNXkAoA7AHh0iOJbxjtE8uiDfikZ/MliFKoKlzZdND+ihSTjtSBX8l39LCuZUcuuHod78HVZPlqx9mOHooZ5yYroV/UId/ZW4XNRwihsUh5T9Fs1ecmOPeWv45iAV/0yAoSiFvZN/qKxQaQ6ugEZjRg+lnbQfPoEyVwUZ5VrWVMASkcOr9ZHUqjF5Bxgutcsx4tfqRvTzLkAoxJO/ucqQAfmVabqBTMFMcg/fB7E53lX0/CUouqJlXTdD8UD6GAkmV3ojsK/Gdmw1wNbh8jClscjJfeMxkPlj/MQPtwwGuXENp77NZbwEHRSQIlNdkUy8DO85TTKeyZ+ywwNa5nPghu6EwUrnoEqZyeogUWAx6RDiiXkjaLmZfaT1z4u52vwEbdjixag1EpIVwMLo4yOimMvpdMcX8eivMOevSBJUb/1r0kQZ+vy0yWjj96j12gtoUshAsXVTqw1fiYxzRWIupWxxt1WY7LJWyPgvCz0Wh/nW3GacBgKQ7NZS6HgLT3CBPVu3/rfinIV9pIUpAlxWzsvVPW4TD06zZBHz2Dlv/GFEEYJ/27Gs5vx5WQ1hGFjbIMIBfy9VdQ5vjEZJdczfVaASDLiY9k1li87FNIXI+Tl+Q9weBYfI+YREZu7gi0R6IDgt4+iuP+gabAc3k+8VV76w3C3Dk4uXm3QD/7P9zVvQmZYyrYhW5x0PyBYvJJTdZbY9lqEZwmuU2ssKz7QJx/iPh2uQzhzSBksT7DTqMZqhkNGczt1fEtaBYNeHuI+zBLIsMGAH3KaSwmIlWdO/oBRcVqtEZIegvozZgzOxY2m91iDXmXxpSCZ5bWzRRgWANsIwhRIdripVxeBMH6wfaf/tCpsZNeYoq8oLqxoDo8jr7PAp8+HJJGdcT6hyBXx2Gd8gDLvSHtJaYGYPbgYNRt5d+8EU7ctBApGpfAAF+Z/CKYEecN2fEr5K4PdYsF8hhf+G2JXiS49UYV7I3Tv0DOChXsDaX5sGHG/kEtmeiOAoSHopkHctG5X5d96GNp9E4LGzhctD1uR2KGJVfphUB6lDG5HwUmdgg8usNYwZ/SeVEjrYGrKPb0BaweRkSNxhxyT2cpP8rhmFA4qoF+c1jFkH+bj0i6EwZ6e0Eb6GGE1OYzMyt40ZNi4swTe0ae7avp4mIXY60Yl+T920cJO/9pm8X4hhvhzuHMK1P80klXxOhw+JiMoFlRX4fp3/CBYaQf3mdi5ooabBx9s1aNPkJqICdmQeBvsIeSN5+8ojX5+aXIg81kmcCU7tzuP2SWwPYexEv5m9j5YueC4m41b7jQVC0jOX23UqFKPLVsoFfEiMMkV8NcOJYeI/rNAUadtE5PsHM9hEghDuQjLvvBSqZdM2/Rahjb61R9rjCNMbCouteNc7CSu8Ui+UVxrbD1ornxSBKCLtTjW4OADJj+O3JsLYd2DBiCmpa/gAr0yOVYYNzDCLEq0GmxWmAYSyCIlE0IhqUm4xY9RRHvesiPWU6dDqS0UxKm8Hc0Bj9zfaC16dN2ejUbMBLzSum2VxfqadzsHqxoV7DsAgTyIFRlvh0PDPxFJ+NLwSGPZKZ8Xgt40to5ms/KHldzypGNSlzLPP9cx6tIoUS19N7ypwo1Gqk1Xn271yeELWQJRgw/6lIjL2mXITslf5wlu8IK6G41Egawx2AeE9vwpi6cWejU8wmYVhN1OyaS6gg/YZP4b08pZv6ncL2mHyQQC3/i3W9Ex5eF/0a40/tVouet+tdavEwD4dHkyeVj1FOmTUp67ChdYRORhzhyl1rJeGNtZGwAOw7C5koisfYL8gHB5o3TzWv9CfgAkj4Kt12y1QwZTsmZwz0JRI0XzlwznUlD4RLUuNpfks1vEUzvi8cHbDhpzG6EumwGKBvnWzXMFZ6HSL+v7iic3Sh9xckhygsV
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!magnam.odt</fileURL><filename>magnam.odt</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5745
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>consequatur.bmp</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!consequatur.bmp</fileURL><filename>consequatur.bmp</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5730
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>sit.mp4</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!sit.mp4</fileURL><filename>sit.mp4</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5738
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>dignissimos.ppt</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/jackie.rau!*!*!*!dignissimos.ppt</fileURL><filename>dignissimos.ppt</filename><owner>jackie.rau</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5734
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>aut.csv</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/gregory.wiza!*!*!*!aut.csv</fileURL><filename>aut.csv</filename><owner>gregory.wiza</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5751
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>repellendus.ppt</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!repellendus.ppt</fileURL><filename>repellendus.ppt</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5737
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>error.jpg</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/digna.hilll!*!*!*!error.jpg</fileURL><filename>error.jpg</filename><owner>digna.hilll</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5740
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>et.numbers</arg0><arg1>p7d7IQIvlxz/IUCm5QU2wdJg7Zr8mBMi0yFxsLNh5aZUBZM+BDgC0b3wVqWsgnEMdYOFapaXVJ4jFpFeFvoOkm3yNtkgjkLRpsHo8KqCLJEGm9nL1HK1g2Iuw6OKXAa4f1arCb9c0D50dkB+cvR+R7N3XRcav9QSvJp1zS5Kfn17oq9C4PbD7ePC2AhLyjyUTzXWXqCdE3Gf+eIFEY/1kzMpq6yTtdPVNelaYrA8x/vQizLg8QIDHT9c8BG47Elv4PfpYX8mv/ivhgi4ztzTQ8+v7E9sTcN/E1sX1pzUzRGfPmzHXoqB4Blw4kkJdxOfC8OXLMYrUElWOs5RqvJqTu9ICmx7o+UIQp4eiHfF4jDm1HofhtPySoceIH3Bh5tHNAbvjTvUVKF6Kr/LY/JuEuZyW0iIh1Tw6VBneDeUREE4IqukkY37FBdbXOfM6vcFNsnZNHtu60wElFvKVdK60qWtYhSHDZ2w8L9zneOAGjAiUwAuY7m78CKI5vzWgHwli1bXfLxtsI7lXs6hkV5Mgp8b6XgXGqdc0x9wxWz9aTTgMFHt4QGhq1Xwzyvux/P8wI2aIcSJxPtpJJUJOy+H7vwOqKQ7BkylpivBR8stxZJC1X3paF96/HzKeX1cwY+3GWrv6iSeFTLAI2cFKZBQQgHPEP1YtlRBaFYqTVwt6P/Z2oYAiiIvzZKzeVrAsOjtgIm1Jrok0ubK0Ls+upW1lL8hkRRvwOhujPrKD3kVTpVmVcFODMKgiAfLHv9scCbYtL8Ts2dnKGkk6TFY9NrH1/tlLTubfQWGxTPW11sBNkmEHkEhHQhgqVHdicADV5QQrwGLqw3FZwJwOwTg4qR0oV9Jr6zOIp2yE09ZAC2L2/KUQh0g2Ho7RLZIf9dT6p5WWDV9CMyli5vpjPHSLGeNRd9mOtXIPMNhC/3gPnJ+DX3pmahx/BuGPVmIGWlv29VCa7FWvn36ZOAmScHr+OVH321ZFnpZKw2La7KVM5m7ECo12lqW6tuKCIKRj0wRCESepXkPCG9jQLUu6B6/AHFnxuEOKG3Yd0o13uK7y96IHNU0rDRO4FsyYTJvmhovfYIHNINrdGFaTFS+NiJG9PNHiiNnKj7jIjKvDQKlyGTM+EyYkSMwddutH+jH6VTctpqvXo1/PsD7Yz/X7MKNE9hmsRemoving: files1.ourorg
+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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:10 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/dillon.bayer!*!*!*!et.numbers</fileURL><filename>et.numbers</filename><owner>dillon.bayer</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/writeFileRequest"
+Content-length: 5745
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFile xmlns:ns2="http://sd2122"><arg0>fugit.ppt</arg0><arg1>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
+
+Message has been truncated
+use com.sun.xml.ws.transport.http.HttpAdapter.dumpTreshold property to increase the amount of printed part of the message
+--------------------
+
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+---[HTTP response 200]---
+Date: Sun, 24 Apr 2022 11:26:11 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:writeFileResponse xmlns:ns2="http://sd2122"><return><fileURL>http://172.18.0.5:8080/rest/files/terence.bartoletti!*!*!*!fugit.ppt</fileURL><filename>fugit.ppt</filename><owner>terence.bartoletti</owner></return></ns2:writeFileResponse></S:Body></S:Envelope>
+--------------------
+
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: 172.18.0.4:8080
+User-agent: JAX-WS RI 2.3.2-1 git-revision#dbe58a8
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://sd2122/SoapDirectory/getFileRequest"
+Content-length: 285
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:getFile xmlns:ns2="http://sd2122"><arg0>occaecati.xlsx</arg0><arg1>gregory.wiza</arg1><arg2>gregory.wiza</arg2><arg3>i2p8a933fl</arg3></ns2:getFile></S:Body></S:Envelope>
+--------------------
+
+JerseyWebTarget { http://172.18.0.5:8080/rest/files }
+FROM files1.ourorg.sdnet (172.18.0.5) : files	http://172.18.0.5:8080/rest
+tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
+	at tp1.impl.service.soap.directory.DirectoryWebService.getFile(DirectoryWebService.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.xml.ws.util.Trampoline.invoke(MethodUtil.java:52)
+	at jdk.internal.reflect.GeneratedMethodAccessor19.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.xml.ws.util.MethodUtil.invoke(MethodUtil.java:77)
+	at com.sun.xml.ws.api.server.MethodUtil.invoke(MethodUtil.java:34)
+	at com.sun.xml.ws.api.server.InstanceResolver$1.invoke(InstanceResolver.java:220)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:119)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:58)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1105)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:988)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:846)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:400)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:838)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:392)
+	at com.sun.xml.ws.transport.http.server.WSHttpHandler.handleExchange(WSHttpHandler.java:83)
+	at com.sun.xml.ws.transport.http.server.WSHttpHandler.handle(WSHttpHandler.java:67)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:95)
+	at jdk.httpserver/sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:82)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:98)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:733)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:95)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+tp1.api.service.soap.DirectoryException: INTERNAL_ERROR
+---[HTTP response 500]---
+Date: Sun, 24 Apr 2022 11:26:21 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope"><faultcode>S:Server</faultcode><faultstring>INTERNAL_ERROR</faultstring><detail><ns2:DirectoryException xmlns:ns2="http://sd2122"><errorCode>INTERNAL_ERROR</errorCode><message>INTERNAL_ERROR</message></ns2:DirectoryException></detail></S:Fault></S:Body></S:Envelope>
+--------------------
+
+FROM dir1.ourorg (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+
+-----------------------------------------------------------------------------------
+files1.ourorg
+-----------------------------------------------------------------------------------
+INFO: Starting discovery on multicast group: /226.226.226.226, port: 2266
+INFO: Starting Discovery announcements on: /226.226.226.226:2266 for: files -> http://172.18.0.5:8080/rest
+INFO: files Server ready @ http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM users1.ourorg.sdnet (172.18.0.3) : users	http://172.18.0.3:8080/rest
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+FROM dir1.ourorg.sdnet (172.18.0.4) : directory	http://172.18.0.4:8080/soap
+FROM files1.ourorg (172.18.0.5) : files	http://172.18.0.5:8080/rest
+
+
+
+Continue (Y/N) ?
+Exiting...
